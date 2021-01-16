@@ -16,8 +16,12 @@
     "express": "~4.16.1",
     "google-polyline": "^1.0.3",
     "http-errors": "~1.6.3",
+    "jQuery": "^1.7.4",
     "jade": "~1.11.0",
+    "jquery": "^3.5.1",
     "lodash": "^4.17.20",
-    "morgan": "~1.9.1"
+    "morgan": "~1.9.1",
+    "reactstrap": "^8.8.1",
+    "styled-jsx": "^3.4.1"
   }
 }
