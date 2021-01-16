@@ -72,9 +72,9 @@ const LandingComponent = () => {
         }
         .jumbo-bg {
           background: transparent;
-          background-image: url(https://bootstrapmade.com/demo/themes/eStartup/img/hero-bg.png);
+          background-image: url(https://www.metrimeo.com/wp-content/uploads/2020/11/Modern-architecture-building.jpg);
           background-repeat: no-repeat;
-          background-position: center bottom;
+          background-position: top;
           background-size: 100%;
         }
         @media (min-width: 1024px) {
