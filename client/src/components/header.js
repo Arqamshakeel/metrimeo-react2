@@ -4,20 +4,20 @@ import { Container, Jumbotron } from "reactstrap";
 const Header = () => {
   return (
     <header>
-      <div className="intro-logo jumbo-bg">
-        <h2
-          style={{
-            float: "left",
-          }}
-        >
-          Welcome to a new World! MetriMeo
-        </h2>
-        {/* <h3>A World of Trust and financial progress</h3> */}
-        {/* <img
+      <div
+        className="intro-logo jumbo-bg jumbo-sm"
+        style={{
+          backgroundImage:
+            "url(https://www.99images.com/download-image/394008/1920x1080)",
+        }}
+      >
+        <h2>Welcome to a new World! MetriMeo</h2>
+        <h3>A World of Trust and financial progress</h3>
+        <img
           src="https://bootstrapmade.com/demo/themes/eStartup/img/hero-img.png"
           className=""
           alt=""
-        /> */}
+        />
         <div className="intro-button">
           <a href="">Get Started</a>
         </div>
@@ -41,15 +41,6 @@ const Header = () => {
         header {
           margin-bottom: 1rem;
           height: 100vh;
-        }
-        h2 {
-          color: rgb(100, 125, 99);
-        }
-        h3 {
-          color: white;
-        }
-        span {
-          color: rgb(245, 218, 208);
         }
         .intro-logo {
           display: flex;

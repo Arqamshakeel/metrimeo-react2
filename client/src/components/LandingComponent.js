@@ -72,10 +72,9 @@ const LandingComponent = () => {
         }
         .jumbo-bg {
           background: transparent;
-          background-image: url(https://www.metrimeo.com/wp-content/uploads/2020/11/Modern-architecture-building.jpg);
+          background-image: url(https://www.99images.com/download-image/394008/1920x1080);
           background-repeat: no-repeat;
           background-position: top;
-          background-size: 100%;
         }
         @media (min-width: 1024px) {
           .jumbo-bg {
