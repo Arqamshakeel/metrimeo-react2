@@ -9,6 +9,7 @@ import {
   DropdownItem,
   DropdownToggle,
 } from "reactstrap";
+import { useMediaQuery } from "react-responsive";
 class MobileMenu extends Component {
   state = { isOpen: false };
 
@@ -146,6 +147,11 @@ class MobileMenu extends Component {
 }
 
 export default class extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { width: 0, height: 0 };
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+  }
   dropNav = React.createRef();
 
   hamButton = React.createRef();
@@ -201,11 +207,21 @@ export default class extends Component {
     this.mobileMenu = document.querySelector(".mobile-menu");
     this.mobileNav = document.querySelector(".mobile-nav");
     this.hamButton = document.querySelector(".ham");
+
+    this.updateWindowDimensions();
+    window.addEventListener("resize", this.updateWindowDimensions);
   }
   componentWillUnmount() {
     window.removeEventListener("scroll", this.fixedNav);
+
+    window.removeEventListener("resize", this.updateWindowDimensions);
   }
+  updateWindowDimensions() {
+    this.setState({ width: window.innerWidth, height: window.innerHeight });
+  }
+
   render() {
+    console.log(this.state.width);
     return (
       <div className="navi-menu">
         <Container>
@@ -266,13 +282,18 @@ export default class extends Component {
             <NavItem className="nav-item-n">
               <NavLink href="#">Contact Us</NavLink>
             </NavItem>
-
-            <NavItem className="nav-item-n-white intro-button2">
-              <NavLink href="#">Login</NavLink>
-            </NavItem>
-            <NavItem className="nav-item-n-white intro-button3">
-              <NavLink href="#">Sign up</NavLink>
-            </NavItem>
+            {this.state.width > 490 ? (
+              <>
+                <NavItem className="nav-item-n-white intro-button2">
+                  <NavLink href="#">Login</NavLink>
+                </NavItem>
+                <NavItem className="nav-item-n-white intro-button3">
+                  <NavLink href="#">Sign up</NavLink>
+                </NavItem>
+              </>
+            ) : (
+              <></>
+            )}
           </Nav>
         </Container>
         <style jsx>{`

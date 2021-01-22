@@ -75,6 +75,7 @@ const LandingComponent = () => {
           background-image: url(https://www.99images.com/download-image/394008/1920x1080);
           background-repeat: no-repeat;
           background-position: top;
+          height: 100%;
         }
         @media (min-width: 1024px) {
           .jumbo-bg {
