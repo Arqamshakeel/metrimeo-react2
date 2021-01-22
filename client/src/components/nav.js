@@ -213,7 +213,13 @@ export default class extends Component {
 
           <Nav className="nav-n">
             <NavItem className="nav-item-n logo">
-              <NavLink href="#">Meterio</NavLink>
+              {/* <NavLink href="#">Meterio</NavLink> */}
+              <div style={{ marginTop: "10px" }}></div>
+              <img
+                src="https://www.metrimeo.com/wp-content/uploads/2020/11/cropped-MetriMeo-Blue-300x78.png"
+                alt=""
+                height="50px"
+              />
             </NavItem>
             <NavItem className="nav-item-n ham" onClick={this.showNav}>
               <NavLink href="">
@@ -221,22 +227,10 @@ export default class extends Component {
               </NavLink>
             </NavItem>
             <NavItem className="nav-item-n">
-              <NavLink href="#">home</NavLink>
+              <NavLink href="#">Home</NavLink>
             </NavItem>
             <NavItem className="nav-item-n">
-              <NavLink href="#">about</NavLink>
-            </NavItem>
-            <NavItem className="nav-item-n">
-              <NavLink href="#">features</NavLink>
-            </NavItem>
-            <NavItem className="nav-item-n">
-              <NavLink href="#">screenshots</NavLink>
-            </NavItem>
-            <NavItem className="nav-item-n">
-              <NavLink href="#">team</NavLink>
-            </NavItem>
-            <NavItem className="nav-item-n">
-              <NavLink href="#">pricing</NavLink>
+              <NavLink href="#">Our Products</NavLink>
             </NavItem>
             <div
               className="drop"
@@ -246,48 +240,55 @@ export default class extends Component {
             >
               <NavItem>
                 <NavLink href="#" className="nav-item-n caret">
-                  dropdown
+                  Our Solutions
                 </NavLink>
               </NavItem>
               <div className="drop__item" ref={this.dropNav}>
                 <Nav vertical>
                   <NavItem className="nav-item-n">
-                    <NavLink href="#">dropdown-1</NavLink>
+                    <NavLink href="#">To Individuals</NavLink>
                   </NavItem>
                   <NavItem className="nav-item-n">
-                    <NavLink href="#">dropdown-2</NavLink>
+                    <NavLink href="#">To Landlords</NavLink>
                   </NavItem>
                   <NavItem className="nav-item-n">
-                    <NavLink href="#">dropdown-3</NavLink>
+                    <NavLink href="#">To Cooperatives</NavLink>
                   </NavItem>
                   <NavItem className="nav-item-n">
-                    <NavLink href="#">dropdown-4</NavLink>
+                    <NavLink href="#">To Businesses</NavLink>
                   </NavItem>
                 </Nav>
               </div>
             </div>
-
             <NavItem className="nav-item-n">
-              <NavLink href="#">Blog</NavLink>
+              <NavLink href="#">About Metrimeo</NavLink>
             </NavItem>
-            <NavItem className="nav-item-n intro-button2">
-              <NavLink href="#">Contact</NavLink>
+            <NavItem className="nav-item-n">
+              <NavLink href="#">Contact Us</NavLink>
+            </NavItem>
+
+            <NavItem className="nav-item-n-white intro-button2">
+              <NavLink href="#">Login</NavLink>
+            </NavItem>
+            <NavItem className="nav-item-n-white intro-button3">
+              <NavLink href="#">Sign up</NavLink>
             </NavItem>
           </Nav>
         </Container>
         <style jsx>{`
-          .intro-button2 a {
-            padding: 0.65em 2.6em;
-            border-radius: 20px;
-            color: var(--brand-color);
-            border: 1.8px solid var(--brand-color);
-            background: white;
-            transition: all 0.5s;
-          }
-          .intro-button2 a:hover {
-            background-color: var(--brand-color);
+          .intro-button2 {
+            padding: 0.25em 1.6em;
+
             color: white;
+            background: #e4620f;
           }
+          .intro-button3 {
+            padding: 0.25em 1.6em;
+
+            color: white;
+            background: #186eb8;
+          }
+
           .scroll-nav {
             background: white;
             width: 100%;
@@ -307,8 +308,28 @@ export default class extends Component {
           }
           .nav-item-n a {
             padding: 0.5rem 0.6rem;
-            color: inherit;
+            color: black;
           }
+          .nav-item-n-white a {
+            padding: 0.5rem 0.6rem;
+            color: white;
+          }
+
+          // .nav-n-button1 {
+          //   align-items: center;
+          // }
+          // .nav-item-n-button1 {
+          //   display: none;
+          //   font-size: 14px;
+          // }
+          // .nav-item-n-button1:not(.logo) {
+          //   text-transform: capitalize;
+          // }
+          // .nav-item-n-button1 a {
+          //   padding: 0.5rem 0.6rem;
+          //   color: white;
+          // }
+
           .nav-item-n:not(.ham):not(.logo):hover {
             color: var(--brand-color);
           }
@@ -347,12 +368,13 @@ export default class extends Component {
           .drop__item {
             position: absolute;
             display: none;
-            transition: all 0.5s;
+
             width: 200px;
             padding: 0.5rem 0;
             opacity: 0;
             box-shadow: 0px 0px 20px 0px #f1f1f1d1, 0px 0px 20px 0px #ffffff2b;
             z-index: 3;
+            background: white;
           }
           .drop__item .nav {
             align-items: flex-start;

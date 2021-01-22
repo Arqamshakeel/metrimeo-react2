@@ -15,7 +15,7 @@ const LandingComponent = () => {
       <Nav />
       {/* <CustomNav /> */}
       <Header />
-      <Sec1 />
+      {/* <Sec1 /> */}
       <Sec2
         imgPos={"left"}
         img={
@@ -60,7 +60,7 @@ const LandingComponent = () => {
             "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
             "Segoe UI Emoji", "Segoe UI Symbol";
           font-size: 14px;
-          --brand-color: #71c55d;
+          --brand-color: #186eb8;
           --gray-color-1: #777;
           --gray-color-2: #555;
         }

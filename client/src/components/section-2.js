@@ -16,13 +16,50 @@ export default (props) => (
 
         <Col md="5" lg="5" className="s2__des">
           <h1>
-            <span className="bold">{props.headingStart}</span> {props.heading}
+            {props.headingStart} {props.heading}
           </h1>
           <p>{props.desc}</p>
         </Col>
         {props.imgPos === "right" ? (
           <Col md="7" lg="5" className="s2__mob-pic">
             <img src={props.img} alt="" />
+          </Col>
+        ) : (
+          <></>
+        )}
+      </Row>
+      <Row className="flex-align">
+        {props.imgPos === "left" ? (
+          <Col md="7" lg="5" className="s2__mob-pic">
+            {/* <img src={props.img} alt="" /> */}
+          </Col>
+        ) : (
+          <></>
+        )}
+
+        <Col md="5" lg="5" className="s2__des">
+          {/* <h1>
+            {props.headingStart} {props.heading}
+          </h1>
+          <p>{props.desc}</p> */}
+
+          <div>
+            <a
+              href="url"
+              style={{
+                fontSize: "1.125em",
+                fontWeight: "600",
+                background: "#ffffff",
+                color: "#126bc5",
+              }}
+            >
+              {">> Discover our products <<"}
+            </a>
+          </div>
+        </Col>
+        {props.imgPos === "right" ? (
+          <Col md="7" lg="5" className="s2__mob-pic">
+            {/* <img src={props.img} alt="" /> */}
           </Col>
         ) : (
           <></>
@@ -48,16 +85,22 @@ export default (props) => (
         }
         .s2__des h1 {
             font-size: 2.6em;
-            font-weight: 100;
+            font-weight: bold;
             letter-spacing: 2.5px;
+            font-size: 32px;
+            font-family: 'DM Sans', sans-serif;
         }
         .s2__des .bold{
             font-weight: 700;
         }
         .s2__des p {
             font-weight: 100;
-            font-size: .95em;
+            font-size: 18px;
+            line-height: 20px;
             line-height: 1.8;
+
+
+            font-family: 'DM Sans', sans-serif;
         }
         .s2__des ul {
             font-weight: 100;

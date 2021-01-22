@@ -82,10 +82,13 @@ export default class extends Component {
                text-align: center;
            }
            .s4__titles h1 {
-               font-size: 3em;
-               font-weight: 100;
+               
+               font-weight: 300;
                text-transform: capitalize;
-               letter-spacing: 5px;
+               letter-spacing: 1px;
+               font-family: 'Open Sans',sans-serif;
+
+               font-size: 3.125em;
            }
            .s4__titles h4 {
                font-size: .9em;
