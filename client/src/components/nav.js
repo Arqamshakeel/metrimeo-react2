@@ -10,6 +10,7 @@ import {
   DropdownToggle,
 } from "reactstrap";
 import { useMediaQuery } from "react-responsive";
+import { withRouter } from "react-router-dom";
 class MobileMenu extends Component {
   state = { isOpen: false };
 
@@ -146,7 +147,7 @@ class MobileMenu extends Component {
   }
 }
 
-export default class extends Component {
+class NavBar extends Component {
   constructor(props) {
     super(props);
     this.state = { width: 0, height: 0 };
@@ -222,6 +223,7 @@ export default class extends Component {
 
   render() {
     console.log(this.state.width);
+
     return (
       <div className="navi-menu">
         <Container>
@@ -243,10 +245,22 @@ export default class extends Component {
               </NavLink>
             </NavItem>
             <NavItem className="nav-item-n">
-              <NavLink href="#">Home</NavLink>
+              <NavLink
+                onClick={() => {
+                  this.props.history.push("/");
+                }}
+              >
+                Home
+              </NavLink>
             </NavItem>
             <NavItem className="nav-item-n">
-              <NavLink href="#">Our Products</NavLink>
+              <NavLink
+                onClick={() => {
+                  this.props.history.push("our-products");
+                }}
+              >
+                Our Products
+              </NavLink>
             </NavItem>
             <div
               className="drop"
@@ -420,3 +434,4 @@ export default class extends Component {
     );
   }
 }
+export default withRouter(NavBar);

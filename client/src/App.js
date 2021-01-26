@@ -1,10 +1,14 @@
 import React from "react";
 // import "./App.css";
 // import Header from "./components/header/Header";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Nav from "./components/nav";
 
 import { Paper, ThemeProvider, createMuiTheme } from "@material-ui/core";
 import LandingComponent from "./components/LandingComponent";
+import OurProducts from "./components/ourProducts/OurProducts";
+import CustomFooter from "./components/footer/CustomFooter";
+import NavBar from "./components/nav";
 
 function App() {
   const [dark, setDark] = React.useState(false);
@@ -15,18 +19,12 @@ function App() {
   });
   return (
     <BrowserRouter>
-      {/* <ThemeProvider theme={theme}> */}
-      {/* <Paper> */}
-      {/* <ResponsiveDrawer /> */}
-      {/* <CustomHeader dark={dark} setDark={setDark} /> */}
-      {/* <Main2 /> */}
-      {/* <Template /> */}
-      {/* <Test /> */}
-      {/* </Paper> */}
-      {/* <Header /> */}
-      {/* <Blog /> */}
-      {/* </ThemeProvider> */}
-      <LandingComponent />
+      <NavBar />
+      <Switch>
+        <Route path="/" exact component={LandingComponent} />
+        <Route path="/our-products" exact component={OurProducts} />
+      </Switch>
+      <CustomFooter />
     </BrowserRouter>
   );
 }

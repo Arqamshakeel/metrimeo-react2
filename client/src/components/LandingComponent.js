@@ -12,7 +12,6 @@ import CustomFooter from "./footer/CustomFooter";
 const LandingComponent = () => {
   return (
     <div className="app-wrapper">
-      <Nav />
       {/* <CustomNav /> */}
       <Header />
       {/* <Sec1 /> */}
@@ -53,7 +52,7 @@ const LandingComponent = () => {
       <Carousel />
       {/* <Sec5 /> */}
       <Sec6 />
-      <CustomFooter />
+
       <style jsx global>{`
         .app-wrapper {
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
