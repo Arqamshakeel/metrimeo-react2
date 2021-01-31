@@ -26,6 +26,12 @@ const LandingComponent = () => {
           "When you partner with us, you’re trusting us with your future. So we take that responsibility to heart. We use a variety of proprietary tools to make sense of credit data you can trust. We help you see beyond the numbers and keep your information safe."
         }
       />
+      <hr
+        style={{
+          border: "1px solid #e05414",
+          margin: "20px 185px 0px 185px",
+        }}
+      />
       <Sec2
         imgPos={"right"}
         img={
@@ -36,6 +42,12 @@ const LandingComponent = () => {
         desc={
           "Whether you are trying to get more opportunities coming your way, or choose a partner you can trust for your business, we can help. We provide you with the confidence you need to growth financially."
         }
+      />
+      <hr
+        style={{
+          border: "1px solid #e05414",
+          margin: "20px 185px 0px 185px",
+        }}
       />
       <Sec2
         imgPos={"left"}
@@ -48,10 +60,11 @@ const LandingComponent = () => {
           "Preserving what you have acquired and while still pursuing growth  can be a challenge. Whether you are an individual or a business, your best resource is people: “Your net worth is your network”. We ensure your best interest is aligned with partners you are recruiting, working for, or teaming up with."
         }
       />
+
       {/* <Sec3 /> */}
       <Carousel />
       {/* <Sec5 /> */}
-      <Sec6 />
+      {/* <Sec6 /> */}
 
       <style jsx global>{`
         .app-wrapper {

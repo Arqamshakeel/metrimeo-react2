@@ -3,7 +3,6 @@ import { Container, Row, Col } from "reactstrap";
 
 export default (props) => (
   <section className="s2">
-    <hr />
     <Container>
       <Row className="flex-align">
         {props.imgPos === "left" ? (
@@ -43,18 +42,8 @@ export default (props) => (
           </h1>
           <p>{props.desc}</p> */}
 
-          <div>
-            <a
-              href="url"
-              style={{
-                fontSize: "1.125em",
-                fontWeight: "600",
-                background: "#ffffff",
-                color: "#126bc5",
-              }}
-            >
-              {">> Discover our products <<"}
-            </a>
+          <div className={"intro-button-sec2"}>
+            <a href="">Discover our products</a>
           </div>
         </Col>
         {props.imgPos === "right" ? (
@@ -67,6 +56,22 @@ export default (props) => (
       </Row>
     </Container>
     <style>{`
+    .intro-button-sec2 {
+      margin-top: 2.3em;
+      margin-bottom: 3em;
+    }
+    .intro-button-sec2 a {
+      padding: 0.65em 2.6em;
+      border-radius: 20px;
+      color: white;
+
+      background: #186eb8;
+      transition: all 0.5s;
+    }
+    .intro-button-sec2 a:hover {
+      background-color: #186eb8;
+      color: white;
+    }
         .s2 {
             font-size: 16px;
             margin-top: 4em;

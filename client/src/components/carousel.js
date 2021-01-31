@@ -27,8 +27,19 @@ export default class extends Component {
       <section className="s4">
         <Container>
           <div className="s4__titles">
+            <hr
+              style={{
+                border: "1px solid #e05414",
+                margin: "20px 80px 0px 80px",
+              }}
+            />
             <h1>Our Guarantee to you</h1>
-            <hr />
+            <hr
+              style={{
+                border: "1px solid #e05414",
+                margin: "20px 80px 0px 80px",
+              }}
+            />
             <h4>Materio</h4>
           </div>
           <div class="owl-carousel owl-theme">
@@ -37,36 +48,98 @@ export default class extends Component {
                 src="https://www.metrimeo.com/wp-content/uploads/2020/10/4421964-1024x1024.jpg"
                 alt=""
               />
+              <h5
+                style={{
+                  textAlign: "center",
+                  fontSize: "19px",
+                  fontFamily: "'Montserrat',sans-serif",
+                  fontWeight: "800",
+                }}
+              >
+                Extremely Accurate Models
+              </h5>
             </div>
+
             <div>
               <img
                 src="https://www.metrimeo.com/wp-content/uploads/2020/10/5204685-1024x1024.jpg"
                 alt=""
               />
+
+              <h5
+                style={{
+                  textAlign: "center",
+                  fontSize: "19px",
+                  fontFamily: "'Montserrat',sans-serif",
+                  fontWeight: "800",
+                }}
+              >
+                Highest Standards Of Security
+              </h5>
             </div>
             <div>
               <img
                 src="https://www.metrimeo.com/wp-content/uploads/2020/10/2149568-1024x1024.jpg"
                 alt=""
               />
+              <h5
+                style={{
+                  textAlign: "center",
+                  fontSize: "19px",
+                  fontFamily: "'Montserrat',sans-serif",
+                  fontWeight: "800",
+                }}
+              >
+                Data Privacy Integrated By Design
+              </h5>
             </div>
             <div>
               <img
                 src="https://www.metrimeo.com/wp-content/uploads/2020/10/3857457-1024x1024.jpg"
                 alt=""
               />
+              <h5
+                style={{
+                  textAlign: "center",
+                  fontSize: "19px",
+                  fontFamily: "'Montserrat',sans-serif",
+                  fontWeight: "800",
+                }}
+              >
+                Innovative And Most Cost-Effective Solutions
+              </h5>
             </div>
             <div>
               <img
                 src="https://www.metrimeo.com/wp-content/uploads/2020/10/5204685-1024x1024.jpg"
                 alt=""
               />
+              <h5
+                style={{
+                  textAlign: "center",
+                  fontSize: "19px",
+                  fontFamily: "'Montserrat',sans-serif",
+                  fontWeight: "800",
+                }}
+              >
+                Extremely Accurate Models
+              </h5>
             </div>
             <div>
               <img
                 src="https://www.metrimeo.com/wp-content/uploads/2020/10/2149568-1024x1024.jpg"
                 alt=""
               />
+              <h5
+                style={{
+                  textAlign: "center",
+                  fontSize: "19px",
+                  fontFamily: "'Montserrat',sans-serif",
+                  fontWeight: "800",
+                }}
+              >
+                Highest Standards Of Security
+              </h5>
             </div>
           </div>
         </Container>
@@ -75,7 +148,7 @@ export default class extends Component {
           {`
            .s4 {
                font-size: 16px;
-               margin-top: 10em;
+               margin-top: 2em;
            }
            .s4__titles {
                margin-bottom: 4em;

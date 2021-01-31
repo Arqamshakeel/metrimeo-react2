@@ -246,6 +246,7 @@ class NavBar extends Component {
             </NavItem>
             <NavItem className="nav-item-n">
               <NavLink
+                style={{ cursor: "pointer" }}
                 onClick={() => {
                   this.props.history.push("/");
                 }}
@@ -255,6 +256,7 @@ class NavBar extends Component {
             </NavItem>
             <NavItem className="nav-item-n">
               <NavLink
+                style={{ cursor: "pointer" }}
                 onClick={() => {
                   this.props.history.push("our-products");
                 }}
@@ -336,7 +338,7 @@ class NavBar extends Component {
           }
           .nav-item-n {
             display: none;
-            font-size: 14px;
+            font-size: 16px;
           }
           .nav-item-n:not(.logo) {
             text-transform: capitalize;

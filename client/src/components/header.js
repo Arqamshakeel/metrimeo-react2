@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Jumbotron } from "reactstrap";
 import { useMediaQuery } from "react-responsive";
+import { Grid } from "@material-ui/core";
 const Header = () => {
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-width: 1224px)",
@@ -15,19 +16,22 @@ const Header = () => {
 
   return (
     <header>
-      <div
+      {/* <div
         className={isDesktopOrLaptop ? "intro-logo" : "intro-logo-mobile"}
         style={{
           backgroundImage:
             "url(https://www.metrimeo.com/wp-content/uploads/2020/11/Modern-architecture-building.jpg)",
+          backgroundPosition: "center",
         }}
       >
         <h2 className={isDesktopOrLaptop ? "data1" : "data1-mobile"}>
           Welcome to a new <br /> World!
         </h2>
+
         <h2 className={isDesktopOrLaptop ? "data4" : "data4-mobile"}>
           MetriMeo
         </h2>
+        <span className="elementor-divider-separator data5"></span>
         <h2 className={isDesktopOrLaptop ? "data2" : "data1-mobile"}>
           A World of Trust and <br /> financial progress
         </h2>
@@ -41,49 +45,101 @@ const Header = () => {
         >
           <a href="">Get Started!</a>
         </div>
-        {/* <div className="company-icons">
-          <span className="company-icons__item">
-            <i className="fab fa-apple" />
-            app store
-          </span>
-          <span className="company-icons__item">
-            <i className="fab fa-google-play" />
-            google play
-          </span>
-          <span className="company-icons__item">
-            <i className="fab fa-windows" />
-            windows
-          </span>
-        </div> */}
+      </div> */}
+
+      <div
+        style={{
+          backgroundImage:
+            "url(https://www.metrimeo.com/wp-content/uploads/2020/11/Modern-architecture-building.jpg)",
+          backgroundPosition: "center",
+          padding: "100px",
+        }}
+      >
+        <Grid container>
+          <Grid item xs={6}>
+            {/* <h2 className={isDesktopOrLaptop ? "data1" : "data1-mobile"}>
+              <p>Welcome to a new</p>
+              <p>World!</p>
+            </h2> */}
+            <span className={isDesktopOrLaptop ? "data1" : "data1-mobile"}>
+              <h2 className="backgroundColorProperties">Welcome to a new</h2>{" "}
+              <br />
+              <h2 className="backgroundColorProperties">World!</h2> <br />
+            </span>
+            <br />
+
+            <h2 className={isDesktopOrLaptop ? "data4" : "data4-mobile"}>
+              MetriMeo
+            </h2>
+            <br />
+            <div>
+              <div className="elementor-divider-separator data5"></div>
+              <br />
+            </div>
+            <br />
+
+            <span className={isDesktopOrLaptop ? "data1" : "data1-mobile"}>
+              <h2 className="backgroundColorProperties">
+                A World of Trust and
+              </h2>
+              <br />
+              <h2 className="backgroundColorProperties">financial progress</h2>
+              <br />
+            </span>
+            <br />
+
+            <div
+              className={
+                isDesktopOrLaptop ? "intro-button data3" : "intro-button"
+              }
+            >
+              <a href="">Get Started!</a>
+            </div>
+          </Grid>
+          {/* <Grid item xs={2}></Grid>
+          <Grid item xs={4}></Grid> */}
+        </Grid>
       </div>
 
       <style jsx>{`
         header {
-          margin-bottom: 1rem;
-          height: 100vh;
+          // margin-bottom: 1rem;
+          // height: 100vh;
         }
+        .elementor-divider-separator {
+          width: 50px;
+          margin: 0 auto;
+          margin-left: 0;
+          border-top: 4.5px solid #e05414;
+        }
+
         .intro-logo {
           display: flex;
-          position: absolute;
-          top: 5em;
-          bottom: 0;
-          left: 0;
-          right: 0;
+          // position: absolute;
+          // top: 5em;
+          // bottom: 0;
+          // left: 0;
+          // right: 0;
           flex-direction: column;
           // justify-content: space-evenly;
           // align-items: center;
           // text-align: center;
+          // align-items: flex-start;
+          // align-items: baseline;
         }
         .data1 {
           order: 1;
-          margin: 100px;
+          // align-self: flex-start;
+          // margin: 100px;
+
           font-size: 45px;
           text-transform: none;
           white-space: normal;
-          background-color: rgba(251, 252, 252, 0.66);
+          // background-color: rgba(251, 252, 252, 0.66);
           color: #e06219;
-          flex: 0 0 auto;
-          width: 30%;
+          // flex: 0 0 auto;
+          width: auto;
+          // width: 30%;
 
           font-style: normal;
 
@@ -94,6 +150,16 @@ const Header = () => {
           margin-bottom: 30px;
 
           // text-shadow: rgba(0, 0, 0, 0.3) 0px 0px 10px;
+        }
+        .backgroundColorProperties {
+          font-size: 45px;
+          text-transform: none;
+          white-space: normal;
+          background-color: rgba(251, 252, 252, 0.66);
+          color: #e06219;
+          color: #e06219;
+          text-shadow: rgba(0, 0, 0, 0.3) 0px 0px 10px;
+          display: inline-block;
         }
         .data1-mobile {
           font-size: 30px;
@@ -112,8 +178,8 @@ const Header = () => {
           // text-shadow: rgba(0, 0, 0, 0.3) 0px 0px 10px;
         }
         .data2 {
-          order: 3;
-          margin-left: 100px;
+          order: 4;
+          // margin-left: 100px;
 
           font-size: 45px;
           text-transform: none;
@@ -130,20 +196,28 @@ const Header = () => {
           margin-top: 30px;
         }
         .data3 {
-          order: 4;
-          margin-left: 100px;
+          order: 5;
+          // margin-left: 100px;
           flex: 0 0 auto;
           width: 35%;
+        }
+        .data5 {
+          order: 3;
+          // margin-left: 100px;
+          flex: 0 0 auto;
+          width: 50px;
         }
         .data4 {
           font-family: "Montserrat", sans-serif;
           font-weight: 800;
           font-size: 80px;
+          text-transform: capitalize;
           order: 2;
 
-          margin-left: 100px;
+          // margin-left: 100px;
           flex: 0 0 auto;
           width: 35%;
+          font-style: inherit;
 
           color: #ffffff;
           text-shadow: 0px 0px 24px rgba(0, 0, 0, 0.3);
@@ -158,7 +232,7 @@ const Header = () => {
         }
         .intro-logo-mobile {
           display: flex;
-          position: absolute;
+          // position: absolute;
           top: 5em;
           bottom: 0;
           left: 0;
