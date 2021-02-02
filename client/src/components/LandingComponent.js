@@ -9,6 +9,7 @@ import Sec5 from "./section-5";
 import Sec6 from "./section-6";
 import CustomNav from "./CustomNav";
 import CustomFooter from "./footer/CustomFooter";
+import ContactUsCard from "./pageComponents/ContactUsCard";
 const LandingComponent = () => {
   return (
     <div className="app-wrapper">
@@ -65,6 +66,22 @@ const LandingComponent = () => {
       <Carousel />
       {/* <Sec5 /> */}
       {/* <Sec6 /> */}
+      <ContactUsCard
+        image={
+          "https://www.metrimeo.com/wp-content/uploads/2020/10/3234-1024x683.jpg"
+        }
+        desc={
+          "Are you ready to start advancing your pathway? It’s free and we promise you won’t be disappointed."
+        }
+        heading={"Let's Get Started"}
+        superLative={""}
+        subHeading={""}
+        backgroundColor={"#31587d"}
+        buttonColor={"#FFFF"}
+        buttonTextColor={"blue"}
+        height="400px"
+        buttonText={"Sign up free today!"}
+      />
 
       <style jsx global>{`
         .app-wrapper {

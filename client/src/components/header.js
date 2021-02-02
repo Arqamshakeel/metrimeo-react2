@@ -51,7 +51,7 @@ const Header = () => {
         style={{
           backgroundImage:
             "url(https://www.metrimeo.com/wp-content/uploads/2020/11/Modern-architecture-building.jpg)",
-          backgroundPosition: "center",
+          backgroundPosition: "right 35% bottom 68%",
           padding: "100px",
         }}
       >
@@ -61,6 +61,7 @@ const Header = () => {
               <p>Welcome to a new</p>
               <p>World!</p>
             </h2> */}
+            <br />
             <span className={isDesktopOrLaptop ? "data1" : "data1-mobile"}>
               <h2 className="backgroundColorProperties">Welcome to a new</h2>{" "}
               <br />
@@ -95,6 +96,7 @@ const Header = () => {
             >
               <a href="">Get Started!</a>
             </div>
+            <br />
           </Grid>
           {/* <Grid item xs={2}></Grid>
           <Grid item xs={4}></Grid> */}

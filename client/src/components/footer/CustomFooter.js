@@ -6,6 +6,7 @@ import { render } from "react-dom";
 const CustomFooter = () => {
   return (
     <Footer
+      backgroundColor="#404040"
       columns={[
         {
           title: "Company Info",
@@ -24,12 +25,11 @@ const CustomFooter = () => {
         {
           title: "Resources",
           items: [
+            { title: "Home" },
             { title: "About" },
             { title: "Our Products" },
-            { title: "Careers" },
-            { title: "Terms and conditions" },
-            { title: "Privacy and policy" },
-            { title: "Security" },
+            { title: "Login" },
+            { title: "Sign up" },
           ],
           url: "https://yuque.com",
           description: "hellosdnfljdashjfldjlf",
@@ -38,19 +38,17 @@ const CustomFooter = () => {
         {
           title: "Our Solutions",
           items: [
-            { title: "About" },
-            { title: "Our Products" },
-            { title: "Careers" },
-            { title: "Terms and conditions" },
-            { title: "Privacy and policy" },
-            { title: "Security" },
+            { title: "To Cooperatives" },
+            { title: "To Landlords" },
+            { title: "To Businesses" },
+            { title: "To Individuals" },
           ],
           url: "https://yuque.com",
           description: "hellosdnfljdashjfldjlf",
           openExternal: true,
         },
       ]}
-      bottom="Made with ❤️ by ARQAM SHAKEEL"
+      // bottom={<div style={{ backgroundColor: "white" }}>hello</div>}
     />
   );
 };

@@ -18,10 +18,10 @@ const ContactUsCard = (props) => {
     root: {
       maxWidth: "100%",
       backgroundColor: props.backgroundColor,
-      height: "300px",
+      // height: "300px",
     },
     media: {
-      height: 10,
+      height: 80,
     },
     largeIcon: {
       width: 100,
@@ -35,9 +35,21 @@ const ContactUsCard = (props) => {
     <div>
       <Card className={classes.root}>
         <CardActionArea>
-          <Grid container>
-            <Grid item lg={1} md={12}></Grid>
-            <Grid item lg={6} md={12} justify="center">
+          <Grid
+            container
+
+            // justify="center"
+          >
+            <Grid item lg={1} md={1}></Grid>
+            <Grid
+              item
+              lg={6}
+              md={6}
+              justify="center"
+              alignItems="center"
+              direction="row"
+              // style={{ textAlign: "center" }}
+            >
               <CardMedia
                 className={classes.media}
                 // image="https://source.unsplash.com/random"
@@ -91,14 +103,23 @@ const ContactUsCard = (props) => {
                 <br />
 
                 <div className="intro-button-card">
-                  <a href="">Lets get in touch!</a>
+                  <a href=""> {props.buttonText}</a>
                 </div>
               </CardContent>
             </Grid>
-            <Grid item lg={5} md={12} xs={12}>
-              <Box display="flex" justifyContent="center" alignItems="center">
-                <img src={props.image} alt="" height="300px" />
-              </Box>
+            <Grid
+              item
+              container
+              lg={5}
+              md={5}
+              xs={12}
+              justify="center"
+              alignItems="center"
+              direction="row"
+            >
+              {/* <Box display="flex" justifyContent="center" alignItems="center"> */}
+              <img src={props.image} alt="" height="300px" />
+              {/* </Box> */}
             </Grid>
           </Grid>
         </CardActionArea>

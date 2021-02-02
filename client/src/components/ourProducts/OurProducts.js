@@ -147,6 +147,8 @@ const OurProducts = () => {
         backgroundColor={"#31587d"}
         buttonColor={"#FFFF"}
         buttonTextColor={"blue"}
+        height="300px"
+        buttonText={"Lets get in touch!"}
       />
     </div>
   );

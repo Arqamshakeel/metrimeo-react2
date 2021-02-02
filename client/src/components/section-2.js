@@ -1,7 +1,8 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 import { Container, Row, Col } from "reactstrap";
 
-export default (props) => (
+export default withRouter((props) => (
   <section className="s2">
     <Container>
       <Row className="flex-align">
@@ -43,7 +44,14 @@ export default (props) => (
           <p>{props.desc}</p> */}
 
           <div className={"intro-button-sec2"}>
-            <a href="">Discover our products</a>
+            <a
+              onClick={() => {
+                props.history.push("our-products");
+              }}
+              style={{ color: "white", cursor: "pointer" }}
+            >
+              Discover our products
+            </a>
           </div>
         </Col>
         {props.imgPos === "right" ? (
@@ -129,4 +137,4 @@ export default (props) => (
     
     `}</style>
   </section>
-);
+));
