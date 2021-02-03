@@ -222,7 +222,7 @@ class NavBar extends Component {
   }
 
   render() {
-    console.log(this.state.width);
+    // console.log(this.state.width);
 
     return (
       <div className="navi-menu">
@@ -271,7 +271,11 @@ class NavBar extends Component {
               onTransitionEnd={this.onHide}
             >
               <NavItem>
-                <NavLink href="#" className="nav-item-n caret">
+                <NavLink
+                  href="#"
+                  className="nav-item-n caret"
+                  style={{ color: "black" }}
+                >
                   Our Solutions
                 </NavLink>
               </NavItem>

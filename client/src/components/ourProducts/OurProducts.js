@@ -4,6 +4,9 @@ import CarMediaCard from "../pageComponents/CarMediaCard";
 import CarMediaCardRightPic from "../pageComponents/CarMediaCardRightPic";
 import ContactUsCard from "../pageComponents/ContactUsCard";
 const OurProducts = () => {
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div>
       <div className="image">

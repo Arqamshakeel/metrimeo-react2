@@ -52,11 +52,11 @@ const Header = () => {
           backgroundImage:
             "url(./wp-content/uploads/2020/11/Modern-architecture-building.jpg)",
           backgroundPosition: "right 35% bottom 68%",
-          padding: "100px",
+          padding: isDesktopOrLaptop ? "100px" : "0px",
         }}
       >
         <Grid container>
-          <Grid item xs={6}>
+          <Grid item lg={6} xs={12}>
             {/* <h2 className={isDesktopOrLaptop ? "data1" : "data1-mobile"}>
               <p>Welcome to a new</p>
               <p>World!</p>

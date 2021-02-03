@@ -10,7 +10,21 @@ import Sec6 from "./section-6";
 import CustomNav from "./CustomNav";
 import CustomFooter from "./footer/CustomFooter";
 import ContactUsCard from "./pageComponents/ContactUsCard";
+import { useMediaQuery } from "react-responsive";
 const LandingComponent = () => {
+  const isDesktopOrLaptop = useMediaQuery({
+    query: "(min-width: 1224px)",
+  });
+  const isBigScreen = useMediaQuery({ query: "(min-device-width: 1824px)" });
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
+  const isTabletOrMobileDevice = useMediaQuery({
+    query: "(max-device-width: 700px)",
+  });
+  const isPortrait = useMediaQuery({ query: "(orientation: portrait)" });
+  const isRetina = useMediaQuery({ query: "(min-resolution: 2dppx)" });
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="app-wrapper">
       {/* <CustomNav /> */}
@@ -28,9 +42,10 @@ const LandingComponent = () => {
       <hr
         style={{
           border: "1px solid #e05414",
-          margin: "20px 185px 0px 185px",
+          margin: isDesktopOrLaptop ? "20px 185px 0px 185px" : "0px",
         }}
       />
+
       <Sec2
         imgPos={"right"}
         img={"./wp-content/uploads/2020/10/3256-1024x683.jpg"}
@@ -43,7 +58,7 @@ const LandingComponent = () => {
       <hr
         style={{
           border: "1px solid #e05414",
-          margin: "20px 185px 0px 185px",
+          margin: isDesktopOrLaptop ? "20px 185px 0px 185px" : "0px",
         }}
       />
       <Sec2

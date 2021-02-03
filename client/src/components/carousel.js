@@ -3,6 +3,11 @@ import { Container } from "reactstrap";
 const $ = window.jQuery;
 // import $ from "jquery";
 export default class extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { width: 0, height: 0 };
+    // this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+  }
   componentDidMount() {
     $(".owl-carousel").owlCarousel({
       items: 4,
@@ -21,6 +26,9 @@ export default class extends Component {
       },
     });
   }
+  updateWindowDimensions() {
+    this.setState({ width: window.innerWidth, height: window.innerHeight });
+  }
 
   render() {
     return (
@@ -30,14 +38,14 @@ export default class extends Component {
             <hr
               style={{
                 border: "1px solid #e05414",
-                margin: "20px 80px 0px 80px",
+                margin: this.state.width > 1220 ? "20px 80px 0px 80px" : "0px",
               }}
             />
             <h1>Our Guarantee to you</h1>
             <hr
               style={{
                 border: "1px solid #e05414",
-                margin: "0px 80px 0px 80px",
+                margin: this.state.width > 1220 ? "20px 80px 0px 80px" : "0px",
               }}
             />
           </div>

@@ -25,10 +25,10 @@ function App() {
         <Route path="/our-products" exact component={OurProducts} />
       </Switch>
       <Grid container>
-        <Grid item xs={9}>
+        <Grid item xs={12} lg={9}>
           <CustomFooter />
         </Grid>
-        <Grid item xs={3}>
+        <Grid item lg={3} xs={12}>
           <div style={{ backgroundColor: "#404040", height: "100%" }}>
             <div class="elementor-widget-container">
               <form
