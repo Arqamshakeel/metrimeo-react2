@@ -110,7 +110,7 @@ export default class extends Component {
             </div>
             <div>
               <img
-                src="./wp-content/uploads/2020/10/5204685-1024x1024.jpg"
+                src="./wp-content/uploads/2020/10/4421964-1024x1024.jpg"
                 alt=""
               />
               <h5
@@ -122,6 +122,24 @@ export default class extends Component {
                 }}
               >
                 Extremely Accurate Models
+              </h5>
+            </div>
+
+            <div>
+              <img
+                src="./wp-content/uploads/2020/10/5204685-1024x1024.jpg"
+                alt=""
+              />
+
+              <h5
+                style={{
+                  textAlign: "center",
+                  fontSize: "19px",
+                  fontFamily: "'Montserrat',sans-serif",
+                  fontWeight: "800",
+                }}
+              >
+                Highest Standards Of Security
               </h5>
             </div>
             <div>
@@ -137,7 +155,23 @@ export default class extends Component {
                   fontWeight: "800",
                 }}
               >
-                Highest Standards Of Security
+                Data Privacy Integrated By Design
+              </h5>
+            </div>
+            <div>
+              <img
+                src="./wp-content/uploads/2020/10/3857457-1024x1024.jpg"
+                alt=""
+              />
+              <h5
+                style={{
+                  textAlign: "center",
+                  fontSize: "19px",
+                  fontFamily: "'Montserrat',sans-serif",
+                  fontWeight: "800",
+                }}
+              >
+                Innovative And Most Cost-Effective Solutions
               </h5>
             </div>
           </div>

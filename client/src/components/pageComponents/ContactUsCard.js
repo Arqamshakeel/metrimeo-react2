@@ -135,7 +135,7 @@ const ContactUsCard = (props) => {
           padding: 0.65em 2.6em;
           border-radius: 20px;
           color: white;
-
+          font-size: 16px;
           background: #186eb8;
           transition: all 0.5s;
           opacity: 1;
