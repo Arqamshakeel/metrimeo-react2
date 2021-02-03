@@ -234,7 +234,7 @@ class NavBar extends Component {
               {/* <NavLink href="#">Meterio</NavLink> */}
               <div style={{ marginTop: "10px" }}></div>
               <img
-                src="https://www.metrimeo.com/wp-content/uploads/2020/11/cropped-MetriMeo-Blue-300x78.png"
+                src="./wp-content/uploads/2020/11/cropped-MetriMeo-Blue-300x78.png"
                 alt=""
                 height="50px"
               />
