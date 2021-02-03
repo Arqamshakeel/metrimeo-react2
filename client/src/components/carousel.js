@@ -37,15 +37,14 @@ export default class extends Component {
             <hr
               style={{
                 border: "1px solid #e05414",
-                margin: "20px 80px 0px 80px",
+                margin: "0px 80px 0px 80px",
               }}
             />
-            <h4>Materio</h4>
           </div>
           <div class="owl-carousel owl-theme">
             <div>
               <img
-                src="https://www.metrimeo.com/wp-content/uploads/2020/10/4421964-1024x1024.jpg"
+                src="./wp-content/uploads/2020/10/4421964-1024x1024.jpg"
                 alt=""
               />
               <h5
@@ -62,7 +61,7 @@ export default class extends Component {
 
             <div>
               <img
-                src="https://www.metrimeo.com/wp-content/uploads/2020/10/5204685-1024x1024.jpg"
+                src="./wp-content/uploads/2020/10/5204685-1024x1024.jpg"
                 alt=""
               />
 
@@ -79,7 +78,7 @@ export default class extends Component {
             </div>
             <div>
               <img
-                src="https://www.metrimeo.com/wp-content/uploads/2020/10/2149568-1024x1024.jpg"
+                src="./wp-content/uploads/2020/10/2149568-1024x1024.jpg"
                 alt=""
               />
               <h5
@@ -95,7 +94,7 @@ export default class extends Component {
             </div>
             <div>
               <img
-                src="https://www.metrimeo.com/wp-content/uploads/2020/10/3857457-1024x1024.jpg"
+                src="./wp-content/uploads/2020/10/3857457-1024x1024.jpg"
                 alt=""
               />
               <h5
@@ -111,7 +110,7 @@ export default class extends Component {
             </div>
             <div>
               <img
-                src="https://www.metrimeo.com/wp-content/uploads/2020/10/5204685-1024x1024.jpg"
+                src="./wp-content/uploads/2020/10/5204685-1024x1024.jpg"
                 alt=""
               />
               <h5
@@ -127,7 +126,7 @@ export default class extends Component {
             </div>
             <div>
               <img
-                src="https://www.metrimeo.com/wp-content/uploads/2020/10/2149568-1024x1024.jpg"
+                src="./wp-content/uploads/2020/10/2149568-1024x1024.jpg"
                 alt=""
               />
               <h5

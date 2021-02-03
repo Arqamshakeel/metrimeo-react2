@@ -18,9 +18,7 @@ const LandingComponent = () => {
       {/* <Sec1 /> */}
       <Sec2
         imgPos={"left"}
-        img={
-          "https://www.metrimeo.com/wp-content/uploads/2020/10/1969-1536x1024.jpg"
-        }
+        img={"./wp-content/uploads/2020/10/1969-1536x1024.jpg"}
         heading={"work hard so you can benefit from useful credit analytics"}
         headingStart={"We"}
         desc={
@@ -35,9 +33,7 @@ const LandingComponent = () => {
       />
       <Sec2
         imgPos={"right"}
-        img={
-          "https://www.metrimeo.com/wp-content/uploads/2020/10/3256-1024x683.jpg"
-        }
+        img={"./wp-content/uploads/2020/10/3256-1024x683.jpg"}
         heading={"help you make better decisions for you and your business"}
         headingStart={"We"}
         desc={
@@ -53,7 +49,7 @@ const LandingComponent = () => {
       <Sec2
         imgPos={"left"}
         img={
-          "https://www.metrimeo.com/wp-content/uploads/elementor/thumbs/339793-PA78VA-567-scaled-oxauzfda34j0ft58n83wckg1bvzlbize2m4a8pe0tc.jpg"
+          "./wp-content/uploads/elementor/thumbs/339793-PA78VA-567-scaled-oxauzfda34j0ft58n83wckg1bvzlbize2m4a8pe0tc.jpg"
         }
         heading={"ensure you connect with the best resources and partners"}
         headingStart={"We"}
@@ -67,9 +63,7 @@ const LandingComponent = () => {
       {/* <Sec5 /> */}
       {/* <Sec6 /> */}
       <ContactUsCard
-        image={
-          "https://www.metrimeo.com/wp-content/uploads/2020/10/3234-1024x683.jpg"
-        }
+        image={"./wp-content/uploads/2020/10/3234-1024x683.jpg"}
         desc={
           "Are you ready to start advancing your pathway? It’s free and we promise you won’t be disappointed."
         }

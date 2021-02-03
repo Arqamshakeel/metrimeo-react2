@@ -63,8 +63,23 @@ function App() {
           </div>
         </Grid>
         <Grid item xs={12}>
-          <div className="bottom">
-            <span style={{ textAlign: "center" }}>
+          <div
+            className="bottom"
+            style={{
+              textAlign: "center",
+              verticalAlign: "middle",
+              // line-height: 90px;
+              // fontSize: "15px",
+              // fontFamily: "'Open Sans', sans-serif",
+            }}
+          >
+            <span
+              style={{
+                // textAlign: "center",
+                fontSize: "15px",
+                fontFamily: "'Open Sans', sans-serif",
+              }}
+            >
               © Copyright 2020 MetriMeo | All rights reserved MetriMeo and the
               MetriMeo marks used herein are trademarks of MetriMeo.
             </span>

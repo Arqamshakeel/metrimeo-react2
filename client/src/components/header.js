@@ -50,7 +50,7 @@ const Header = () => {
       <div
         style={{
           backgroundImage:
-            "url(https://www.metrimeo.com/wp-content/uploads/2020/11/Modern-architecture-building.jpg)",
+            "url(./wp-content/uploads/2020/11/Modern-architecture-building.jpg)",
           backgroundPosition: "right 35% bottom 68%",
           padding: "100px",
         }}
@@ -286,6 +286,7 @@ const Header = () => {
           padding: 0.65em 2.6em;
           border-radius: 20px;
           color: white;
+          font-size: 16px;
 
           background: #186eb8;
           transition: all 0.5s;
