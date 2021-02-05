@@ -43,6 +43,7 @@ const CarMediaCardRightPic = (props) => {
                 title="Contemplative Reptile"
               />
               <CardContent>
+                <br />
                 <div
                   style={{
                     fontfont: "'Montserrat',sans-serif",
@@ -54,7 +55,12 @@ const CarMediaCardRightPic = (props) => {
                   {props.heading}
                   <sup>{props.superLative}</sup>
                 </div>
-                <br />
+                <div>
+                  <br />
+                  <div className="elementor-divider-separator data5"></div>
+                  <br />
+                </div>
+
                 <div
                   style={{
                     fontfont: "'Montserrat',sans-serif",
@@ -101,7 +107,6 @@ const CarMediaCardRightPic = (props) => {
             </Grid>
           </Grid>
         </CardActionArea>
-        <CardActions></CardActions>
       </Card>
       <style jsx global>{`
         .intro-button-card2 {

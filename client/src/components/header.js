@@ -167,7 +167,7 @@ const Header = () => {
           font-size: 30px;
           text-transform: none;
           white-space: normal;
-          background-color: rgba(251, 252, 252, 0.66);
+          // background-color: rgba(251, 252, 252, 0.66);
           color: #e06219;
 
           font-style: normal;

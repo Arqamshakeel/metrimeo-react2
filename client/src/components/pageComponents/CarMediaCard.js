@@ -48,6 +48,7 @@ const CarMediaCard = (props) => {
                 title="Contemplative Reptile"
               />
               <CardContent>
+                <br />
                 <div
                   style={{
                     fontfont: "'Montserrat',sans-serif",
@@ -60,6 +61,11 @@ const CarMediaCard = (props) => {
                   <sup>{props.superLative}</sup>
                 </div>
                 <br />
+                <div>
+                  <div className="elementor-divider-separator data5"></div>
+                  <br />
+                </div>
+
                 <div
                   style={{
                     fontfont: "'Montserrat',sans-serif",
@@ -100,7 +106,6 @@ const CarMediaCard = (props) => {
             <Grid item lg={1} md={12}></Grid>
           </Grid>
         </CardActionArea>
-        <CardActions></CardActions>
       </Card>
       <style jsx global>{`
         .intro-button {
@@ -121,6 +126,12 @@ const CarMediaCard = (props) => {
           background-color: ${props.buttonColor};
           color: white;
           opacity: 1;
+        }
+        .elementor-divider-separator {
+          width: 50px;
+          margin: 0 auto;
+          margin-left: 0;
+          border-top: 4.5px solid #e05414;
         }
       `}</style>
     </div>

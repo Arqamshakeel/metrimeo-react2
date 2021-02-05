@@ -3,16 +3,35 @@ import React from "react";
 import CarMediaCard from "../pageComponents/CarMediaCard";
 import CarMediaCardRightPic from "../pageComponents/CarMediaCardRightPic";
 import ContactUsCard from "../pageComponents/ContactUsCard";
+import { useMediaQuery } from "react-responsive";
 const OurProducts = () => {
   React.useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  // const CustomTag = `sup${props.priority}`;
+  const isDesktopOrLaptop = useMediaQuery({
+    query: "(min-width: 1224px)",
+  });
+  const isBigScreen = useMediaQuery({ query: "(min-device-width: 1824px)" });
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 700px)" });
+  const isTabletOrMobileDevice = useMediaQuery({
+    query: "(max-device-width: 700px)",
+  });
+  const isPortrait = useMediaQuery({ query: "(orientation: portrait)" });
+  const isRetina = useMediaQuery({ query: "(min-resolution: 2dppx)" });
   return (
     <div>
       <div className="image">
-        <Grid container>
-          <Grid item lg={7} md={7} xs={12}></Grid>
-          <Grid item lg={3} md={3} xs={12}>
+        <Grid container justify={isTabletOrMobile ? "flex-end" : null}>
+          <Grid item lg={7} md={7} sm={7} xs={12}></Grid>
+          <Grid
+            item
+            lg={3}
+            md={3}
+            sm={4}
+            xs={10}
+            style={{ marginRight: isTabletOrMobile ? "7px" : null }}
+          >
             <div className="box">
               <div className="box-margin">
                 <div className="heading">Our Products</div>
@@ -25,9 +44,10 @@ const OurProducts = () => {
                   <a href="">Get Started!</a>
                 </div>
               </div>
+              <div></div>
             </div>
           </Grid>
-          <Grid item lg={2} md={2} xs={12}></Grid>
+          <Grid item lg={2} md={2} sm={7} xs={12}></Grid>
         </Grid>
 
         <style jsx global>{`
@@ -98,11 +118,14 @@ const OurProducts = () => {
         image={
           "https://www.metrimeo.com/wp-content/uploads/2020/10/credit-score-scale-showing-good-value-illustration_100456-1427-removebg-preview.png"
         }
-        desc={
-          "The core information that individuals willing to enter into credit agreement must have is a credit report from borrowers. Metrimeo calculates a consumer credit score through its product ScoreoTM for individuals through a complex algorithm developed by the company. These credit reports are generated and accessed via our systems using unique keys assigned to each potential borrower. They will provide and excellent overview to lenders and help them decide whether to extend a credit line or not."
-        }
         heading={"Scoreo"}
         superLative={"TM"}
+        // desc={`The core information that individuals willing to enter into credit agreement must have is a credit report from borrowers. Metrimeo calculates a consumer credit score through its product Scoreo  for individuals through a complex algorithm developed by the company. These credit reports are generated and accessed via our systems using unique keys assigned to each potential borrower. They will provide and excellent overview to lenders and help them decide whether to extend a credit line or not.`}
+        desc={[
+          "The core information that individuals willing to enter into credit agreement must have is a credit report from borrowers. Metrimeo calculates a consumer credit score through its product Scoreo",
+          <sup>TM</sup>,
+          " for individuals through a complex algorithm developed by the company. These credit reports are generated and accessed via our systems using unique keys assigned to each potential borrower. They will provide and excellent overview to lenders and help them decide whether to extend a credit line or not.",
+        ]}
         subHeading={"Consumer Credit Reporting"}
         backgroundColor={"#ffff"}
         buttonColor={"#186eb8"}
@@ -121,7 +144,7 @@ const OurProducts = () => {
         subHeading={"Business Ratings & Reporting"}
         backgroundColor={"#186EB8"}
         buttonColor={"#ffff"}
-        buttonTextColor={"blue"}
+        buttonTextColor={"#186eb8"}
       />
       <CarMediaCard
         image={
