@@ -38,14 +38,22 @@ export default class extends Component {
             <hr
               style={{
                 border: "1px solid #e05414",
-                margin: this.state.width > 1220 ? "20px 80px 0px 80px" : "0px",
+                margin:
+                  this.state.width > 1220
+                    ? "20px 80px 0px 80px"
+                    : "20px 20px 0px 20px",
               }}
             />
-            <h1>Our Guarantee to you</h1>
+            <h1>
+              Our Guarantee {this.state.width > 700 ? <br /> : <></>} to you
+            </h1>
             <hr
               style={{
                 border: "1px solid #e05414",
-                margin: this.state.width > 1220 ? "20px 80px 0px 80px" : "0px",
+                margin:
+                  this.state.width > 1220
+                    ? "20px 80px 0px 80px"
+                    : "20px 20px 0px 20px",
               }}
             />
           </div>

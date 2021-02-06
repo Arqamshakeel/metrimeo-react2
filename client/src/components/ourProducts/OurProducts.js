@@ -35,13 +35,17 @@ const OurProducts = () => {
             <div className="box">
               <div className="box-margin">
                 <div className="heading">Our Products</div>
-                <hr />
+                <div>
+                  <br />
+                  <div className="elementor-divider-separator data5"></div>
+                  <br />
+                </div>
                 <div className="decs">
                   This is how we shape a new economy for individuals and
                   businesses
                 </div>
                 <div className="intro-button">
-                  <a href="">Get Started!</a>
+                  <a href="">Join Us!</a>
                 </div>
               </div>
               <div></div>

@@ -6,6 +6,7 @@ import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
+import { useMediaQuery } from "react-responsive";
 import Typography from "@material-ui/core/Typography";
 import ContactSupportIcon from "@material-ui/icons/ContactSupport";
 import { Box, Grid } from "@material-ui/core";
@@ -29,13 +30,32 @@ const CarMediaCardRightPic = (props) => {
   });
 
   const classes = useStyles();
+  const isDesktopOrLaptop = useMediaQuery({
+    query: "(min-width: 1224px)",
+  });
+  const isBigScreen = useMediaQuery({ query: "(min-device-width: 1824px)" });
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
+  const isTabletOrMobileDevice = useMediaQuery({
+    query: "(max-device-width: 700px)",
+  });
+  const isPortrait = useMediaQuery({ query: "(orientation: portrait)" });
+  const isRetina = useMediaQuery({ query: "(min-resolution: 2dppx)" });
 
   return (
     <div>
       <Card className={classes.root}>
         <CardActionArea>
           <Grid container>
-            <Grid item lg={1} md={12}></Grid>
+            {isTabletOrMobileDevice ? (
+              <Grid item lg={5} md={12} xs={12}>
+                <Box display="flex" justifyContent="center" alignItems="center">
+                  <img src={props.image} alt="" height="400px" />
+                </Box>
+              </Grid>
+            ) : (
+              <Grid item lg={1} md={12}></Grid>
+            )}
+
             <Grid item lg={6} md={12} justify="center">
               <CardMedia
                 className={classes.media}
@@ -100,11 +120,15 @@ const CarMediaCardRightPic = (props) => {
                 </div>
               </CardContent>
             </Grid>
-            <Grid item lg={5} md={12} xs={12}>
-              <Box display="flex" justifyContent="center" alignItems="center">
-                <img src={props.image} alt="" height="400px" />
-              </Box>
-            </Grid>
+            {isTabletOrMobileDevice ? (
+              <Grid item lg={1} md={12}></Grid>
+            ) : (
+              <Grid item lg={5} md={12} xs={12}>
+                <Box display="flex" justifyContent="center" alignItems="center">
+                  <img src={props.image} alt="" height="400px" />
+                </Box>
+              </Grid>
+            )}
           </Grid>
         </CardActionArea>
       </Card>

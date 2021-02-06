@@ -16,7 +16,7 @@ class MobileMenu extends Component {
 
   toggle = () => this.setState({ isOpen: !this.state.isOpen });
 
-  render() {
+  render(props) {
     return (
       <div className="mobile-wrapper">
         <div className="mobile-menu">
@@ -29,33 +29,38 @@ class MobileMenu extends Component {
         </div>
         <Nav vertical className={"mobile-nav"}>
           <NavItem className="nav-item-m">
-            <NavLink>home</NavLink>
+            <NavLink
+              style={{ cursor: "pointer" }}
+              onClick={() => {
+                this.props.props.history.push("/");
+                this.props.hideNav();
+              }}
+            >
+              Home
+            </NavLink>
           </NavItem>
           <NavItem className="nav-item-m">
-            <NavLink>about</NavLink>
+            <NavLink
+              style={{ cursor: "pointer" }}
+              onClick={() => {
+                this.props.props.history.push("our-products");
+                this.props.hideNav();
+              }}
+            >
+              Our Products
+            </NavLink>
           </NavItem>
-          <NavItem className="nav-item-m">
-            <NavLink>features</NavLink>
-          </NavItem>
-          <NavItem className="nav-item-m">
-            <NavLink>screenshots</NavLink>
-          </NavItem>
-          <NavItem className="nav-item-m">
-            <NavLink>team</NavLink>
-          </NavItem>
-          <NavItem className="nav-item-m">
-            <NavLink>pricing</NavLink>
-          </NavItem>
+
           <NavItem>
             <Dropdown isOpen={this.state.isOpen} toggle={this.toggle}>
               <DropdownToggle className="drop-item" caret>
-                Dropdown
+                Our Solutions
               </DropdownToggle>
               <DropdownMenu className="drop-menu">
-                <DropdownItem>dropdown-1</DropdownItem>
-                <DropdownItem>dropdown-2</DropdownItem>
-                <DropdownItem>dropdown-3</DropdownItem>
-                <DropdownItem>dropdown-4</DropdownItem>
+                <DropdownItem>To Individuals</DropdownItem>
+                <DropdownItem>To Landlords</DropdownItem>
+                <DropdownItem>To Cooperatives</DropdownItem>
+                <DropdownItem>To Businesses</DropdownItem>
               </DropdownMenu>
             </Dropdown>
           </NavItem>
@@ -65,6 +70,18 @@ class MobileMenu extends Component {
           <NavItem className="nav-item-m">
             <NavLink>contact</NavLink>
           </NavItem>
+          <NavItem className="nav-item-m">
+            <NavLink>Login</NavLink>
+          </NavItem>
+          <NavItem className="nav-item-m">
+            <NavLink>Sign up</NavLink>
+          </NavItem>
+          {/* <NavItem className="nav-item-n-white intro-button2">
+            <NavLink href="#">Login</NavLink>
+          </NavItem>
+          <NavItem className="nav-item-n-white intro-button3">
+            <NavLink href="#">Sign up</NavLink>
+          </NavItem> */}
         </Nav>
         <style jsx>
           {`
@@ -227,17 +244,24 @@ class NavBar extends Component {
     return (
       <div className="navi-menu">
         <Container>
-          <MobileMenu hideNav={this.hideNav} />
+          <MobileMenu hideNav={this.hideNav} props={this.props} />
 
           <Nav className="nav-n">
             <NavItem className="nav-item-n logo">
               {/* <NavLink href="#">Meterio</NavLink> */}
               <div style={{ marginTop: "10px" }}></div>
-              <img
-                src="./wp-content/uploads/2020/11/cropped-MetriMeo-Blue-300x78.png"
-                alt=""
-                height="50px"
-              />
+              <a
+                onClick={() => {
+                  this.props.history.push("/");
+                }}
+                style={{ cursor: "pointer" }}
+              >
+                <img
+                  src="./wp-content/uploads/2020/11/cropped-MetriMeo-Blue-300x78.png"
+                  alt=""
+                  height="50px"
+                />
+              </a>
             </NavItem>
             <NavItem className="nav-item-n ham" onClick={this.showNav}>
               <NavLink href="">

@@ -1,71 +1,75 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import { Container, Row, Col } from "reactstrap";
+import { useMediaQuery } from "react-responsive";
+export default withRouter((props) => {
+  const isDesktopOrLaptop = useMediaQuery({
+    query: "(min-width: 1224px)",
+  });
+  const isBigScreen = useMediaQuery({ query: "(min-device-width: 1824px)" });
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
+  const isTabletOrMobileDevice = useMediaQuery({
+    query: "(max-device-width: 700px)",
+  });
+  const isPortrait = useMediaQuery({ query: "(orientation: portrait)" });
+  const isRetina = useMediaQuery({ query: "(min-resolution: 2dppx)" });
+  return (
+    <section className="s2">
+      <Container>
+        <Row className="flex-align">
+          {props.imgPos === "left" ? (
+            <Col md="7" lg="5" className="s2__mob-pic">
+              <img src={props.img} alt="" />
+            </Col>
+          ) : (
+            <></>
+          )}
 
-export default withRouter((props) => (
-  <section className="s2">
-    <Container>
-      <Row className="flex-align">
-        {props.imgPos === "left" ? (
-          <Col md="7" lg="5" className="s2__mob-pic">
-            <img src={props.img} alt="" />
+          <Col md="5" lg="5" className="s2__des">
+            <h1>
+              {props.headingStart} {props.heading}
+            </h1>
+            <p>{props.desc}</p>
           </Col>
-        ) : (
-          <></>
-        )}
+          {props.imgPos === "right" ? (
+            <Col md="7" lg="5" className="s2__mob-pic">
+              <img src={props.img} alt="" />
+            </Col>
+          ) : (
+            <></>
+          )}
+        </Row>
+        <Row className="flex-align">
+          {props.imgPos === "left" ? (
+            <Col md="7" lg="5" className="s2__mob-pic"></Col>
+          ) : (
+            <></>
+          )}
 
-        <Col md="5" lg="5" className="s2__des">
-          <h1>
-            {props.headingStart} {props.heading}
-          </h1>
-          <p>{props.desc}</p>
-        </Col>
-        {props.imgPos === "right" ? (
-          <Col md="7" lg="5" className="s2__mob-pic">
-            <img src={props.img} alt="" />
+          <Col md="5" lg="5" className="s2__des">
+            <div className={"intro-button-sec2"}>
+              <a
+                onClick={() => {
+                  props.history.push("our-products");
+                }}
+                style={{ color: "white", cursor: "pointer" }}
+              >
+                Discover our products
+              </a>
+            </div>
           </Col>
-        ) : (
-          <></>
-        )}
-      </Row>
-      <Row className="flex-align">
-        {props.imgPos === "left" ? (
-          <Col md="7" lg="5" className="s2__mob-pic">
-            {/* <img src={props.img} alt="" /> */}
-          </Col>
-        ) : (
-          <></>
-        )}
-
-        <Col md="5" lg="5" className="s2__des">
-          {/* <h1>
-            {props.headingStart} {props.heading}
-          </h1>
-          <p>{props.desc}</p> */}
-
-          <div className={"intro-button-sec2"}>
-            <a
-              onClick={() => {
-                props.history.push("our-products");
-              }}
-              style={{ color: "white", cursor: "pointer" }}
-            >
-              Discover our products
-            </a>
-          </div>
-        </Col>
-        {props.imgPos === "right" ? (
-          <Col md="7" lg="5" className="s2__mob-pic">
-            {/* <img src={props.img} alt="" /> */}
-          </Col>
-        ) : (
-          <></>
-        )}
-      </Row>
-    </Container>
-    <style>{`
+          {props.imgPos === "right" ? (
+            <Col md="7" lg="5" className="s2__mob-pic">
+              {/* <img src={props.img} alt="" /> */}
+            </Col>
+          ) : (
+            <></>
+          )}
+        </Row>
+      </Container>
+      <style>{`
     .intro-button-sec2 {
-      margin-top: 2.3em;
+      margin-top: ${isTabletOrMobileDevice ? "-20px" : "2.3em"};
       margin-bottom: 3em;
     }
     .intro-button-sec2 a {
@@ -136,5 +140,6 @@ export default withRouter((props) => (
         }
     
     `}</style>
-  </section>
-));
+    </section>
+  );
+});

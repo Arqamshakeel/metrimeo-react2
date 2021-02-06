@@ -9,8 +9,19 @@ import LandingComponent from "./components/LandingComponent";
 import OurProducts from "./components/ourProducts/OurProducts";
 import CustomFooter from "./components/footer/CustomFooter";
 import NavBar from "./components/nav";
+import { useMediaQuery } from "react-responsive";
 
 function App() {
+  const isDesktopOrLaptop = useMediaQuery({
+    query: "(min-width: 1224px)",
+  });
+  const isBigScreen = useMediaQuery({ query: "(min-device-width: 1824px)" });
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
+  const isTabletOrMobileDevice = useMediaQuery({
+    query: "(max-device-width: 700px)",
+  });
+  const isPortrait = useMediaQuery({ query: "(orientation: portrait)" });
+  const isRetina = useMediaQuery({ query: "(min-resolution: 2dppx)" });
   const [dark, setDark] = React.useState(false);
   const theme = createMuiTheme({
     palette: {
@@ -28,6 +39,27 @@ function App() {
         <Grid item xs={12} lg={9}>
           <CustomFooter />
         </Grid>
+        {isTabletOrMobile ? (
+          <div
+            style={{
+              backgroundColor: "#404040",
+              // height: "100%",
+              width: "100%",
+            }}
+          >
+            <span>
+              <hr
+                style={{
+                  margin: isDesktopOrLaptop
+                    ? "20px 185px 0px 185px"
+                    : "20px 50px 0px 50px",
+                }}
+              />
+            </span>
+          </div>
+        ) : (
+          <></>
+        )}
         <Grid item lg={3} xs={12}>
           <div style={{ backgroundColor: "#404040", height: "100%" }}>
             <div class="elementor-widget-container">
@@ -43,7 +75,10 @@ function App() {
                   style={{ textAlign: "center" }}
                 >
                   <input
-                    style={{ marginTop: "100px", margin: "100px auto" }}
+                    style={{
+                      marginTop: "100px",
+                      margin: isTabletOrMobile ? "50px auto" : "100px auto",
+                    }}
                     placeholder="Search..."
                     class="hfe-search-form__input"
                     type="search"
@@ -68,6 +103,7 @@ function App() {
             style={{
               textAlign: "center",
               verticalAlign: "middle",
+              lineHeight: isTabletOrMobile ? null : "47px",
               // line-height: 90px;
               // fontSize: "15px",
               // fontFamily: "'Open Sans', sans-serif",

@@ -52,7 +52,7 @@ const Header = () => {
           backgroundImage:
             "url(./wp-content/uploads/2020/11/Modern-architecture-building.jpg)",
           backgroundPosition: "right 35% bottom 68%",
-          padding: isDesktopOrLaptop ? "100px" : "0px",
+          padding: isTabletOrMobileDevice ? "0px" : "100px",
         }}
       >
         <Grid container>
@@ -69,7 +69,7 @@ const Header = () => {
             </span>
             <br />
 
-            <h2 className={isDesktopOrLaptop ? "data4" : "data4-mobile"}>
+            <h2 className={isTabletOrMobileDevice ? "data4-mobile" : "data4"}>
               MetriMeo
             </h2>
             <br />

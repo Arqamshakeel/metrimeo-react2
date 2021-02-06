@@ -42,23 +42,40 @@ const LandingComponent = () => {
       <hr
         style={{
           border: "1px solid #e05414",
-          margin: isDesktopOrLaptop ? "20px 185px 0px 185px" : "0px",
+          margin: isDesktopOrLaptop
+            ? "20px 185px 0px 185px"
+            : "20px 50px 0px 50px",
         }}
       />
 
-      <Sec2
-        imgPos={"right"}
-        img={"./wp-content/uploads/2020/10/3256-1024x683.jpg"}
-        heading={"help you make better decisions for you and your business"}
-        headingStart={"We"}
-        desc={
-          "Whether you are trying to get more opportunities coming your way, or choose a partner you can trust for your business, we can help. We provide you with the confidence you need to growth financially."
-        }
-      />
+      {isTabletOrMobileDevice ? (
+        <Sec2
+          imgPos={"left"}
+          img={"./wp-content/uploads/2020/10/3256-1024x683.jpg"}
+          heading={"help you make better decisions for you and your business"}
+          headingStart={"We"}
+          desc={
+            "Whether you are trying to get more opportunities coming your way, or choose a partner you can trust for your business, we can help. We provide you with the confidence you need to growth financially."
+          }
+        />
+      ) : (
+        <Sec2
+          imgPos={"right"}
+          img={"./wp-content/uploads/2020/10/3256-1024x683.jpg"}
+          heading={"help you make better decisions for you and your business"}
+          headingStart={"We"}
+          desc={
+            "Whether you are trying to get more opportunities coming your way, or choose a partner you can trust for your business, we can help. We provide you with the confidence you need to growth financially."
+          }
+        />
+      )}
+
       <hr
         style={{
           border: "1px solid #e05414",
-          margin: isDesktopOrLaptop ? "20px 185px 0px 185px" : "0px",
+          margin: isDesktopOrLaptop
+            ? "20px 185px 0px 185px"
+            : "20px 50px 0px 50px",
         }}
       />
       <Sec2
