@@ -57,8 +57,24 @@ class MobileMenu extends Component {
                 Our Solutions
               </DropdownToggle>
               <DropdownMenu className="drop-menu">
-                <DropdownItem>To Individuals</DropdownItem>
-                <DropdownItem>To Landlords</DropdownItem>
+                <DropdownItem
+                  style={{ cursor: "pointer" }}
+                  onClick={() => {
+                    this.props.props.history.push("for-individuals");
+                    this.props.hideNav();
+                  }}
+                >
+                  To Individuals
+                </DropdownItem>
+                <DropdownItem
+                  style={{ cursor: "pointer" }}
+                  onClick={() => {
+                    this.props.props.history.push("for-landlords");
+                    this.props.hideNav();
+                  }}
+                >
+                  To Landlords
+                </DropdownItem>
                 <DropdownItem>To Cooperatives</DropdownItem>
                 <DropdownItem>To Businesses</DropdownItem>
               </DropdownMenu>
@@ -306,11 +322,26 @@ class NavBar extends Component {
               <div className="drop__item" ref={this.dropNav}>
                 <Nav vertical>
                   <NavItem className="nav-item-n">
-                    <NavLink href="#">To Individuals</NavLink>
+                    <NavLink
+                      style={{ cursor: "pointer" }}
+                      onClick={() => {
+                        this.props.history.push("for-individuals");
+                      }}
+                    >
+                      To Individuals
+                    </NavLink>
                   </NavItem>
                   <NavItem className="nav-item-n">
-                    <NavLink href="#">To Landlords</NavLink>
+                    <NavLink
+                      style={{ cursor: "pointer" }}
+                      onClick={() => {
+                        this.props.history.push("for-landlords");
+                      }}
+                    >
+                      To Landlords
+                    </NavLink>
                   </NavItem>
+
                   <NavItem className="nav-item-n">
                     <NavLink href="#">To Cooperatives</NavLink>
                   </NavItem>

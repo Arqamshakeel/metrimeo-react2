@@ -11,6 +11,7 @@ import CustomNav from "./CustomNav";
 import CustomFooter from "./footer/CustomFooter";
 import ContactUsCard from "./pageComponents/ContactUsCard";
 import { useMediaQuery } from "react-responsive";
+import HrOrangeLine from "./hrOrangeLine/HrOrangeLine";
 const LandingComponent = () => {
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-width: 1224px)",
@@ -39,14 +40,7 @@ const LandingComponent = () => {
           "When you partner with us, you’re trusting us with your future. So we take that responsibility to heart. We use a variety of proprietary tools to make sense of credit data you can trust. We help you see beyond the numbers and keep your information safe."
         }
       />
-      <hr
-        style={{
-          border: "1px solid #e05414",
-          margin: isDesktopOrLaptop
-            ? "20px 185px 0px 185px"
-            : "20px 50px 0px 50px",
-        }}
-      />
+      <HrOrangeLine />
 
       {isTabletOrMobileDevice ? (
         <Sec2
@@ -70,14 +64,7 @@ const LandingComponent = () => {
         />
       )}
 
-      <hr
-        style={{
-          border: "1px solid #e05414",
-          margin: isDesktopOrLaptop
-            ? "20px 185px 0px 185px"
-            : "20px 50px 0px 50px",
-        }}
-      />
+      <HrOrangeLine />
       <Sec2
         imgPos={"left"}
         img={

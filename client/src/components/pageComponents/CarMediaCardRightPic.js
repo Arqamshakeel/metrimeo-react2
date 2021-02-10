@@ -116,7 +116,9 @@ const CarMediaCardRightPic = (props) => {
                 <br />
 
                 <div className="intro-button-card2">
-                  <a href="">Learn More</a>
+                  <a href="">
+                    {props.buttonText ? props.buttonText : "Learn More"}
+                  </a>
                 </div>
               </CardContent>
             </Grid>

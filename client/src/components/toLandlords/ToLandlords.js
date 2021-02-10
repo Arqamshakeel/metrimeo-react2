@@ -4,7 +4,10 @@ import CarMediaCard from "../pageComponents/CarMediaCard";
 import CarMediaCardRightPic from "../pageComponents/CarMediaCardRightPic";
 import ContactUsCard from "../pageComponents/ContactUsCard";
 import { useMediaQuery } from "react-responsive";
-const OurProducts = () => {
+import ImageFullBackground from "../pageComponents/ImageFullBackground";
+import TextFullBackground from "../pageComponents/TextFullBackground";
+import CarMediaCardLeftPic from "../pageComponents/CarMediaCardLeftPic";
+const ToLandlords = () => {
   React.useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -23,40 +26,41 @@ const OurProducts = () => {
     <div>
       <div className="image">
         <Grid container justify={isTabletOrMobile ? "flex-end" : null}>
-          <Grid item lg={7} md={7} sm={7} xs={12}></Grid>
+          <Grid item lg={1} md={1} sm={7} xs={12}></Grid>
           <Grid
             item
-            lg={3}
-            md={3}
-            sm={4}
+            lg={4}
+            md={4}
+            sm={10}
             xs={10}
             style={{ marginRight: isTabletOrMobile ? "7px" : null }}
           >
             <div className="box">
               <div className="box-margin">
-                <div className="heading">Our Products</div>
+                <div className="heading">Landlords</div>
                 <div>
                   <br />
                   <div className="elementor-divider-separator data5"></div>
                   <br />
                 </div>
                 <div className="decs">
-                  This is how we shape a new economy for individuals and
-                  businesses
+                  Landlords need tenants they can entrust with their properties.
+                  Metrimeo is helping them make the right decision.
                 </div>
                 <div className="intro-button">
-                  <a href="">Join Us!</a>
+                  <a href="">Start today!</a>
                 </div>
               </div>
               <div></div>
             </div>
           </Grid>
-          <Grid item lg={2} md={2} sm={7} xs={12}></Grid>
+          <Grid item lg={7} md={7} sm={7} xs={12}></Grid>
         </Grid>
 
         <style jsx global>{`
           .image {
-            background-image: url("https://www.metrimeo.com/wp-content/uploads/2020/10/17656810-scaled.jpg");
+            background-image: url("https://www.metrimeo.com/wp-content/uploads/2020/11/11862-scaled.jpg");
+
             width: 100%;
             height: 600px;
             max-height: 1000px;
@@ -71,7 +75,7 @@ const OurProducts = () => {
           }
           .box {
             min-height: 300px;
-            margin-top: 50%;
+            margin-top: 30%;
             border: 1px solid rgba(255, 255, 255, 0.5);
             background-color: #ffff;
             // opacity: 0.7;
@@ -119,41 +123,67 @@ const OurProducts = () => {
           }
         `}</style>
       </div>
-      <CarMediaCard
+
+      <TextFullBackground
         image={
           "https://www.metrimeo.com/wp-content/uploads/2020/10/credit-score-scale-showing-good-value-illustration_100456-1427-removebg-preview.png"
         }
-        heading={"Scoreo"}
+        heading={"Scoreo Basic"}
         superLative={"TM"}
         // desc={`The core information that individuals willing to enter into credit agreement must have is a credit report from borrowers. Metrimeo calculates a consumer credit score through its product Scoreo  for individuals through a complex algorithm developed by the company. These credit reports are generated and accessed via our systems using unique keys assigned to each potential borrower. They will provide and excellent overview to lenders and help them decide whether to extend a credit line or not.`}
         desc={[
-          "The core information that individuals willing to enter into credit agreement must have is a credit report from borrowers. Metrimeo calculates a consumer credit score through its product Scoreo",
+          "We build and maintain trust among individuals and businesses to promote progress for everyone in the society. Scoreo Basic",
           <sup>TM</sup>,
-          " for individuals through a complex algorithm developed by the company. These credit reports are generated and accessed via our systems using unique keys assigned to each potential borrower. They will provide and excellent overview to lenders and help them decide whether to extend a credit line or not.",
+          " is a value indicator that measures how financially trustworthy you are at any point of time. It allows you to access unique financing opportunities by tracking your creditworthiness.",
         ]}
-        subHeading={"Consumer Credit Reporting"}
+        subHeading={"Consumer Credit Score"}
         backgroundColor={"#ffff"}
         buttonColor={"#186eb8"}
         buttonTextColor={"white"}
+        buttonText={"Apply now!"}
       />
 
+      <CarMediaCardLeftPic
+        image={
+          "https://www.metrimeo.com/wp-content/uploads/2020/11/credit-score-online-report-research-document-computer-flat-cartoon_101884-717.jpg"
+        }
+        desc={[
+          "By getting this credit report, you can lease to a tenant with peace of mind. The tenant’s credit reports give you the ability to evaluate an applicant’s creditworthiness through their credit score and credit history. All tenant’s credit reports from MetriMeo include the applicant’s credit score along with their payment history among others.",
+        ]}
+        heading={"Tenant's Credit Report​"}
+        superLative={""}
+        subHeading={
+          "Rent With Confidence By Pulling A Prospective Tenant's Credit Report! ​"
+        }
+        backgroundColor={"#186EB8"}
+        buttonColor={"#ffff"}
+        buttonTextColor={"#186eb8"}
+        buttonText={"Subscribe now!"}
+      />
       <CarMediaCardRightPic
         image={
           "https://www.metrimeo.com/wp-content/uploads/2020/12/235-removebg-preview1.png"
         }
-        desc={
-          "We built an artificial intelligence solution that performs in-depth verification and allows companies to tremendously lower risk on their potential investments. This is to provide a perspective to local and international investors willing to enter a new market or partnership. Our Business Rating is ideal for organizations eager to acquire trade references on other companies that they would like to venture with. Our Business report and screening will evaluate companies’ activities and operations that are critical for their successes."
-        }
-        heading={"BusiMeo"}
+        desc={[
+          "Scoreo basic",
+          <sup>TM</sup>,
+          " is just the beginning! In addition, Metrimeo offers Scoreo Premium",
+          <sup>TM</sup>,
+          ", which is taking it one step further. Our credit reporting product includes everything else Scoreo Basic",
+          <sup>TM</sup>,
+          " has to offer, plus a detailed report showing your loans repayment history. This gives lenders the complete confidence they need to issue loans to you and your business potentially.",
+        ]}
+        heading={"Scoreo Premium"}
         superLative={"TM"}
-        subHeading={"Business Ratings & Reporting"}
+        subHeading={"Consumer Credit Report"}
         backgroundColor={"#186EB8"}
         buttonColor={"#ffff"}
         buttonTextColor={"#186eb8"}
+        buttonText={"Apply now!"}
       />
-      <CarMediaCard
+      <ImageFullBackground
         image={
-          "https://www.metrimeo.com/wp-content/uploads/2020/12/online-form-survey-quiz-voting-document-with-stamp-pc-computer_101884-353__1_-removebg-preview.png"
+          "https://www.metrimeo.com/wp-content/uploads/2020/11/3799789-scaled.jpg"
         }
         desc={
           "MetriMeo provides a fast and effective screening (background check) Service to clients who need to verify an applicant’s details. The verification process primarily discerns any fraudulent applications to ensure that the client gets certified information and makes the correct hiring decision. "
@@ -170,7 +200,7 @@ const OurProducts = () => {
           "https://www.metrimeo.com/wp-content/uploads/2020/10/3969587-removebg-preview.png"
         }
         desc={
-          "Having questions? Please send us a request  with a detailed description of your need, one of our representative will promptly assist you. "
+          "Having questions? Please send us a request  with a detailed description of your need, one of our representative will promptly assist you."
         }
         heading={"Contact Us"}
         superLative={""}
@@ -185,4 +215,4 @@ const OurProducts = () => {
   );
 };
 
-export default OurProducts;
+export default ToLandlords;

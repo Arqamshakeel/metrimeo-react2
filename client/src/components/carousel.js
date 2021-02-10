@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import MediaQuery from "react-responsive";
 import { Container } from "reactstrap";
 const $ = window.jQuery;
 // import $ from "jquery";
@@ -6,7 +7,7 @@ export default class extends Component {
   constructor(props) {
     super(props);
     this.state = { width: 0, height: 0 };
-    // this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
   }
   componentDidMount() {
     $(".owl-carousel").owlCarousel({
@@ -25,12 +26,15 @@ export default class extends Component {
         992: { items: 4 },
       },
     });
+    this.updateWindowDimensions();
+    window.addEventListener("resize", this.updateWindowDimensions);
   }
   updateWindowDimensions() {
     this.setState({ width: window.innerWidth, height: window.innerHeight });
   }
 
   render() {
+    console.log(this.state.width);
     return (
       <section className="s4">
         <Container>
@@ -41,19 +45,39 @@ export default class extends Component {
                 margin:
                   this.state.width > 1220
                     ? "20px 80px 0px 80px"
-                    : "20px 20px 0px 20px",
+                    : "20px 10px 0px 10px",
               }}
             />
-            <h1>
+            {/* <MediaQuery maxDeviceWidth={700}>
+              <h1>
+                Our Guarantee <br /> to you
+              </h1>
+            </MediaQuery>
+            <MediaQuery minDeviceWidth={701}>
+              <h1>Our Guarantee to you</h1>
+            </MediaQuery> */}
+            {/* {this.state.width > 700 ? (
+              <div
+                style={{ fontSize: this.state.width > 700 ? "18px" : "27pt" }}
+              >
+                Our Guarantee {this.state.width > 700 ? <br /> : <></>} to you
+              </div>
+            ) : (
+              <h1>Our Guarantee to you</h1>
+            )} */}
+            {/* <h1>
               Our Guarantee {this.state.width > 700 ? <br /> : <></>} to you
-            </h1>
+            </h1> */}
+            <div style={{ fontSize: this.state.width > 700 ? "38pt" : "27pt" }}>
+              Our Guarantee {this.state.width < 700 ? <br /> : <></>} to you
+            </div>
             <hr
               style={{
                 border: "1px solid #e05414",
                 margin:
                   this.state.width > 1220
                     ? "20px 80px 0px 80px"
-                    : "20px 20px 0px 20px",
+                    : "20px 10px 0px 10px",
               }}
             />
           </div>

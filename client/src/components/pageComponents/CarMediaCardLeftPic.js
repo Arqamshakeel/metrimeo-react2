@@ -6,6 +6,7 @@ import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
+import { useMediaQuery } from "react-responsive";
 import Typography from "@material-ui/core/Typography";
 import ContactSupportIcon from "@material-ui/icons/ContactSupport";
 import { Box, Grid } from "@material-ui/core";
@@ -13,7 +14,7 @@ import { red } from "@material-ui/core/colors";
 import { withRouter } from "react-router-dom";
 // import GradientBtn from "../../quotes/GradientBtn";
 
-const CarMediaCard = (props) => {
+const CarMediaCardLeftPic = (props) => {
   const useStyles = makeStyles({
     root: {
       maxWidth: "100%",
@@ -29,17 +30,44 @@ const CarMediaCard = (props) => {
   });
 
   const classes = useStyles();
+  const isDesktopOrLaptop = useMediaQuery({
+    query: "(min-width: 1224px)",
+  });
+  const isBigScreen = useMediaQuery({ query: "(min-device-width: 1824px)" });
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
+  const isTabletOrMobileDevice = useMediaQuery({
+    query: "(max-device-width: 700px)",
+  });
+  const isPortrait = useMediaQuery({ query: "(orientation: portrait)" });
+  const isRetina = useMediaQuery({ query: "(min-resolution: 2dppx)" });
 
   return (
     <div>
       <Card className={classes.root}>
         <CardActionArea>
           <Grid container>
-            <Grid item lg={5} md={12} xs={12}>
-              <Box display="flex" justifyContent="center" alignItems="center">
-                <img src={props.image} alt="" height="400px" />
-              </Box>
-            </Grid>
+            {true ? (
+              <Grid item lg={5} md={12} xs={12}>
+                <div>
+                  <Box
+                    display="flex"
+                    justifyContent="center"
+                    alignItems="center"
+                  >
+                    <div style={{ marginTop: "50px" }}>
+                      <img
+                        src={props.image}
+                        alt=""
+                        height="400px"
+                        style={{ borderRadius: "70px" }}
+                      />
+                    </div>
+                  </Box>
+                </div>
+              </Grid>
+            ) : (
+              <Grid item lg={1} md={12}></Grid>
+            )}
 
             <Grid item lg={6} md={12} justify="center">
               <CardMedia
@@ -54,14 +82,14 @@ const CarMediaCard = (props) => {
                     fontfont: "'Montserrat',sans-serif",
                     fontSize: "35px",
                     fontWeight: "800",
-                    color: props.buttonColor ? props.buttonColor : "#186EB8",
+                    color: props.buttonColor,
                   }}
                 >
                   {props.heading}
                   <sup>{props.superLative}</sup>
                 </div>
-                <br />
                 <div>
+                  <br />
                   <div className="elementor-divider-separator data5"></div>
                   <br />
                 </div>
@@ -71,7 +99,8 @@ const CarMediaCard = (props) => {
                     fontfont: "'Montserrat',sans-serif",
                     fontSize: "25px",
                     fontWeight: "700",
-                    color: props.buttonColor ? props.buttonColor : "#186EB8",
+                    color: "#186EB8",
+                    color: props.buttonColor,
                   }}
                 >
                   {props.subHeading}
@@ -85,6 +114,7 @@ const CarMediaCard = (props) => {
                     lineHeightStep: "1.85714285714286",
 
                     fontWeight: "100",
+                    color: props.buttonColor,
 
                     //         font-weight: 100;
                     // font-size: 18px;
@@ -98,45 +128,38 @@ const CarMediaCard = (props) => {
                 </div>
                 <br />
 
-                <div className="intro-button">
+                <div className="intro-button-card2">
                   <a href="">
                     {props.buttonText ? props.buttonText : "Learn More"}
                   </a>
                 </div>
               </CardContent>
             </Grid>
-            <Grid item lg={1} md={12}></Grid>
           </Grid>
         </CardActionArea>
       </Card>
       <style jsx global>{`
-        .intro-button {
+        .intro-button-card2 {
           margin-top: 2.3em;
           margin-bottom: 3em;
           opacity: 1;
         }
-        .intro-button a {
+        .intro-button-card2 a {
           padding: 0.65em 2.6em;
           border-radius: 20px;
-          color: ${props.buttonTextColor ? props.buttonTextColor : "white"}
+          color: ${props.buttonTextColor};
 
           background: ${props.buttonColor};
           transition: all 0.5s;
           opacity: 1;
         }
-        .intro-button a:hover {
+        .intro-button-card2 a:hover {
           background-color: ${props.buttonColor};
-          color: white;
+          color: ${props.buttonTextColor};
           opacity: 1;
-        }
-        .elementor-divider-separator {
-          width: 50px;
-          margin: 0 auto;
-          margin-left: 0;
-          border-top: 4.5px solid #e05414;
         }
       `}</style>
     </div>
   );
 };
-export default CarMediaCard;
+export default CarMediaCardLeftPic;

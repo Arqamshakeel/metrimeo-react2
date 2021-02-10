@@ -10,6 +10,8 @@ import OurProducts from "./components/ourProducts/OurProducts";
 import CustomFooter from "./components/footer/CustomFooter";
 import NavBar from "./components/nav";
 import { useMediaQuery } from "react-responsive";
+import ToIndividuals from "./components/toIndividuals/ToIndividuals";
+import ToLandlords from "./components/toLandlords/ToLandlords";
 
 function App() {
   const isDesktopOrLaptop = useMediaQuery({
@@ -34,6 +36,8 @@ function App() {
       <Switch>
         <Route path="/" exact component={LandingComponent} />
         <Route path="/our-products" exact component={OurProducts} />
+        <Route path="/for-individuals" exact component={ToIndividuals} />
+        <Route path="/for-landlords" exact component={ToLandlords} />
       </Switch>
       <Grid container>
         <Grid item xs={12} lg={9}>
