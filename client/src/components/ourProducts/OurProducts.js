@@ -28,7 +28,7 @@ const OurProducts = () => {
             item
             lg={3}
             md={3}
-            sm={4}
+            sm={6}
             xs={10}
             style={{ marginRight: isTabletOrMobile ? "7px" : null }}
           >
@@ -70,12 +70,14 @@ const OurProducts = () => {
           .top-div {
           }
           .box {
-            min-height: 300px;
-            margin-top: 50%;
+            ${!isPortrait && isTabletOrMobile
+              ? "max-height:280px;"
+              : "min-height:300px;"}
+            margin-top: ${!isPortrait && isTabletOrMobile ? "40%" : "50%"};
             border: 1px solid rgba(255, 255, 255, 0.5);
             background-color: #ffff;
             // opacity: 0.7;
-            background: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.9);
           }
           .box .heading {
             font-style: normal;
@@ -86,6 +88,7 @@ const OurProducts = () => {
             letter-spacing: 0.5px;
             font-weight: 800;
             opacity: 1;
+            color: #636060;
           }
           .box-margin {
             margin: 30px;

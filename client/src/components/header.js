@@ -7,7 +7,7 @@ const Header = () => {
     query: "(min-width: 1224px)",
   });
   const isBigScreen = useMediaQuery({ query: "(min-device-width: 1824px)" });
-  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 700px)" });
   const isTabletOrMobileDevice = useMediaQuery({
     query: "(max-device-width: 700px)",
   });
@@ -51,16 +51,19 @@ const Header = () => {
         style={{
           backgroundImage:
             "url(./wp-content/uploads/2020/11/Modern-architecture-building.jpg)",
-          backgroundPosition: "right 35% bottom 68%",
+          backgroundPosition: isTabletOrMobile
+            ? "right 65% bottom 78%"
+            : "right 35% bottom 68%",
           padding: isTabletOrMobileDevice ? "0px" : "100px",
         }}
       >
         <Grid container>
-          <Grid item lg={6} xs={12}>
-            {/* <h2 className={isDesktopOrLaptop ? "data1" : "data1-mobile"}>
-              <p>Welcome to a new</p>
-              <p>World!</p>
-            </h2> */}
+          <Grid
+            item
+            lg={6}
+            xs={12}
+            style={{ margin: isTabletOrMobile ? "30px 20px 20px 20px" : "0px" }}
+          >
             <br />
             <span className={isDesktopOrLaptop ? "data1" : "data1-mobile"}>
               <h2 className="backgroundColorProperties">Welcome to a new</h2>{" "}
@@ -69,7 +72,7 @@ const Header = () => {
             </span>
             <br />
 
-            <h2 className={isTabletOrMobileDevice ? "data4-mobile" : "data4"}>
+            <h2 className={isTabletOrMobile ? "data4-mobile" : "data4"}>
               MetriMeo
             </h2>
             <br />
@@ -154,7 +157,7 @@ const Header = () => {
           // text-shadow: rgba(0, 0, 0, 0.3) 0px 0px 10px;
         }
         .backgroundColorProperties {
-          font-size: 45px;
+          font-size: ${isTabletOrMobile ? "35px" : "45px"};
           text-transform: none;
           white-space: normal;
           background-color: rgba(251, 252, 252, 0.66);
@@ -227,10 +230,10 @@ const Header = () => {
         .data4-mobile {
           font-family: "Montserrat", sans-serif;
           font-weight: 800;
-          font-size: 40px;
+          font-size: 60px;
 
           color: #ffffff;
-          text-shadow: 0px 0px 24px rgba(0, 0, 0, 0.3);
+          text-shadow: 0px 0px 24px rgba(0, 0, 0, 0.4);
         }
         .intro-logo-mobile {
           display: flex;

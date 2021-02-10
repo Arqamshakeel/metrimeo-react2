@@ -25,15 +25,15 @@ const ToLandlords = () => {
   return (
     <div>
       <div className="image">
-        <Grid container justify={isTabletOrMobile ? "flex-end" : null}>
+        <Grid container justify={isTabletOrMobile ? "flex-start" : null}>
           <Grid item lg={1} md={1} sm={7} xs={12}></Grid>
           <Grid
             item
             lg={4}
             md={4}
-            sm={10}
+            sm={6}
             xs={10}
-            style={{ marginRight: isTabletOrMobile ? "7px" : null }}
+            style={{ marginLeft: isTabletOrMobile ? "7px" : null }}
           >
             <div className="box">
               <div className="box-margin">
@@ -74,12 +74,15 @@ const ToLandlords = () => {
           .top-div {
           }
           .box {
-            min-height: 300px;
-            margin-top: 30%;
+            ${!isPortrait && isTabletOrMobile
+              ? "max-height:340px;"
+              : "min-height:300px;"}
+            // min-height: 300px;
+            margin-top: ${!isPortrait && isTabletOrMobile ? "40%" : "30%"};
             border: 1px solid rgba(255, 255, 255, 0.5);
             background-color: #ffff;
             // opacity: 0.7;
-            background: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.9);
           }
           .box .heading {
             font-style: normal;
@@ -90,6 +93,7 @@ const ToLandlords = () => {
             letter-spacing: 0.5px;
             font-weight: 800;
             opacity: 1;
+            color: #636060;
           }
           .box-margin {
             margin: 30px;
@@ -165,7 +169,7 @@ const ToLandlords = () => {
           "https://www.metrimeo.com/wp-content/uploads/2020/12/235-removebg-preview1.png"
         }
         desc={[
-          "Scoreo basic",
+          "Scoreo Basic",
           <sup>TM</sup>,
           " is just the beginning! In addition, Metrimeo offers Scoreo Premium",
           <sup>TM</sup>,
@@ -197,19 +201,19 @@ const ToLandlords = () => {
       />
       <ContactUsCard
         image={
-          "https://www.metrimeo.com/wp-content/uploads/2020/10/3969587-removebg-preview.png"
+          "https://www.metrimeo.com/wp-content/uploads/2020/11/2434220-removebg-preview.png"
         }
         desc={
-          "Having questions? Please send us a request  with a detailed description of your need, one of our representative will promptly assist you."
+          "We can help you navigate through all our solutions and help you select the one that perfectly suits your need."
         }
-        heading={"Contact Us"}
+        heading={"Need Help?"}
         superLative={""}
         subHeading={""}
         backgroundColor={"#31587d"}
         buttonColor={"#FFFF"}
         buttonTextColor={"blue"}
         height="300px"
-        buttonText={"Lets get in touch!"}
+        buttonText={"Contact us!"}
       />
     </div>
   );

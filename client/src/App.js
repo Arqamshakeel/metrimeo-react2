@@ -122,8 +122,9 @@ function App() {
                 fontFamily: "'Open Sans', sans-serif",
               }}
             >
-              © Copyright 2020 MetriMeo | All rights reserved MetriMeo and the
-              MetriMeo marks used herein are trademarks of MetriMeo.
+              © Copyright {new Date().getFullYear()} MetriMeo | All rights
+              reserved MetriMeo and the MetriMeo marks used herein are
+              trademarks of MetriMeo.
             </span>
           </div>
         </Grid>

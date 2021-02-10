@@ -1,11 +1,43 @@
 import { Grid } from "@material-ui/core";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import CarMediaCard from "../pageComponents/CarMediaCard";
 import CarMediaCardRightPic from "../pageComponents/CarMediaCardRightPic";
 import ContactUsCard from "../pageComponents/ContactUsCard";
 import { useMediaQuery } from "react-responsive";
 import ImageFullBackground from "../pageComponents/ImageFullBackground";
+// import useWindowsSize from "../../services/useWindowsSize";
 const ToIndividuals = () => {
+  function useWindowSize() {
+    // Initialize state with undefined width/height so server and client renders match
+    // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
+    const [windowSize, setWindowSize] = useState({
+      width: undefined,
+      height: undefined,
+    });
+
+    useEffect(() => {
+      // Handler to call on window resize
+      function handleResize() {
+        // Set window width/height to state
+        setWindowSize({
+          width: window.innerWidth,
+          height: window.innerHeight,
+        });
+      }
+
+      // Add event listener
+      window.addEventListener("resize", handleResize);
+
+      // Call handler right away so state gets updated with initial window size
+      handleResize();
+
+      // Remove event listener on cleanup
+      return () => window.removeEventListener("resize", handleResize);
+    }, []); // Empty array ensures that effect is only run on mount
+
+    return windowSize;
+  }
+  const size = useWindowSize();
   React.useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -20,20 +52,35 @@ const ToIndividuals = () => {
   });
   const isPortrait = useMediaQuery({ query: "(orientation: portrait)" });
   const isRetina = useMediaQuery({ query: "(min-resolution: 2dppx)" });
+
+  console.log(size);
+
   return (
     <div>
       <div className="image">
-        <Grid container justify={isTabletOrMobile ? "flex-end" : null}>
+        <Grid container justify={isTabletOrMobile ? "flex-start" : null}>
           <Grid item lg={1} md={1} sm={7} xs={12}></Grid>
           <Grid
             item
             lg={4}
             md={4}
-            sm={10}
+            sm={6}
             xs={10}
-            style={{ marginRight: isTabletOrMobile ? "7px" : null }}
+            style={{ marginLeft: isTabletOrMobile ? "7px" : null }}
           >
-            <div className="box">
+            <div
+              className="box"
+              style={{
+                width:
+                  size.width > 1271
+                    ? "390px"
+                    : size.width < 1271 && size.width > 700
+                    ? "350px"
+                    : isTabletOrMobile
+                    ? null
+                    : null,
+              }}
+            >
               <div className="box-margin">
                 <div className="heading">Individuals</div>
                 <div>
@@ -63,21 +110,32 @@ const ToIndividuals = () => {
             height: 600px;
             max-height: 1000px;
             //   background-size: 100% auto;
-            background-size: cover;
-            //   background-size: contain;
+            // background-size: contain;
+            background-size: ${size.width < 1346 && size.width > 1200
+              ? "contain"
+              : isTabletOrMobile
+              ? "300% 100%"
+              : "cover"};
+
             background-repeat: no-repeat;
-            background-position: center center;
+
+            // background-position: center center;
+            background-position: ${isTabletOrMobile
+              ? "right 35% bottom 78%"
+              : "center center"};
             max-height: 1000px;
           }
           .top-div {
           }
           .box {
+            // margin-right: 20px;
             min-height: 300px;
+            // width: 400px;
             margin-top: 30%;
             border: 1px solid rgba(255, 255, 255, 0.5);
             background-color: #ffff;
             // opacity: 0.7;
-            background: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.9);
           }
           .box .heading {
             font-style: normal;
@@ -88,6 +146,7 @@ const ToIndividuals = () => {
             letter-spacing: 0.5px;
             font-weight: 800;
             opacity: 1;
+            color: #636060;
           }
           .box-margin {
             margin: 30px;
@@ -145,7 +204,7 @@ const ToIndividuals = () => {
           "https://www.metrimeo.com/wp-content/uploads/2020/12/235-removebg-preview1.png"
         }
         desc={[
-          "Scoreo basic",
+          "Scoreo Basic",
           <sup>TM</sup>,
           " is just the beginning! In addition, Metrimeo offers Scoreo Premium",
           <sup>TM</sup>,
@@ -177,19 +236,19 @@ const ToIndividuals = () => {
       />
       <ContactUsCard
         image={
-          "https://www.metrimeo.com/wp-content/uploads/2020/10/3969587-removebg-preview.png"
+          "https://www.metrimeo.com/wp-content/uploads/2020/11/2650088-removebg-preview.png"
         }
         desc={
-          "Having questions? Please send us a request  with a detailed description of your need, one of our representative will promptly assist you."
+          "We would be happy to help you further understand and own your financial future. Please feel free to reach out."
         }
-        heading={"Contact Us"}
+        heading={"Connect With Us"}
         superLative={""}
         subHeading={""}
         backgroundColor={"#31587d"}
         buttonColor={"#FFFF"}
         buttonTextColor={"blue"}
         height="300px"
-        buttonText={"Lets get in touch!"}
+        buttonText={"Lets connect!"}
       />
     </div>
   );

@@ -34,7 +34,7 @@ const CarMediaCardLeftPic = (props) => {
     query: "(min-width: 1224px)",
   });
   const isBigScreen = useMediaQuery({ query: "(min-device-width: 1824px)" });
-  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 700px)" });
   const isTabletOrMobileDevice = useMediaQuery({
     query: "(max-device-width: 700px)",
   });
@@ -58,7 +58,7 @@ const CarMediaCardLeftPic = (props) => {
                       <img
                         src={props.image}
                         alt=""
-                        height="400px"
+                        height={isTabletOrMobile ? "300px" : "400px"}
                         style={{ borderRadius: "70px" }}
                       />
                     </div>
