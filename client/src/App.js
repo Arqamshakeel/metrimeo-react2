@@ -43,7 +43,7 @@ function App() {
         <Grid item xs={12} lg={9}>
           <CustomFooter />
         </Grid>
-        {isTabletOrMobile ? (
+        {/* {isTabletOrMobile ? (
           <div
             style={{
               backgroundColor: "#404040",
@@ -63,7 +63,7 @@ function App() {
           </div>
         ) : (
           <></>
-        )}
+        )} */}
         <Grid item lg={3} xs={12}>
           <div style={{ backgroundColor: "#404040", height: "100%" }}>
             <div class="elementor-widget-container">
@@ -81,7 +81,9 @@ function App() {
                   <input
                     style={{
                       marginTop: "100px",
-                      margin: isTabletOrMobile ? "50px auto" : "100px auto",
+                      margin: isTabletOrMobile
+                        ? "0px 0px 50px 0px"
+                        : "100px auto",
                     }}
                     placeholder="Search..."
                     class="hfe-search-form__input"
