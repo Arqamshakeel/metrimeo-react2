@@ -7,6 +7,7 @@ import { useMediaQuery } from "react-responsive";
 import ImageFullBackground from "../pageComponents/ImageFullBackground";
 import TextFullBackground from "../pageComponents/TextFullBackground";
 import CarMediaCardLeftPic from "../pageComponents/CarMediaCardLeftPic";
+import ThreeGrid from "../pageComponents/ThreeGrid";
 const ToLandlords = () => {
   React.useEffect(() => {
     window.scrollTo(0, 0);
@@ -164,38 +165,107 @@ const ToLandlords = () => {
         buttonTextColor={"#186eb8"}
         buttonText={"Subscribe now!"}
       />
-      <CarMediaCardRightPic
-        image={
-          "https://www.metrimeo.com/wp-content/uploads/2020/12/235-removebg-preview1.png"
+      <ThreeGrid
+        image1={
+          "https://www.metrimeo.com/wp-content/uploads/2020/11/credit-score-online-report-document-computer-flat-cartoon-clipart_101884-719-removebg-preview.png"
         }
-        desc={[
-          "Scoreo Basic",
-          <sup>TM</sup>,
-          " is just the beginning! In addition, Metrimeo offers Scoreo Premium",
-          <sup>TM</sup>,
-          ", which is taking it one step further. Our credit reporting product includes everything else Scoreo Basic",
-          <sup>TM</sup>,
-          " has to offer, plus a detailed report showing your loans repayment history. This gives lenders the complete confidence they need to issue loans to you and your business potentially.",
+        data1Heading={"Credit Score"}
+        data1sub={[
+          " A number describing the tenant’s",
+          <br />,
+          "creditworthiness",
         ]}
-        heading={"Scoreo Premium"}
-        superLative={"TM"}
-        subHeading={"Consumer Credit Report"}
-        backgroundColor={"#186EB8"}
-        buttonColor={"#ffff"}
-        buttonTextColor={"#186eb8"}
-        buttonText={"Apply now!"}
-      />
-      <ImageFullBackground
-        image={
-          "https://www.metrimeo.com/wp-content/uploads/2020/11/3799789-scaled.jpg"
+        image2={
+          "https://www.metrimeo.com/wp-content/uploads/2020/11/computer-data-analytics-report-research_101884-346-removebg-preview.png"
         }
+        data2Heading={"Summary Of Credit"}
+        data2sub={[
+          "A dashboard showing the number of accounts",
+          <br />,
+          " that are open for the tenant along with their",
+          <br />,
+          "statuses, balances and other useful",
+          <br />,
+          " information",
+        ]}
+        image3={
+          "https://www.metrimeo.com/wp-content/uploads/2020/11/online-electronic-documents-smart-contracts-with-signature-laptop-computer_101884-347-removebg-preview-1.png"
+        }
+        data3Heading={"Payment History"}
+        data3sub={[
+          "Include payment patterns such as the number",
+          <br />,
+          "of past due payments on all obligations",
+        ]}
         desc={
           "MetriMeo provides a fast and effective screening (background check) Service to clients who need to verify an applicant’s details. The verification process primarily discerns any fraudulent applications to ensure that the client gets certified information and makes the correct hiring decision. "
         }
         heading={"VeriMeo"}
         superLative={"TM"}
         subHeading={"Application Screening"}
-        backgroundColor={"#E3EEF6"}
+        backgroundColor={"#FFFF"}
+        buttonColor={"#186eb8"}
+        buttonTextColor={"white"}
+      />
+
+      <CarMediaCardRightPic
+        image={
+          "https://www.metrimeo.com/wp-content/uploads/2020/11/audit-research-computer-financial-paper-document-report-data-analysis-pc_101884-640.jpg"
+        }
+        desc={[
+          "MetriMeo tenant’s screening report, through our VeriMeo product, allows you to confirm the identity of your prospective tenants and get all the information you need to make the right decision. Among others, the tenant’s screening report includes information on:",
+          ,
+          <ul>
+            <li>Identity verification</li>
+            <li>Employment verification</li>
+            <li>Eviction background check</li>
+            <li>Criminal background check</li>
+          </ul>,
+        ]}
+        heading={"Tenant's Screening Report"}
+        superLative={""}
+        subHeading={"Make Better Leasing Decisions"}
+        backgroundColor={"#186EB8"}
+        buttonColor={"#ffff"}
+        buttonTextColor={"#186eb8"}
+        buttonText={"Subscribe now!"}
+        borderRadius={true}
+      />
+      <ThreeGrid
+        image1={
+          "https://www.metrimeo.com/wp-content/uploads/2020/11/online-electronic-documents-smart-contracts-with-signature-laptop-computer_101884-347-removebg-preview-1.png"
+        }
+        data1Heading={"Criminal Background Check"}
+        data1sub={[
+          "Information on convictions, frauds, violent",
+          <br />,
+          "crimes and more.​",
+        ]}
+        image2={
+          "https://www.metrimeo.com/wp-content/uploads/2020/11/desktop-computer-with-unlocked-password-bubble-notification-flat-cartoon-vector-illustration_101884-350-removebg-preview.png"
+        }
+        data2Heading={"Eviction Background Check"}
+        data2sub={[
+          "Information on prior evictions proceedings",
+          <br />,
+          "related to the tenant​",
+        ]}
+        image3={
+          "https://www.metrimeo.com/wp-content/uploads/2020/11/search-field-computer-illustration-flat-cartoon_101884-692-removebg-preview.png"
+        }
+        data3Heading={"Identity Verification"}
+        data3sub={[
+          "Confirm the identity of the tenant as per",
+          <br></br>,
+          "public records​",
+        ]}
+        desc={
+          "MetriMeo provides a fast and effective screening (background check) Service to clients who need to verify an applicant’s details. The verification process primarily discerns any fraudulent applications to ensure that the client gets certified information and makes the correct hiring decision. "
+        }
+        heading={"VeriMeo"}
+        superLative={"TM"}
+        subHeading={"Application Screening"}
+        backgroundColor={"#FFFF"}
         buttonColor={"#186eb8"}
         buttonTextColor={"white"}
       />
@@ -213,7 +283,7 @@ const ToLandlords = () => {
         buttonColor={"#FFFF"}
         buttonTextColor={"blue"}
         height="300px"
-        buttonText={"Contact us!"}
+        buttonText={"Contact us"}
       />
     </div>
   );

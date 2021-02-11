@@ -118,7 +118,11 @@ const ContactUsCard = (props) => {
               direction="row"
             >
               {/* <Box display="flex" justifyContent="center" alignItems="center"> */}
-              <img src={props.image} alt="" height="300px" />
+              <img
+                src={props.image}
+                alt=""
+                height={props.picHeight ? "200px" : "300px"}
+              />
               {/* </Box> */}
             </Grid>
           </Grid>

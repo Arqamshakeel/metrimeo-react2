@@ -59,26 +59,29 @@ const ToIndividuals = () => {
     <div>
       <div className="image">
         <Grid container justify={isTabletOrMobile ? "flex-start" : null}>
-          <Grid item lg={1} md={1} sm={7} xs={12}></Grid>
+          {/* <Grid item lg={1} md={1} sm={7} xs={12}></Grid> */}
           <Grid
             item
             lg={4}
             md={4}
             sm={6}
             xs={10}
-            style={{ marginLeft: isTabletOrMobile ? "7px" : null }}
+            style={{
+              marginLeft: isTabletOrMobile ? "7px" : "0px",
+            }}
           >
             <div
               className="box"
               style={{
                 width:
                   size.width > 1271
-                    ? "390px"
+                    ? "350px"
                     : size.width < 1271 && size.width > 700
                     ? "350px"
                     : isTabletOrMobile
                     ? null
                     : null,
+                marginLeft: isTabletOrMobile ? "0px" : "15%",
               }}
             >
               <div className="box-margin">
@@ -112,7 +115,7 @@ const ToIndividuals = () => {
             //   background-size: 100% auto;
             // background-size: contain;
             background-size: ${size.width < 1346 && size.width > 1200
-              ? "contain"
+              ? "cover"
               : isTabletOrMobile
               ? "300% 100%"
               : "cover"};
@@ -236,7 +239,7 @@ const ToIndividuals = () => {
       />
       <ContactUsCard
         image={
-          "https://www.metrimeo.com/wp-content/uploads/2020/11/2650088-removebg-preview.png"
+          "https://www.metrimeo.com/wp-content/uploads/2020/11/2650088-removebg-preview-300x184.png"
         }
         desc={
           "We would be happy to help you further understand and own your financial future. Please feel free to reach out."
@@ -249,6 +252,7 @@ const ToIndividuals = () => {
         buttonTextColor={"blue"}
         height="300px"
         buttonText={"Lets connect!"}
+        picHeight={true}
       />
     </div>
   );

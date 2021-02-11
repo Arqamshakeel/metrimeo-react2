@@ -45,11 +45,25 @@ const CarMediaCardRightPic = (props) => {
     <div>
       <Card className={classes.root}>
         <CardActionArea>
-          <Grid container>
+          <Grid
+            container
+            // direction="column"
+            alignItems="center"
+            justify="center"
+            // style={{ minHeight: "100vh" }}
+          >
             {isTabletOrMobileDevice ? (
               <Grid item lg={5} md={12} xs={12}>
                 <Box display="flex" justifyContent="center" alignItems="center">
-                  <img src={props.image} alt="" height="400px" />
+                  <img
+                    src={props.image}
+                    alt=""
+                    height="300px"
+                    style={{
+                      borderRadius: props.borderRadius ? "70px" : "0px",
+                      margin: "50px",
+                    }}
+                  />
                 </Box>
               </Grid>
             ) : (
@@ -125,9 +139,16 @@ const CarMediaCardRightPic = (props) => {
             {isTabletOrMobileDevice ? (
               <Grid item lg={1} md={12}></Grid>
             ) : (
-              <Grid item lg={5} md={12} xs={12}>
+              <Grid item lg={5} md={12} xs={12} justify="center">
                 <Box display="flex" justifyContent="center" alignItems="center">
-                  <img src={props.image} alt="" height="400px" />
+                  <img
+                    src={props.image}
+                    alt=""
+                    height="400px"
+                    style={{
+                      borderRadius: props.borderRadius ? "70px" : "0px",
+                    }}
+                  />
                 </Box>
               </Grid>
             )}
@@ -137,7 +158,7 @@ const CarMediaCardRightPic = (props) => {
       <style jsx global>{`
         .intro-button-card2 {
           margin-top: 2.3em;
-          margin-bottom: 3em;
+          // margin-bottom: 3em;
           opacity: 1;
         }
         .intro-button-card2 a {

@@ -265,7 +265,7 @@ class NavBar extends Component {
           <Nav className="nav-n">
             <NavItem className="nav-item-n logo">
               {/* <NavLink href="#">Meterio</NavLink> */}
-              <div style={{ marginTop: "10px" }}></div>
+              {/* <div style={{ position:"relative" }}></div> */}
               <a
                 onClick={() => {
                   this.props.history.push("/");
