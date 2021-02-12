@@ -12,6 +12,7 @@ import NavBar from "./components/nav";
 import { useMediaQuery } from "react-responsive";
 import ToIndividuals from "./components/toIndividuals/ToIndividuals";
 import ToLandlords from "./components/toLandlords/ToLandlords";
+import ToCooperatives from "./components/toCooperatives/ToCooperatives";
 
 function App() {
   const isDesktopOrLaptop = useMediaQuery({
@@ -38,6 +39,7 @@ function App() {
         <Route path="/our-products" exact component={OurProducts} />
         <Route path="/for-individuals" exact component={ToIndividuals} />
         <Route path="/for-landlords" exact component={ToLandlords} />
+        <Route path="/for-cooperatives" exact component={ToCooperatives} />
       </Switch>
       <Grid container>
         <Grid item xs={12} lg={9}>

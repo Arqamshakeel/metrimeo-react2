@@ -75,7 +75,16 @@ class MobileMenu extends Component {
                 >
                   To Landlords
                 </DropdownItem>
-                <DropdownItem>To Cooperatives</DropdownItem>
+                <DropdownItem
+                  style={{ cursor: "pointer" }}
+                  onClick={() => {
+                    this.props.props.history.push("for-cooperatives");
+                    this.props.hideNav();
+                  }}
+                >
+                  To Cooperatives
+                </DropdownItem>
+
                 <DropdownItem>To Businesses</DropdownItem>
               </DropdownMenu>
             </Dropdown>
@@ -341,10 +350,17 @@ class NavBar extends Component {
                       To Landlords
                     </NavLink>
                   </NavItem>
-
                   <NavItem className="nav-item-n">
-                    <NavLink href="#">To Cooperatives</NavLink>
+                    <NavLink
+                      style={{ cursor: "pointer" }}
+                      onClick={() => {
+                        this.props.history.push("for-cooperatives");
+                      }}
+                    >
+                      To Cooperatives
+                    </NavLink>
                   </NavItem>
+
                   <NavItem className="nav-item-n">
                     <NavLink href="#">To Businesses</NavLink>
                   </NavItem>

@@ -91,7 +91,7 @@ const CarMediaCardRightPic = (props) => {
                 </div>
                 <div>
                   <br />
-                  <div className="elementor-divider-separator data5"></div>
+                  <div className="elementor-divider-separator3 data5"></div>
                   <br />
                 </div>
 
@@ -174,6 +174,13 @@ const CarMediaCardRightPic = (props) => {
           background-color: ${props.buttonColor};
           color: ${props.buttonTextColor};
           opacity: 1;
+        }
+        .elementor-divider-separator3 {
+          width: 50px;
+          margin: 0 auto;
+          margin-left: 0;
+          border-top: 4.5px solid
+            ${props.elementSepColor ? props.elementSepColor : "#e05414"};
         }
       `}</style>
     </div>

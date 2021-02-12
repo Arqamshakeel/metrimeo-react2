@@ -57,7 +57,7 @@ const TextFullBackground = (props) => {
           >
             <hr
               style={{
-                border: "1px solid #e05414",
+                border: "1px solid #186eb8",
               }}
             />
             <br />
@@ -75,7 +75,7 @@ const TextFullBackground = (props) => {
             <br />
             <hr
               style={{
-                border: "1px solid #e05414",
+                border: "1px solid #186eb8",
               }}
             />
           </div>
