@@ -158,7 +158,7 @@ const CarMediaCardRightPic = (props) => {
       <style jsx global>{`
         .intro-button-card2 {
           margin-top: 2.3em;
-          // margin-bottom: 3em;
+          margin-bottom: 3em;
           opacity: 1;
         }
         .intro-button-card2 a {

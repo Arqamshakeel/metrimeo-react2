@@ -239,7 +239,7 @@ const ToIndividuals = () => {
       />
       <ContactUsCard
         image={
-          "https://www.metrimeo.com/wp-content/uploads/2020/11/2650088-removebg-preview-300x184.png"
+          "https://www.metrimeo.com/wp-content/uploads/2020/11/2650088-removebg-preview.png"
         }
         desc={
           "We would be happy to help you further understand and own your financial future. Please feel free to reach out."
@@ -251,7 +251,7 @@ const ToIndividuals = () => {
         buttonColor={"#FFFF"}
         buttonTextColor={"blue"}
         height="300px"
-        buttonText={"Lets connect!"}
+        buttonText={"Let's connect!"}
         picHeight={true}
       />
     </div>

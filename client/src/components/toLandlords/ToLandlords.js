@@ -76,7 +76,7 @@ const ToLandlords = () => {
           }
           .box {
             ${!isPortrait && isTabletOrMobile
-              ? "max-height:340px;"
+              ? "max-height:360px;"
               : "min-height:300px;"}
             // min-height: 300px;
             margin-top: ${!isPortrait && isTabletOrMobile ? "40%" : "30%"};
@@ -172,7 +172,7 @@ const ToLandlords = () => {
         data1Heading={"Credit Score"}
         data1sub={[
           " A number describing the tenant’s",
-          <br />,
+          !isTabletOrMobile ? <br /> : <></>,
           "creditworthiness",
         ]}
         image2={
@@ -181,20 +181,20 @@ const ToLandlords = () => {
         data2Heading={"Summary Of Credit"}
         data2sub={[
           "A dashboard showing the number of accounts",
-          <br />,
+          !isTabletOrMobile ? <br /> : <></>,
           " that are open for the tenant along with their",
-          <br />,
+          !isTabletOrMobile ? <br /> : <></>,
           "statuses, balances and other useful",
-          <br />,
+          !isTabletOrMobile ? <br /> : <></>,
           " information",
         ]}
         image3={
-          "https://www.metrimeo.com/wp-content/uploads/2020/11/online-electronic-documents-smart-contracts-with-signature-laptop-computer_101884-347-removebg-preview-1.png"
+          "https://www.metrimeo.com/wp-content/uploads/2020/12/online-form-survey-quiz-voting-document-with-stamp-pc-computer_101884-353__1_-removebg-preview.png"
         }
         data3Heading={"Payment History"}
         data3sub={[
           "Include payment patterns such as the number",
-          <br />,
+          !isTabletOrMobile ? <br /> : <></>,
           "of past due payments on all obligations",
         ]}
         desc={
@@ -238,7 +238,7 @@ const ToLandlords = () => {
         data1Heading={"Criminal Background Check"}
         data1sub={[
           "Information on convictions, frauds, violent",
-          <br />,
+          !isTabletOrMobile ? <br /> : <></>,
           "crimes and more.​",
         ]}
         image2={
@@ -247,7 +247,7 @@ const ToLandlords = () => {
         data2Heading={"Eviction Background Check"}
         data2sub={[
           "Information on prior evictions proceedings",
-          <br />,
+          !isTabletOrMobile ? <br /> : <></>,
           "related to the tenant​",
         ]}
         image3={
@@ -256,7 +256,7 @@ const ToLandlords = () => {
         data3Heading={"Identity Verification"}
         data3sub={[
           "Confirm the identity of the tenant as per",
-          <br></br>,
+          !isTabletOrMobile ? <br /> : <></>,
           "public records​",
         ]}
         desc={
