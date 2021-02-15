@@ -295,18 +295,18 @@ const ToBusinesses = () => {
           >
             <div className="box">
               <div className="box-margin">
-                <div className="heading">Cooperatives</div>
+                <div className="heading">Businesses</div>
                 <div>
                   <br />
                   <div className="elementor-divider-separator data5"></div>
                   <br />
                 </div>
                 <div className="decs">
-                  Trust and numbers do matter between cooperatives’ members.
-                  MetriMeo is helping them build it.
+                  Numbers do matter for Businesses. Metrimeo is helping
+                  businesses grow their potential.
                 </div>
                 <div className="intro-button">
-                  <a href="">Start here!</a>
+                  <a href="">Join us!</a>
                 </div>
               </div>
               <div></div>
@@ -362,6 +362,12 @@ const ToBusinesses = () => {
 
             opacity: 1;
           }
+          .elementor-divider-separator {
+            width: 50px;
+            margin: 0 auto;
+            margin-left: 0;
+            border-top: 4.5px solid #e05414;
+          }
           .box .decs {
             font-size: 20px;
             color: black;
@@ -409,7 +415,9 @@ const ToBusinesses = () => {
       />
 
       <CarMediaCardLong
-        image={"./wp-content/uploads/2020/12/1070_copy-removebg-preview.png"}
+        image={
+          "./wp-content/uploads/2020/12/1070_copy-removebg-preview-300x229.png"
+        }
         heading={"Corporate Screening"}
         superLative={""}
         // desc={`The core information that individuals willing to enter into credit agreement must have is a credit report from borrowers. Metrimeo calculates a consumer credit score through its product Scoreo  for individuals through a complex algorithm developed by the company. These credit reports are generated and accessed via our systems using unique keys assigned to each potential borrower. They will provide and excellent overview to lenders and help them decide whether to extend a credit line or not.`}

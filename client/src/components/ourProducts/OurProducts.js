@@ -90,6 +90,12 @@ const OurProducts = () => {
             opacity: 1;
             color: #636060;
           }
+          .elementor-divider-separator {
+            width: 50px;
+            margin: 0 auto;
+            margin-left: 0;
+            border-top: 4.5px solid #e05414;
+          }
           .box-margin {
             margin: 30px;
 

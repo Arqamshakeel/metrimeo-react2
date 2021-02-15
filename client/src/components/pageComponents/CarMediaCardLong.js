@@ -46,7 +46,7 @@ const CarMediaCardLong = (props) => {
             ) : (
               <Grid item lg={5} md={12} xs={12}>
                 <Box display="flex" justifyContent="center" alignItems="center">
-                  <img src={props.image} alt="" height="300px" />
+                  <img src={props.image} alt="" height="250px" />
                 </Box>
               </Grid>
             )}
