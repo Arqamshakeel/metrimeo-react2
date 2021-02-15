@@ -60,7 +60,7 @@ const ToLandlords = () => {
 
         <style jsx global>{`
           .image {
-            background-image: url("https://www.metrimeo.com/wp-content/uploads/2020/11/11862-scaled.jpg");
+            background-image: url("./wp-content/uploads/2020/11/11862-scaled.jpg");
 
             width: 100%;
             height: 600px;
@@ -131,7 +131,7 @@ const ToLandlords = () => {
 
       <TextFullBackground
         image={
-          "https://www.metrimeo.com/wp-content/uploads/2020/10/credit-score-scale-showing-good-value-illustration_100456-1427-removebg-preview.png"
+          "./wp-content/uploads/2020/10/credit-score-scale-showing-good-value-illustration_100456-1427-removebg-preview.png"
         }
         heading={"Scoreo Basic"}
         superLative={"TM"}
@@ -150,7 +150,7 @@ const ToLandlords = () => {
 
       <CarMediaCardLeftPic
         image={
-          "https://www.metrimeo.com/wp-content/uploads/2020/11/credit-score-online-report-research-document-computer-flat-cartoon_101884-717.jpg"
+          "./wp-content/uploads/2020/11/credit-score-online-report-research-document-computer-flat-cartoon_101884-717.jpg"
         }
         desc={[
           "By getting this credit report, you can lease to a tenant with peace of mind. The tenant’s credit reports give you the ability to evaluate an applicant’s creditworthiness through their credit score and credit history. All tenant’s credit reports from MetriMeo include the applicant’s credit score along with their payment history among others.",
@@ -167,7 +167,7 @@ const ToLandlords = () => {
       />
       <ThreeGrid
         image1={
-          "https://www.metrimeo.com/wp-content/uploads/2020/11/credit-score-online-report-document-computer-flat-cartoon-clipart_101884-719-removebg-preview.png"
+          "./wp-content/uploads/2020/11/credit-score-online-report-document-computer-flat-cartoon-clipart_101884-719-removebg-preview.png"
         }
         data1Heading={"Credit Score"}
         data1sub={[
@@ -176,7 +176,7 @@ const ToLandlords = () => {
           "creditworthiness",
         ]}
         image2={
-          "https://www.metrimeo.com/wp-content/uploads/2020/11/computer-data-analytics-report-research_101884-346-removebg-preview.png"
+          "./wp-content/uploads/2020/11/computer-data-analytics-report-research_101884-346-removebg-preview.png"
         }
         data2Heading={"Summary Of Credit"}
         data2sub={[
@@ -188,9 +188,7 @@ const ToLandlords = () => {
           !isTabletOrMobile ? <br /> : <></>,
           " information",
         ]}
-        image3={
-          "https://www.metrimeo.com/wp-content/uploads/2020/12/online-form-survey-quiz-voting-document-with-stamp-pc-computer_101884-353__1_-removebg-preview.png"
-        }
+        image3={"./wp-content/uploads/2020/12/output-onlinepngtools.png"}
         data3Heading={"Payment History"}
         data3sub={[
           "Include payment patterns such as the number",
@@ -210,7 +208,7 @@ const ToLandlords = () => {
 
       <CarMediaCardRightPic
         image={
-          "https://www.metrimeo.com/wp-content/uploads/2020/11/audit-research-computer-financial-paper-document-report-data-analysis-pc_101884-640.jpg"
+          "./wp-content/uploads/2020/11/audit-research-computer-financial-paper-document-report-data-analysis-pc_101884-640.jpg"
         }
         desc={[
           "MetriMeo tenant’s screening report, through our VeriMeo product, allows you to confirm the identity of your prospective tenants and get all the information you need to make the right decision. Among others, the tenant’s screening report includes information on:",
@@ -232,9 +230,7 @@ const ToLandlords = () => {
         borderRadius={true}
       />
       <ThreeGrid
-        image1={
-          "https://www.metrimeo.com/wp-content/uploads/2020/11/online-electronic-documents-smart-contracts-with-signature-laptop-computer_101884-347-removebg-preview-1.png"
-        }
+        image1={"./wp-content/uploads/2020/11/output-onlinepngtoolscheck2.png"}
         data1Heading={"Criminal Background Check"}
         data1sub={[
           "Information on convictions, frauds, violent",
@@ -242,7 +238,7 @@ const ToLandlords = () => {
           "crimes and more.​",
         ]}
         image2={
-          "https://www.metrimeo.com/wp-content/uploads/2020/11/desktop-computer-with-unlocked-password-bubble-notification-flat-cartoon-vector-illustration_101884-350-removebg-preview.png"
+          "./wp-content/uploads/2020/11/desktop-computer-with-unlocked-password-bubble-notification-flat-cartoon-vector-illustration_101884-350-removebg-preview.png"
         }
         data2Heading={"Eviction Background Check"}
         data2sub={[
@@ -251,7 +247,7 @@ const ToLandlords = () => {
           "related to the tenant​",
         ]}
         image3={
-          "https://www.metrimeo.com/wp-content/uploads/2020/11/search-field-computer-illustration-flat-cartoon_101884-692-removebg-preview.png"
+          "./wp-content/uploads/2020/11/search-field-computer-illustration-flat-cartoon_101884-692-removebg-preview.png"
         }
         data3Heading={"Identity Verification"}
         data3sub={[
@@ -270,9 +266,7 @@ const ToLandlords = () => {
         buttonTextColor={"white"}
       />
       <ContactUsCard
-        image={
-          "https://www.metrimeo.com/wp-content/uploads/2020/11/2434220-removebg-preview.png"
-        }
+        image={"./wp-content/uploads/2020/11/2434220-removebg-preview.png"}
         desc={
           "We can help you navigate through all our solutions and help you select the one that perfectly suits your need."
         }

@@ -56,7 +56,7 @@ const OurProducts = () => {
 
         <style jsx global>{`
           .image {
-            background-image: url("https://www.metrimeo.com/wp-content/uploads/2020/10/17656810-scaled.jpg");
+            background-image: url("./wp-content/uploads/2020/10/17656810-scaled.jpg");
             width: 100%;
             height: 600px;
             max-height: 1000px;
@@ -124,7 +124,7 @@ const OurProducts = () => {
       </div>
       <CarMediaCard
         image={
-          "https://www.metrimeo.com/wp-content/uploads/2020/10/credit-score-scale-showing-good-value-illustration_100456-1427-removebg-preview.png"
+          "./wp-content/uploads/2020/10/credit-score-scale-showing-good-value-illustration_100456-1427-removebg-preview.png"
         }
         heading={"Scoreo"}
         superLative={"TM"}
@@ -141,9 +141,7 @@ const OurProducts = () => {
       />
 
       <CarMediaCardRightPic
-        image={
-          "https://www.metrimeo.com/wp-content/uploads/2020/12/235-removebg-preview1.png"
-        }
+        image={"./wp-content/uploads/2020/12/235-removebg-preview1.png"}
         desc={
           "We built an artificial intelligence solution that performs in-depth verification and allows companies to tremendously lower risk on their potential investments. This is to provide a perspective to local and international investors willing to enter a new market or partnership. Our Business Rating is ideal for organizations eager to acquire trade references on other companies that they would like to venture with. Our Business report and screening will evaluate companies’ activities and operations that are critical for their successes."
         }
@@ -156,7 +154,7 @@ const OurProducts = () => {
       />
       <CarMediaCard
         image={
-          "https://www.metrimeo.com/wp-content/uploads/2020/12/online-form-survey-quiz-voting-document-with-stamp-pc-computer_101884-353__1_-removebg-preview.png"
+          "./wp-content/uploads/2020/12/online-form-survey-quiz-voting-document-with-stamp-pc-computer_101884-353__1_-removebg-preview.png"
         }
         desc={
           "MetriMeo provides a fast and effective screening (background check) Service to clients who need to verify an applicant’s details. The verification process primarily discerns any fraudulent applications to ensure that the client gets certified information and makes the correct hiring decision. "
@@ -169,9 +167,7 @@ const OurProducts = () => {
         buttonTextColor={"white"}
       />
       <ContactUsCard
-        image={
-          "https://www.metrimeo.com/wp-content/uploads/2020/10/3969587-removebg-preview.png"
-        }
+        image={"./wp-content/uploads/2020/10/3969587-removebg-preview.png"}
         desc={
           "Having questions? Please send us a request  with a detailed description of your need, one of our representative will promptly assist you. "
         }

@@ -107,7 +107,7 @@ const ToIndividuals = () => {
 
         <style jsx global>{`
           .image {
-            background-image: url("https://www.metrimeo.com/wp-content/uploads/2020/11/5846-1-scaled.jpg");
+            background-image: url("./wp-content/uploads/2020/11/5846-1-scaled.jpg");
 
             width: 100%;
             height: 600px;
@@ -185,7 +185,7 @@ const ToIndividuals = () => {
       </div>
       <CarMediaCard
         image={
-          "https://www.metrimeo.com/wp-content/uploads/2020/10/credit-score-scale-showing-good-value-illustration_100456-1427-removebg-preview.png"
+          "./wp-content/uploads/2020/10/credit-score-scale-showing-good-value-illustration_100456-1427-removebg-preview.png"
         }
         heading={"Scoreo Basic"}
         superLative={"TM"}
@@ -203,9 +203,7 @@ const ToIndividuals = () => {
       />
 
       <CarMediaCardRightPic
-        image={
-          "https://www.metrimeo.com/wp-content/uploads/2020/12/235-removebg-preview1.png"
-        }
+        image={"./wp-content/uploads/2020/12/235-removebg-preview1.png"}
         desc={[
           "Scoreo Basic",
           <sup>TM</sup>,
@@ -224,9 +222,7 @@ const ToIndividuals = () => {
         buttonText={"Apply now!"}
       />
       <ImageFullBackground
-        image={
-          "https://www.metrimeo.com/wp-content/uploads/2020/11/3799789-scaled.jpg"
-        }
+        image={"./wp-content/uploads/2020/11/3799789-scaled.jpg"}
         desc={
           "MetriMeo provides a fast and effective screening (background check) Service to clients who need to verify an applicant’s details. The verification process primarily discerns any fraudulent applications to ensure that the client gets certified information and makes the correct hiring decision. "
         }
@@ -238,9 +234,7 @@ const ToIndividuals = () => {
         buttonTextColor={"white"}
       />
       <ContactUsCard
-        image={
-          "https://www.metrimeo.com/wp-content/uploads/2020/11/2650088-removebg-preview.png"
-        }
+        image={"./wp-content/uploads/2020/11/2650088-removebg-preview.png"}
         desc={
           "We would be happy to help you further understand and own your financial future. Please feel free to reach out."
         }

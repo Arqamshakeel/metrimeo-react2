@@ -36,7 +36,6 @@ const ThreeGrid = (props) => {
         <CardActionArea>
           <Grid container style={{ padding: "50px" }}>
             <Grid item xs={12}>
-              {" "}
               <div
                 style={{
                   fontfont: "'Montserrat',sans-serif",
@@ -52,27 +51,25 @@ const ThreeGrid = (props) => {
 
             <Grid item lg={4} md={4} xs={12}>
               <div
-                style={
-                  {
-                    // backgroundImage: `url(${props.image1})`,
-                    // // backgroundPosition: "center center",
-                    // // height: "300px",
-                    // // backgroundSize: "cover",
-                    // height: "300px",
-                    // width: "100px",
-                    // objectFit: "cover",
-                    // backgroundPosition: "center center",
-                    // textAlign: "center",
-                  }
-                }
+                style={{
+                  backgroundImage: `url(${props.image1})`,
+                  backgroundPosition: "center center",
+                  height: "300px",
+                  backgroundSize: "cover",
+                  // height: "300px",
+                  // width: "100px",
+                  // objectFit: "cover",
+                  // backgroundPosition: "center center",
+                  // textAlign: "center",
+                }}
               >
-                <img
+                {/* <img
                   src={props.image1}
-                  height="400px"
+                  // height="400px"
                   width="auto"
                   alt=""
-                  class="center"
-                />
+                  // class="center"
+                /> */}
               </div>
               <div
                 style={{
@@ -98,23 +95,25 @@ const ThreeGrid = (props) => {
             </Grid>
             <Grid item lg={4} md={4} xs={12}>
               <div
-                style={
-                  {
-                    // backgroundImage: `url(${props.image2})`,
-                    // backgroundPosition: "center center",
-                    // height: "300px",
-                    // width: "300px",
-                    // backgroundSize: "cover",
-                  }
-                }
+                style={{
+                  backgroundImage: `url(${props.image2})`,
+                  // backgroundPosition: "center center",
+                  // height: "300px",
+                  // width: "300px",
+                  // backgroundSize: "cover",
+
+                  backgroundPosition: "center center",
+                  height: "300px",
+                  backgroundSize: "cover",
+                }}
               >
-                <img
+                {/* <img
                   src={props.image2}
                   height="400px"
                   width="auto"
                   alt=""
-                  class="center"
-                />
+                  // class="center"
+                /> */}
               </div>
               <div
                 style={{
@@ -140,25 +139,27 @@ const ThreeGrid = (props) => {
             </Grid>
             <Grid item lg={4} md={4} xs={12}>
               <div
-                style={
-                  {
-                    // backgroundImage: `url(${props.image3})`,
-                    // backgroundPosition: "center center",
-                    // height: "300px",
-                    // width: "300px",
-                    // backgroundSize: "cover",
-                    // height: "300px",
-                    // overflow: "hidden",
-                  }
-                }
+                style={{
+                  backgroundImage: `url(${props.image3})`,
+                  // backgroundPosition: "center center",
+                  // height: "300px",
+                  // width: "300px",
+                  // backgroundSize: "cover",
+                  // height: "300px",
+                  overflow: "hidden",
+
+                  backgroundPosition: "center center",
+                  height: "300px",
+                  backgroundSize: "cover",
+                }}
               >
-                <img
+                {/* <img
                   src={props.image3}
                   height="400px"
                   width="auto"
                   alt=""
-                  class="center"
-                />
+                  // class="center"
+                /> */}
               </div>
               <div
                 style={{
@@ -187,10 +188,10 @@ const ThreeGrid = (props) => {
       </Card>
       <style jsx global>{`
         .center {
-          // display: block;
+          display: block;
           margin-left: auto;
           margin-right: auto;
-          width: 100%;
+          width: auto;
         }
         .intro-button {
           margin-top: 2.3em;
@@ -215,7 +216,7 @@ const ThreeGrid = (props) => {
           width: 50px;
           margin: 0 auto;
           margin-left: 0;
-          border-top: 4.5px solid #e05414;
+          borde;
         }
       `}</style>
     </div>

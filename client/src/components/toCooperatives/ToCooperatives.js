@@ -60,7 +60,7 @@ const ToCooperatives = () => {
 
         <style jsx global>{`
           .image {
-            background-image: url("https://www.metrimeo.com/wp-content/uploads/2020/11/3124-scaled.jpg");
+            background-image: url("./wp-content/uploads/2020/11/3124-scaled.jpg");
 
             width: 100%;
             height: 600px;
@@ -135,7 +135,7 @@ const ToCooperatives = () => {
 
       <TextFullBackground
         image={
-          "https://www.metrimeo.com/wp-content/uploads/2020/10/credit-score-scale-showing-good-value-illustration_100456-1427-removebg-preview.png"
+          "./wp-content/uploads/2020/10/credit-score-scale-showing-good-value-illustration_100456-1427-removebg-preview.png"
         }
         heading={"Scoreo Basic"}
         superLative={"TM"}
@@ -153,7 +153,7 @@ const ToCooperatives = () => {
       />
       <CarMediaCard
         image={
-          "https://www.metrimeo.com/wp-content/uploads/2020/11/credit-score-scale-showing-good-value-illustration_100456-1333.jpg"
+          "./wp-content/uploads/2020/11/credit-score-scale-showing-good-value-illustration_100456-1333.jpg"
         }
         heading={"Scoreo Basic"}
         superLative={"TM"}
@@ -172,7 +172,7 @@ const ToCooperatives = () => {
       />
       <CarMediaCardRightPic
         image={
-          "https://www.metrimeo.com/wp-content/uploads/2020/12/credit-score-document-paper-sheet-chart-personal-credit-score-information_100456-1257-removebg-preview.png"
+          "./wp-content/uploads/2020/12/credit-score-document-paper-sheet-chart-personal-credit-score-information_100456-1257-removebg-preview.png"
         }
         desc={[
           "In addition to Scoreo Basic",
@@ -192,7 +192,7 @@ const ToCooperatives = () => {
 
       <CarMediaCard
         image={
-          "https://www.metrimeo.com/wp-content/uploads/2020/12/online-form-survey-quiz-voting-document-with-stamp-pc-computer_101884-353__1_-removebg-preview.png"
+          "./wp-content/uploads/2020/12/online-form-survey-quiz-voting-document-with-stamp-pc-computer_101884-353__1_-removebg-preview.png"
         }
         desc={
           "Another crucial aspect to building trust among members of a cooperative is to ensure that the prospective member is trustworthy. Through VeriMeo, we can help you get all the information you need, by doing a background and identity verification check, to make the right decision for your cooperative."
@@ -207,9 +207,7 @@ const ToCooperatives = () => {
       />
 
       <ContactUsCard
-        image={
-          "https://www.metrimeo.com/wp-content/uploads/2020/11/2438165-removebg-preview.png"
-        }
+        image={"./wp-content/uploads/2020/11/2438165-removebg-preview.png"}
         desc={
           "We would be happy to understand you specific needs and help you choose the right solution to meet them."
         }
