@@ -11,6 +11,7 @@ import {
 } from "reactstrap";
 import { useMediaQuery } from "react-responsive";
 import { withRouter } from "react-router-dom";
+import NavLoginSignUpButtons from "./NavLoginSignUpButtons";
 class MobileMenu extends Component {
   state = { isOpen: false };
 
@@ -389,15 +390,30 @@ class NavBar extends Component {
             {this.state.width > 490 ? (
               <>
                 <NavItem className="nav-item-n-white intro-button2">
-                  <NavLink href="#">Login</NavLink>
+                  <NavLink
+                    style={{ cursor: "pointer" }}
+                    onClick={() => {
+                      this.props.history.push("login");
+                    }}
+                  >
+                    Login
+                  </NavLink>
                 </NavItem>
                 <NavItem className="nav-item-n-white intro-button3">
-                  <NavLink href="#">Sign up</NavLink>
+                  <NavLink
+                    style={{ cursor: "pointer" }}
+                    onClick={() => {
+                      this.props.history.push("register");
+                    }}
+                  >
+                    Sign up
+                  </NavLink>
                 </NavItem>
               </>
             ) : (
               <></>
             )}
+            {/* <NavLoginSignUpButtons /> */}
           </Nav>
         </Container>
         <style jsx>{`
