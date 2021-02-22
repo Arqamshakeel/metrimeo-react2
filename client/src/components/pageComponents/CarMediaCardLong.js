@@ -10,6 +10,7 @@ import Typography from "@material-ui/core/Typography";
 import ContactSupportIcon from "@material-ui/icons/ContactSupport";
 import { Box, Grid } from "@material-ui/core";
 import { red } from "@material-ui/core/colors";
+import { useMediaQuery } from "react-responsive";
 import { withRouter } from "react-router-dom";
 // import GradientBtn from "../../quotes/GradientBtn";
 
@@ -29,11 +30,28 @@ const CarMediaCardLong = (props) => {
   });
 
   const classes = useStyles();
+  const isDesktopOrLaptop = useMediaQuery({
+    query: "(min-width: 1000px)",
+  });
+  const isBigScreen = useMediaQuery({ query: "(min-device-width: 1824px)" });
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 700px)" });
+  const isTabletOrMobileDevice = useMediaQuery({
+    query: "(max-device-width: 700px)",
+  });
+  const isPortrait = useMediaQuery({ query: "(orientation: portrait)" });
+  const isRetina = useMediaQuery({ query: "(min-resolution: 2dppx)" });
 
   return (
     <div>
       <Card className={classes.root}>
         <CardActionArea>
+          {isTabletOrMobile ? (
+            <>
+              {" "}
+              <br></br>
+              <br></br>{" "}
+            </>
+          ) : null}
           <Grid
             container
             // direction="column"
@@ -41,12 +59,18 @@ const CarMediaCardLong = (props) => {
             justify="center"
             // style={{ minHeight: "100vh" }}
           >
-            {props.picLocation == "right" ? (
+            {isTabletOrMobile ? (
+              <Grid item lg={5} md={12} xs={12}>
+                <Box display="flex" justifyContent="center" alignItems="center">
+                  <img src={props.image} alt="" height="250px" />
+                </Box>
+              </Grid>
+            ) : props.picLocation == "right" ? (
               <Grid item lg={1} md={12}></Grid>
             ) : (
               <Grid item lg={5} md={12} xs={12}>
                 <Box display="flex" justifyContent="center" alignItems="center">
-                  <img src={props.image} alt="" height="250px" />
+                  <img src={props.image} alt="" height="300px" />
                 </Box>
               </Grid>
             )}
@@ -112,7 +136,9 @@ const CarMediaCardLong = (props) => {
                 </div>
               </CardContent>
             </Grid>
-            {props.picLocation == "right" ? (
+            {isTabletOrMobile ? (
+              <Grid item lg={1} md={12}></Grid>
+            ) : props.picLocation == "right" ? (
               <Grid item lg={5} md={12} xs={12}>
                 <Box display="flex" justifyContent="center" alignItems="center">
                   <img src={props.image} alt="" height="300px" />

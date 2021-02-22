@@ -228,6 +228,8 @@ const ToLandlords = () => {
         buttonTextColor={"#186eb8"}
         buttonText={"Subscribe now!"}
         borderRadius={true}
+        marginPic={"50px"}
+        picHeight={"300px"}
       />
       <ThreeGrid
         image1={"./wp-content/uploads/2020/11/output-onlinepngtoolscheck2.png"}

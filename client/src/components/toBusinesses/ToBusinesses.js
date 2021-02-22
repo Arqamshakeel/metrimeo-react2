@@ -83,6 +83,18 @@ const ToBusinesses = () => {
         "By determining the creditworthiness and credit limit of your customers, a high ROI can be measured by targeting the right prospects who are more likely to become fast-paying customers and therefore bring more reliable cash flows to your business.",
     },
   ];
+  const data5 = [
+    {
+      heading: "Financial Institutions",
+      desc:
+        "Financial Institutions have also the choice to subscribe to our Scoreo PremiumTM product which gives them a full access to our consumers data analytics where they will be able to generate customers full and comprehensive credit reports (credit history, credit inquiries, credit score, and additional relevant details)",
+    },
+    {
+      heading: "Service Companies",
+      desc:
+        "Full Credit Reports provide information that helps companies to make sure consumers will pay their bill on a regular basis. The score only can be misleading but a full credit report displays consumers payment habits.",
+    },
+  ];
 
   const heading1 = (
     <div>
@@ -121,7 +133,7 @@ const ToBusinesses = () => {
                 fontSize: "16px",
                 // fontWeight: "700",
                 lineHeight: "1.85714285714286",
-                textAlign: "justify",
+                // textAlign: "justify",
               }}
             >
               {item.desc}
@@ -168,7 +180,7 @@ const ToBusinesses = () => {
                 fontSize: "16px",
                 // fontWeight: "700",
                 lineHeight: "1.85714285714286",
-                textAlign: "justify",
+                // textAlign: "justify",
               }}
             >
               {item.desc}
@@ -223,7 +235,7 @@ const ToBusinesses = () => {
                 fontSize: "16px",
                 // fontWeight: "700",
                 lineHeight: "1.85714285714286",
-                textAlign: "justify",
+                // textAlign: "justify",
               }}
             >
               {item.desc}
@@ -270,7 +282,54 @@ const ToBusinesses = () => {
                 fontSize: "16px",
                 // fontWeight: "700",
                 lineHeight: "1.85714285714286",
-                textAlign: "justify",
+                // textAlign: "justify",
+              }}
+            >
+              {item.desc}
+            </div>
+          </>
+        );
+      })}
+    </div>
+  );
+  const heading5 = (
+    <div>
+      {data5.map((item, index) => {
+        return (
+          <>
+            {" "}
+            <br />
+            <div
+              style={{
+                fontFamily: "'Open Sans',sans-serif",
+                fontSize: "18px",
+                fontWeight: "700",
+              }}
+            >
+              <span
+                style={{
+                  fontStyle: "normal",
+                  fontWeight: "bold",
+                  color: "#e45454",
+                  fontFamily:
+                    '"Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif',
+                  textAlign: "start",
+                  letterSpacing: "normal",
+                  fontSize: "30px",
+                }}
+              >
+                ✓&nbsp;
+              </span>
+              {item.heading}
+            </div>
+            <br />
+            <div
+              style={{
+                fontFamily: "'Open Sans',sans-serif",
+                fontSize: "16px",
+                // fontWeight: "700",
+                lineHeight: "1.85714285714286",
+                // textAlign: "justify",
               }}
             >
               {item.desc}
@@ -397,9 +456,7 @@ const ToBusinesses = () => {
       </div>
 
       <CarMediaCardLong
-        image={
-          "./wp-content/uploads/2020/12/2924_copy-removebg-Great-300x246.png"
-        }
+        image={"./wp-content/uploads/2020/12/2924_copy-removebg-Great.png"}
         heading={"Corporate Credit Rating"}
         superLative={""}
         // desc={`The core information that individuals willing to enter into credit agreement must have is a credit report from borrowers. Metrimeo calculates a consumer credit score through its product Scoreo  for individuals through a complex algorithm developed by the company. These credit reports are generated and accessed via our systems using unique keys assigned to each potential borrower. They will provide and excellent overview to lenders and help them decide whether to extend a credit line or not.`}
@@ -407,7 +464,7 @@ const ToBusinesses = () => {
         subHeading={"BusiMeo Rating"}
         superLativeSubHeading={"TM"}
         data1={heading1}
-        backgroundColor={"#ffff"}
+        backgroundColor={"#e5f3ff"}
         buttonColor={"#186eb8"}
         buttonTextColor={"white"}
         buttonText={"Subscribe now!"}
@@ -415,9 +472,7 @@ const ToBusinesses = () => {
       />
 
       <CarMediaCardLong
-        image={
-          "./wp-content/uploads/2020/12/1070_copy-removebg-preview-300x229.png"
-        }
+        image={"./wp-content/uploads/2020/12/1070_copy-removebg-preview.png"}
         heading={"Corporate Screening"}
         superLative={""}
         // desc={`The core information that individuals willing to enter into credit agreement must have is a credit report from borrowers. Metrimeo calculates a consumer credit score through its product Scoreo  for individuals through a complex algorithm developed by the company. These credit reports are generated and accessed via our systems using unique keys assigned to each potential borrower. They will provide and excellent overview to lenders and help them decide whether to extend a credit line or not.`}
@@ -425,7 +480,7 @@ const ToBusinesses = () => {
         subHeading={"BusiMeo Screening"}
         superLativeSubHeading={"TM"}
         data1={heading2}
-        backgroundColor={"#ffff"}
+        backgroundColor={"#e5f3ff"}
         buttonColor={"#186eb8"}
         buttonTextColor={"white"}
         buttonText={"Subscribe now!"}
@@ -442,7 +497,7 @@ const ToBusinesses = () => {
         subHeading={"VeriMeo Screening"}
         superLativeSubHeading={"TM"}
         data1={heading3}
-        backgroundColor={"#ffff"}
+        backgroundColor={"#e5f3ff"}
         buttonColor={"#186eb8"}
         buttonTextColor={"white"}
         buttonText={"Subscribe now!"}
@@ -459,12 +514,27 @@ const ToBusinesses = () => {
         subHeading={"Scoreo Basic"}
         superLativeSubHeading={"TM"}
         data1={heading4}
-        backgroundColor={"#ffff"}
+        backgroundColor={"#e5f3ff"}
         buttonColor={"#186eb8"}
         buttonTextColor={"white"}
         buttonText={"Subscribe now!"}
         // elementSepColor={"#186eb8"}
         picLocation={"right"}
+      />
+      <CarMediaCardLong
+        image={"./wp-content/uploads/2020/12/2107_copy-removebg-preview.png"}
+        heading={"Credit Report"}
+        superLative={""}
+        // desc={`The core information that individuals willing to enter into credit agreement must have is a credit report from borrowers. Metrimeo calculates a consumer credit score through its product Scoreo  for individuals through a complex algorithm developed by the company. These credit reports are generated and accessed via our systems using unique keys assigned to each potential borrower. They will provide and excellent overview to lenders and help them decide whether to extend a credit line or not.`}
+
+        subHeading={"Scoreo Premium"}
+        superLativeSubHeading={"TM"}
+        data1={heading5}
+        backgroundColor={"#e5f3ff"}
+        buttonColor={"#186eb8"}
+        buttonTextColor={"white"}
+        buttonText={"Subscribe now!"}
+        // elementSepColor={"#186eb8"}
       />
 
       <ContactUsCard

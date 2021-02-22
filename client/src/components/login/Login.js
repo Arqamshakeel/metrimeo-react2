@@ -7,6 +7,7 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import Link from "@material-ui/core/Link";
 import Paper from "@material-ui/core/Paper";
+import CloseIcon from "@material-ui/icons/Close";
 import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
@@ -25,7 +26,7 @@ import { useMediaQuery } from "react-responsive";
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
-      By continuing you accept our Terms & Conditions and Privacy Policy.
+      By continuing you accept our Terms & Conditions and Privacy Policy{" "}
       {/* <Link color="inherit" href="https://www.instagram.com/arqamshakeel/">
         Family Mart made by Arqam Shakeel.
       </Link>{" "} */}
@@ -51,14 +52,15 @@ const Login = (props) => {
       minHeight: "100vh",
     },
     image: {
-      backgroundImage: "url(./wp-content/uploads/2020/11/4258063-scaled-1.jpg)",
-      backgroundRepeat: "no-repeat",
-      backgroundColor:
-        theme.palette.type === "light"
-          ? theme.palette.grey[50]
-          : theme.palette.grey[900],
-      // backgroundSize: "cover",
-      backgroundPosition: "left",
+      backgroundImage: "url(./wp-content/uploads/2020/12/newlogin.jpeg)",
+      backgroundSize: "cover",
+      // backgkcroundRepeat: "cover",
+      // backgroundColor:
+      //   theme.palette.type === "light"
+      //     ? theme.palette.grey[50]
+      //     : theme.palette.grey[900],
+      // // backgroundSize: "cover",
+      // backgroundPosition: "center",
     },
     paper: {
       margin: theme.spacing(8, 4),
@@ -128,7 +130,9 @@ const Login = (props) => {
         setmsg(error);
       });
   };
-
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <CheckLogIn>
       <Grid container component="main" className={classes.root}>
@@ -138,11 +142,16 @@ const Login = (props) => {
 
         <Grid item xs={12} sm={8} md={7} square component={Paper}>
           <div className={classes.icon}>
-            <CancelOutlinedIcon
+            <CloseIcon
               onClick={() => {
                 props.history.push("/");
               }}
-              style={{ float: "right", fontSize: "40px", margin: "0px" }}
+              style={{
+                float: "right",
+                fontSize: "40px",
+                margin: "0px",
+                color: "rgba(24, 110, 184, 0.5)",
+              }}
             />
           </div>
           <div className={classes.paper}>
@@ -159,10 +168,13 @@ const Login = (props) => {
               />
             </a>
             <br />
+            <div style={{ width: "100%" }}>
+              <hr />
+            </div>
             <div
               style={{
                 fontFamily: "'Montserrat',sans-serif",
-                fontSize: "19px",
+                fontSize: "28px",
                 textAlign: "center",
                 fontWeight: "800",
               }}
@@ -171,7 +183,7 @@ const Login = (props) => {
             </div>
             <br />
             <p style={{ color: "#5D7280", fontSize: "15px" }}>
-              New to MeriMeo?{" "}
+              New to MetriMeo?{" "}
               <a
                 style={{ cursor: "pointer", color: "#E05414" }}
                 onClick={() => {
@@ -194,7 +206,6 @@ const Login = (props) => {
                 label="Email Address"
                 name="email"
                 autoComplete="email"
-                autoFocus
               />
               <SnackBar open={open} setOpen={setOpen} msg={msg} />
               <TextField
@@ -232,7 +243,7 @@ const Login = (props) => {
                   Forgot password?
                 </Link> */}
                 </Grid>
-                <Grid item>
+                <Grid item xs={12}>
                   <Link
                     variant="body2"
                     onClick={() => {

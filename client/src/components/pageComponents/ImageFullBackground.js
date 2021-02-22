@@ -10,6 +10,7 @@ import Typography from "@material-ui/core/Typography";
 import ContactSupportIcon from "@material-ui/icons/ContactSupport";
 import { Box, Grid } from "@material-ui/core";
 import { red } from "@material-ui/core/colors";
+import { useMediaQuery } from "react-responsive";
 import { withRouter } from "react-router-dom";
 // import GradientBtn from "../../quotes/GradientBtn";
 
@@ -29,6 +30,16 @@ const ImageFullBackground = (props) => {
   });
 
   const classes = useStyles();
+  const isDesktopOrLaptop = useMediaQuery({
+    query: "(min-width: 1224px)",
+  });
+  const isBigScreen = useMediaQuery({ query: "(min-device-width: 1824px)" });
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 700px)" });
+  const isTabletOrMobileDevice = useMediaQuery({
+    query: "(max-device-width: 700px)",
+  });
+  const isPortrait = useMediaQuery({ query: "(orientation: portrait)" });
+  const isRetina = useMediaQuery({ query: "(min-resolution: 2dppx)" });
 
   return (
     <div>
@@ -57,6 +68,7 @@ const ImageFullBackground = (props) => {
                         position: "absolute",
                         margin: "0px",
                         top: "40%",
+                        left: isTabletOrMobile && !isPortrait ? "50%" : null,
                         fontFamily: "'Montserrat',sans-serif",
                         fontSize: "40px",
                         // fontSize:"2.3333333333333rem"
@@ -66,7 +78,8 @@ const ImageFullBackground = (props) => {
                         align="center"
                         style={{
                           fontFamily: "'Montserrat',sans-serif",
-                          fontSize: "35px",
+                          fontSize:
+                            isTabletOrMobile && !isPortrait ? "25px" : "35px",
                           // fontSize:"2.3333333333333rem"
                           fontWeight: "800",
                         }}

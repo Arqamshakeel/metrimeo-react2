@@ -11,6 +11,7 @@ import ContactSupportIcon from "@material-ui/icons/ContactSupport";
 import { Box, Grid } from "@material-ui/core";
 import { red } from "@material-ui/core/colors";
 import { withRouter } from "react-router-dom";
+import { useMediaQuery } from "react-responsive";
 // import GradientBtn from "../../quotes/GradientBtn";
 
 const ThreeGrid = (props) => {
@@ -29,6 +30,16 @@ const ThreeGrid = (props) => {
   });
 
   const classes = useStyles();
+  const isDesktopOrLaptop = useMediaQuery({
+    query: "(min-width: 1224px)",
+  });
+  const isBigScreen = useMediaQuery({ query: "(min-device-width: 1824px)" });
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 700px)" });
+  const isTabletOrMobileDevice = useMediaQuery({
+    query: "(max-device-width: 700px)",
+  });
+  const isPortrait = useMediaQuery({ query: "(orientation: portrait)" });
+  const isRetina = useMediaQuery({ query: "(min-resolution: 2dppx)" });
 
   return (
     <div>
@@ -47,6 +58,12 @@ const ThreeGrid = (props) => {
               >
                 Our Tenant Credit Report Includes:
               </div>
+              {isTabletOrMobile && !isPortrait ? (
+                <>
+                  <br></br>
+                  <br></br>
+                </>
+              ) : null}
             </Grid>
 
             <Grid item lg={4} md={4} xs={12}>
@@ -91,6 +108,12 @@ const ThreeGrid = (props) => {
                 }}
               >
                 {props.data1sub}
+                {isTabletOrMobile && !isPortrait ? (
+                  <>
+                    <br></br>
+                    <br></br>
+                  </>
+                ) : null}
               </div>
             </Grid>
             <Grid item lg={4} md={4} xs={12}>
@@ -125,6 +148,7 @@ const ThreeGrid = (props) => {
               >
                 {props.data2Heading}
               </div>
+
               <div
                 style={{
                   textAlign: "center",
@@ -135,6 +159,12 @@ const ThreeGrid = (props) => {
                 }}
               >
                 {props.data2sub}
+                {isTabletOrMobile && !isPortrait ? (
+                  <>
+                    <br></br>
+                    <br></br>
+                  </>
+                ) : null}
               </div>
             </Grid>
             <Grid item lg={4} md={4} xs={12}>
@@ -181,6 +211,12 @@ const ThreeGrid = (props) => {
                 }}
               >
                 {props.data3sub}
+                {isTabletOrMobile && !isPortrait ? (
+                  <>
+                    <br></br>
+                    <br></br>
+                  </>
+                ) : null}
               </div>
             </Grid>
           </Grid>

@@ -58,10 +58,17 @@ const CarMediaCardRightPic = (props) => {
                   <img
                     src={props.image}
                     alt=""
-                    height="300px"
+                    height={
+                      !isPortrait
+                        ? props.picHeight
+                          ? props.picHeight
+                          : "500px"
+                        : "300px"
+                    }
                     style={{
                       borderRadius: props.borderRadius ? "70px" : "0px",
-                      margin: "50px",
+                      marginBottom: !isPortrait ? "-25px" : "0px",
+                      margin: props.marginPic ? props.marginPic : null,
                     }}
                   />
                 </Box>

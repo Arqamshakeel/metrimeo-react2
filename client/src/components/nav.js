@@ -104,10 +104,26 @@ class MobileMenu extends Component {
             <NavLink>contact</NavLink>
           </NavItem>
           <NavItem className="nav-item-m">
-            <NavLink>Login</NavLink>
+            <NavLink
+              style={{ cursor: "pointer" }}
+              onClick={() => {
+                this.props.props.history.push("login");
+                this.props.hideNav();
+              }}
+            >
+              Login
+            </NavLink>
           </NavItem>
           <NavItem className="nav-item-m">
-            <NavLink>Sign up</NavLink>
+            <NavLink
+              style={{ cursor: "pointer" }}
+              onClick={() => {
+                this.props.props.history.push("register");
+                this.props.hideNav();
+              }}
+            >
+              Sign up
+            </NavLink>
           </NavItem>
           {/* <NavItem className="nav-item-n-white intro-button2">
             <NavLink href="#">Login</NavLink>

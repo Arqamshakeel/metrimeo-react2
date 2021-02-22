@@ -12,14 +12,13 @@ import Grid from "@material-ui/core/Grid";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
-
+import CloseIcon from "@material-ui/icons/Close";
 import userService from "../../services/UserService";
 import CustomBackdrop from "../backdrop/CustomBackdrop";
 import { useSelector, useDispatch } from "react-redux";
 import CheckLogIn from "../../auth/CheckLogIn";
 import { trueLogin } from "../../Redux/actions/LoginAction";
 import SnackBar from "../snackBar/SnackBar";
-
 import { useMediaQuery } from "react-responsive";
 import RadioButton from "./RadioButton";
 import CountryNames from "./CountryNames";
@@ -27,7 +26,7 @@ import CancelOutlinedIcon from "@material-ui/icons/CancelOutlined";
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
-      By continuing you accept our Terms & Conditions and Privacy Policy.
+      By continuing you accept our Terms & Conditions and Privacy Policy{" "}
       {/* <Link color="inherit" href="https://www.instagram.com/arqamshakeel/">
         Family Mart made by Arqam Shakeel.
       </Link>{" "} */}
@@ -53,14 +52,8 @@ const Register = (props) => {
       minHeight: "100vh",
     },
     image: {
-      backgroundImage: "url(./wp-content/uploads/2020/11/4258063-scaled-1.jpg)",
-      backgroundRepeat: "no-repeat",
-      backgroundColor:
-        theme.palette.type === "light"
-          ? theme.palette.grey[50]
-          : theme.palette.grey[900],
-      // backgroundSize: "cover",
-      backgroundPosition: "left",
+      backgroundImage: "url(./wp-content/uploads/2020/12/newlogin.jpeg)",
+      backgroundSize: "cover",
     },
     paper: {
       margin: theme.spacing(8, 4),
@@ -131,6 +124,9 @@ const Register = (props) => {
       });
   };
 
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <CheckLogIn>
       <Grid container component="main" className={classes.root}>
@@ -139,11 +135,16 @@ const Register = (props) => {
         <Grid item xs={false} sm={4} md={5} className={classes.image} />
         <Grid item xs={12} sm={8} md={7} component={Paper} square>
           <div className={classes.icon}>
-            <CancelOutlinedIcon
+            <CloseIcon
               onClick={() => {
                 props.history.push("/");
               }}
-              style={{ float: "right", fontSize: "40px", margin: "0px" }}
+              style={{
+                float: "right",
+                fontSize: "40px",
+                margin: "0px",
+                color: "rgba(24, 110, 184, 0.5)",
+              }}
             />
           </div>
           <div className={classes.paper}>
@@ -167,15 +168,18 @@ const Register = (props) => {
               />
             </a>
             <br />
+            <div style={{ width: "100%" }}>
+              <hr />
+            </div>
             <div
               style={{
                 fontFamily: "'Montserrat',sans-serif",
-                fontSize: "19px",
+                fontSize: "28px",
                 textAlign: "center",
                 fontWeight: "800",
               }}
             >
-              Welcome To Building Trust And Financial Freedom
+              Welcome to a world of Trust and Financial progress
             </div>
             <br />
             <p style={{ color: "#5D7280", fontSize: "15px" }}>
@@ -186,6 +190,7 @@ const Register = (props) => {
                   props.history.push("login");
                 }}
               >
+                {" "}
                 Log In
               </a>
             </p>
@@ -214,7 +219,6 @@ const Register = (props) => {
                 label="Username"
                 name="Username"
                 autoComplete="name"
-                autoFocus
               />
               <TextField
                 value={email}
