@@ -1,5 +1,7 @@
+import userService from "../../services/UserService";
+
 const initialState = {
-  isloggedin: false,
+  isloggedin: userService.isLoggedin(),
 };
 
 const LoginReducer = (state = initialState, action) => {

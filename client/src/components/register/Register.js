@@ -23,6 +23,7 @@ import { useMediaQuery } from "react-responsive";
 import RadioButton from "./RadioButton";
 import CountryNames from "./CountryNames";
 import CancelOutlinedIcon from "@material-ui/icons/CancelOutlined";
+import CheckLoginForRegister from "../../auth/CheckLoginForRegister";
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -54,6 +55,13 @@ const Register = (props) => {
     image: {
       backgroundImage: "url(./wp-content/uploads/2020/12/newlogin.jpeg)",
       backgroundSize: "cover",
+      // backgkcroundRepeat: "cover",
+      // backgroundColor:
+      //   theme.palette.type === "light"
+      //     ? theme.palette.grey[50]
+      //     : theme.palette.grey[900],
+      // // backgroundSize: "cover",
+      backgroundPosition: "center",
     },
     paper: {
       margin: theme.spacing(8, 4),
@@ -128,7 +136,7 @@ const Register = (props) => {
     window.scrollTo(0, 0);
   }, []);
   return (
-    <CheckLogIn>
+    <CheckLoginForRegister>
       <Grid container component="main" className={classes.root}>
         <CssBaseline />
 
@@ -346,7 +354,7 @@ const Register = (props) => {
           </div>
         </Grid>
       </Grid>
-    </CheckLogIn>
+    </CheckLoginForRegister>
   );
 };
 export default Register;

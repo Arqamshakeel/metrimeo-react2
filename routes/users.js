@@ -42,7 +42,12 @@ router.post("/login", validateUserLoginMW, async (req, res) => {
   console.log(userData.fname);
 
   let token = jwt.sign(
-    { _id: userData._id, name: userData.fname, role: userData.role },
+    {
+      _id: userData._id,
+      name: userData.fname,
+      role: userData.role,
+      email: userData.email,
+    },
     config.get("jwt")
   );
 

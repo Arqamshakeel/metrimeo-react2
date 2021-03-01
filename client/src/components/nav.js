@@ -405,7 +405,7 @@ class NavBar extends Component {
             </NavItem>
             {this.state.width > 490 ? (
               <>
-                <NavItem className="nav-item-n-white intro-button2">
+                {/* <NavItem className="nav-item-n-white intro-button2">
                   <NavLink
                     style={{ cursor: "pointer" }}
                     onClick={() => {
@@ -424,7 +424,8 @@ class NavBar extends Component {
                   >
                     Sign up
                   </NavLink>
-                </NavItem>
+                </NavItem> */}
+                <NavLoginSignUpButtons />
               </>
             ) : (
               <></>

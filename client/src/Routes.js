@@ -16,6 +16,8 @@ import ToCooperatives from "./components/toCooperatives/ToCooperatives";
 import ToBusinesses from "./components/toBusinesses/ToBusinesses";
 import Login from "./components/login/Login";
 import Register from "./components/register/Register";
+import Profile from "./components/account/Account";
+import Account from "./components/account/Account";
 
 function Routes(props) {
   const isDesktopOrLaptop = useMediaQuery({
@@ -54,6 +56,7 @@ function Routes(props) {
         <Route path="/for-businesses" exact component={ToBusinesses} />
         <Route path="/login" exact component={Login} />
         <Route path="/register" exact component={Register} />
+        <Route path="/account" exact component={Account} />
       </Switch>
       <Grid container>
         <Grid item xs={12} lg={9}>

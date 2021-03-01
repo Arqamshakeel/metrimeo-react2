@@ -15,10 +15,12 @@ const HrOrangeLine = () => {
     <>
       <hr
         style={{
-          border: "1px solid #e05414",
+          // border: "solid #e05414",
+          borderColor: "#e05414",
           margin: isDesktopOrLaptop
             ? "20px 185px 0px 185px"
             : "20px 20px 0px 20px",
+          // height: "1px",
         }}
       />
     </>

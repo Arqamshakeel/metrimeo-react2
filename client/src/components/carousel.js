@@ -41,7 +41,8 @@ export default class extends Component {
           <div className="s4__titles">
             <hr
               style={{
-                border: "1px solid #e05414",
+                // border: "1px solid #e05414",
+                borderColor: "#e05414",
                 margin:
                   this.state.width > 1220
                     ? "20px 80px 0px 80px"
@@ -73,7 +74,8 @@ export default class extends Component {
             </div>
             <hr
               style={{
-                border: "1px solid #e05414",
+                // border: "1px solid #e05414",
+                borderColor: "#e05414",
                 margin:
                   this.state.width > 1220
                     ? "20px 80px 0px 80px"

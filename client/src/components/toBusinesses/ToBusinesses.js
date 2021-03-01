@@ -464,7 +464,7 @@ const ToBusinesses = () => {
         subHeading={"BusiMeo Rating"}
         superLativeSubHeading={"TM"}
         data1={heading1}
-        backgroundColor={"#e5f3ff"}
+        backgroundColor={"#ffff"}
         buttonColor={"#186eb8"}
         buttonTextColor={"white"}
         buttonText={"Subscribe now!"}
@@ -480,7 +480,7 @@ const ToBusinesses = () => {
         subHeading={"BusiMeo Screening"}
         superLativeSubHeading={"TM"}
         data1={heading2}
-        backgroundColor={"#e5f3ff"}
+        backgroundColor={"#ddeaf6"}
         buttonColor={"#186eb8"}
         buttonTextColor={"white"}
         buttonText={"Subscribe now!"}
@@ -497,7 +497,7 @@ const ToBusinesses = () => {
         subHeading={"VeriMeo Screening"}
         superLativeSubHeading={"TM"}
         data1={heading3}
-        backgroundColor={"#e5f3ff"}
+        backgroundColor={"#ffff"}
         buttonColor={"#186eb8"}
         buttonTextColor={"white"}
         buttonText={"Subscribe now!"}
@@ -514,7 +514,7 @@ const ToBusinesses = () => {
         subHeading={"Scoreo Basic"}
         superLativeSubHeading={"TM"}
         data1={heading4}
-        backgroundColor={"#e5f3ff"}
+        backgroundColor={"#ddeaf6"}
         buttonColor={"#186eb8"}
         buttonTextColor={"white"}
         buttonText={"Subscribe now!"}
@@ -530,7 +530,7 @@ const ToBusinesses = () => {
         subHeading={"Scoreo Premium"}
         superLativeSubHeading={"TM"}
         data1={heading5}
-        backgroundColor={"#e5f3ff"}
+        backgroundColor={"#ffff"}
         buttonColor={"#186eb8"}
         buttonTextColor={"white"}
         buttonText={"Subscribe now!"}

@@ -23,6 +23,7 @@ import SnackBar from "../snackBar/SnackBar";
 import CancelOutlinedIcon from "@material-ui/icons/CancelOutlined";
 
 import { useMediaQuery } from "react-responsive";
+import CheckLoginForRegister from "../../auth/CheckLoginForRegister";
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -60,7 +61,7 @@ const Login = (props) => {
       //     ? theme.palette.grey[50]
       //     : theme.palette.grey[900],
       // // backgroundSize: "cover",
-      // backgroundPosition: "center",
+      backgroundPosition: "center",
     },
     paper: {
       margin: theme.spacing(8, 4),
@@ -134,7 +135,7 @@ const Login = (props) => {
     window.scrollTo(0, 0);
   }, []);
   return (
-    <CheckLogIn>
+    <CheckLoginForRegister>
       <Grid container component="main" className={classes.root}>
         <CssBaseline />
 
@@ -263,7 +264,7 @@ const Login = (props) => {
           </div>
         </Grid>
       </Grid>
-    </CheckLogIn>
+    </CheckLoginForRegister>
   );
 };
 export default Login;
