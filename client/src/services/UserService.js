@@ -66,6 +66,11 @@ class UserService extends GenericService {
   //         reject(err);
   //       });
   //   });
+  forgetPassword = (emaill) => this.post("users/forgetPassword/" + emaill);
+  getNewPassword = (id, key) =>
+    this.get("users/getNewPassword/" + id + "/" + key);
+  updatePassword = (id, key, data) =>
+    this.post("users/updatepassword/" + id + "/" + key, data);
 }
 
 let userService = new UserService();

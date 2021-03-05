@@ -5,6 +5,7 @@ var userSchema = mongoose.Schema({
   fname: String,
   lname: String,
   email: String,
+  password_reset_code: String,
   password: String,
   role: { type: String, default: "common" },
 });
@@ -15,7 +16,7 @@ function validateUser(data) {
     fname: Joi.string().min(3).required(),
     lname: Joi.string().min(3).required(),
     email: Joi.string().email().min(3).required(),
-    password: Joi.string().min(5).required(),
+    password: Joi.string().min(4).required(),
   });
   return schema.validate(data, { abortEarly: false });
 }

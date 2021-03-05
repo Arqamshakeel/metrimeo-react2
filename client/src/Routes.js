@@ -18,6 +18,9 @@ import Login from "./components/login/Login";
 import Register from "./components/register/Register";
 import Profile from "./components/account/Account";
 import Account from "./components/account/Account";
+import ForgetPassword from "./components/forgetPassword/ForgetPassword";
+import NewPasswordForm from "./components/forgetPassword/NewPasswordForm";
+import About from "./components/about/About";
 
 function Routes(props) {
   const isDesktopOrLaptop = useMediaQuery({
@@ -41,7 +44,8 @@ function Routes(props) {
   return (
     <>
       {props.history.location.pathname === "/login" ||
-      props.history.location.pathname === "/register" ? (
+      props.history.location.pathname === "/register" ||
+      props.history.location.pathname === "/forgetpassword" ? (
         <></>
       ) : (
         <NavBar />
@@ -57,6 +61,9 @@ function Routes(props) {
         <Route path="/login" exact component={Login} />
         <Route path="/register" exact component={Register} />
         <Route path="/account" exact component={Account} />
+        <Route path="/forgetpassword" exact component={ForgetPassword} />
+        <Route path="/newpassword/:id/:key" exact component={NewPasswordForm} />
+        <Route path="/about" exact component={About} />
       </Switch>
       <Grid container>
         <Grid item xs={12} lg={9}>

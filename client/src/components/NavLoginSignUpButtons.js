@@ -176,7 +176,7 @@ const NavLoginSignUpButtons = (props) => {
               href="#"
               style={{ cursor: "pointer" }}
               onClick={() => {
-                props.history.push("login");
+                props.history.push("/login");
               }}
             >
               Login
@@ -187,7 +187,7 @@ const NavLoginSignUpButtons = (props) => {
               href="#"
               style={{ cursor: "pointer" }}
               onClick={() => {
-                props.history.push("register");
+                props.history.push("/register");
               }}
             >
               Sign up

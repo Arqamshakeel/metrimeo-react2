@@ -248,7 +248,7 @@ const Login = (props) => {
                   <Link
                     variant="body2"
                     onClick={() => {
-                      props.history.push("/signup");
+                      props.history.push("/forgetpassword");
                     }}
                   >
                     <a style={{ cursor: "pointer" }}>
