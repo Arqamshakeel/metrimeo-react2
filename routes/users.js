@@ -10,6 +10,7 @@ const nodemailer = require("nodemailer");
 var jwt = require("jsonwebtoken");
 var validateUserRegMW = require("../middlewares/authUserReg");
 var validateUserLoginMW = require("../middlewares/authUserLog");
+var validateUserUpdateMW = require("../middlewares/authUserUpdate");
 router.get("/", async (req, res, next) => {
   let user = await User.find();
 
@@ -19,15 +20,76 @@ router.get("/", async (req, res, next) => {
 router.post("/register", validateUserRegMW, async (req, res) => {
   let newuser = await User.findOne({ email: req.body.email });
   if (newuser != null)
-    return res.status(400).send("Sorry, user already exists.");
+    return res.status(400).send("Sorry, user with this email already exists.");
+
+  newuser = await User.findOne({ username: req.body.username });
+  if (newuser != null)
+    return res.status(400).send("Sorry, username already exists.");
   newuser = new User();
+  console.log(req.body.type2);
   newuser.fname = req.body.fname;
-  newuser.lname = req.body.lname;
+
   newuser.email = req.body.email;
+  newuser.username = req.body.username;
+
   newuser.password = req.body.password;
+  newuser.type = req.body.type;
+  newuser.phone = req.body.phone;
+  newuser.country = req.body.country;
+
   let salt = await bcrypt.genSalt(10);
   newuser.password = await bcrypt.hash(newuser.password, salt);
   await newuser.save();
+  return res.send();
+  // return res.send(_.pick(user, ["email", "name"]));
+});
+router.post("/update/:id", validateUserUpdateMW, async (req, res) => {
+  let newuser = await User.findById(req.params.id);
+  if (!newuser) return res.status(400).send("Sorry, user not found.");
+  let tempusername = newuser.username;
+  newuser = await User.findOne({ username: req.body.username });
+  if (req.body.username == tempusername) {
+  } else {
+    if (newuser != null)
+      return res.status(400).send("Sorry, username already exists.");
+  }
+
+  newuser = await User.findById(req.params.id);
+  if (!newuser) return res.status(400).send("Sorry, user not found.");
+
+  newuser.fname = req.body.fname;
+
+  newuser.email = req.body.email;
+  newuser.username = req.body.username;
+
+  newuser.phone = req.body.phone;
+  newuser.img = req.body.img;
+
+  await newuser.save();
+  return res.send();
+  // return res.send(_.pick(user, ["email", "name"]));
+});
+router.get("/getimage/:id", async (req, res) => {
+  let newuser = await User.findById(req.params.id);
+  if (!newuser) return res.status(400).send("Sorry, user not found.");
+
+  return res.send(newuser.img);
+  // return res.send(_.pick(user, ["email", "name"]));
+});
+router.post("/updatepassword/:id", async (req, res) => {
+  let newuser = await User.findById(req.params.id);
+  if (!newuser) return res.status(400).send("Sorry, user not found.");
+
+  let password = await bcrypt.compare(
+    req.body.currentPassword,
+    newuser.password
+  );
+  if (!password) return res.status(400).send("Wrong current password.");
+
+  let salt = await bcrypt.genSalt(10);
+  newuser.password = await bcrypt.hash(req.body.password, salt);
+  await newuser.save();
+
   return res.send();
   // return res.send(_.pick(user, ["email", "name"]));
 });
@@ -49,6 +111,8 @@ router.post("/login", validateUserLoginMW, async (req, res) => {
       name: userData.fname,
       role: userData.role,
       email: userData.email,
+      phone: userData.phone,
+      username: userData.username,
     },
     config.get("jwt")
   );

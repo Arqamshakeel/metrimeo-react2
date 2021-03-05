@@ -113,7 +113,7 @@ app.use(function (err, req, res, next) {
 //mongodb://<dbuser>:<dbpassword>@ds127260.mlab.com:27260/heroku_xtg78bjw
 //mongodb+srv://arqam:arqam@mern1-siiuo.mongodb.net/FamilyMart?retryWrites=true&w=majority
 mongoose
-  .connect("mongodb://localhost:27017/FamilyMart", {
+  .connect("mongodb://localhost:27017/metrimeo", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })

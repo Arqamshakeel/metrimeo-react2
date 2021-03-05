@@ -14,9 +14,8 @@ const useStyles = makeStyles((theme) => ({
   checked: {},
 }));
 
-export default function RadioButton() {
+export default function RadioButton({ value, setValue }) {
   const classes = useStyles();
-  const [value, setValue] = React.useState("business");
 
   const handleChange = (event) => {
     setValue(event.target.value);

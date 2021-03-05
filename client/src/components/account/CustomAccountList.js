@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function CustomAccountList() {
+export default function CustomAccountList(props) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
 
@@ -48,13 +48,23 @@ export default function CustomAccountList() {
       }
       className={classes.root}
     >
-      <ListItem button>
+      <ListItem
+        button
+        onClick={() => {
+          props.setPageState(0);
+        }}
+      >
         <ListItemIcon>
           <AccountCircleIcon />
         </ListItemIcon>
         <ListItemText primary="Account" />
       </ListItem>
-      <ListItem button>
+      <ListItem
+        button
+        onClick={() => {
+          props.setPageState(1);
+        }}
+      >
         <ListItemIcon>
           <SettingsIcon />
         </ListItemIcon>

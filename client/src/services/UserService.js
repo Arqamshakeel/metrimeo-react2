@@ -55,6 +55,9 @@ class UserService extends GenericService {
   };
 
   UserReg = (data) => this.post("users/register", data);
+  UserUpdate = (id, data) => this.post("users//update/" + id, data);
+  getImg = (id) => this.get("users/getimage/" + id);
+  updatePassword2 = (id, data) => this.post("users/updatepassword/" + id, data);
   // UserReg = (data) =>
   //   new Promise((resolve, reject) => {
   //     this.postReg("users/register", data)

@@ -15,16 +15,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ProfileAvatar() {
+export default function ProfileAvatar(props) {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
-      <Avatar
-        alt="Remy Sharp"
-        src="https://www.metrimeo.com/wp-content/uploads/ultimatemember/15/profile_photo-190x190.jpg?1614258950"
-        className={classes.large}
-      />
+      <Avatar alt="Remy Sharp" src={props.img.file} className={classes.large} />
     </div>
   );
 }

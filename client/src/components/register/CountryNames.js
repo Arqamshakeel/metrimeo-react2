@@ -26,7 +26,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function CountryNames() {
+export default function CountryNames({ country, setCountry }) {
   const classes = useStyles();
 
   return (
@@ -39,6 +39,10 @@ export default function CountryNames() {
         option: classes.option,
       }}
       autoHighlight
+      // value={country}
+      onChange={(e, v) => {
+        setCountry(v.label);
+      }}
       getOptionLabel={(option) => option.label}
       renderOption={(option) => (
         <React.Fragment>
@@ -52,6 +56,13 @@ export default function CountryNames() {
           label="Choose a country"
           variant="outlined"
           margin="normal"
+          // value={country}
+          // onChange={(e) => {
+          //   setCountry(e.target.value);
+          //   console.log("====================================");
+          //   console.log(e);
+          //   console.log("====================================");
+          // }}
           inputProps={{
             ...params.inputProps,
             autoComplete: "new-password", // disable autocomplete and autofill

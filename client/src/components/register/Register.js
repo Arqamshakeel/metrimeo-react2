@@ -104,15 +104,40 @@ const Register = (props) => {
   const classes = useStyles();
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
-
+  const [confirmPassword, setConfirmPassword] = React.useState("");
+  const [type, setType] = React.useState("business");
+  const [userName, setUserName] = React.useState("");
+  const [phone, setPhone] = React.useState("");
+  const [fname, setFname] = React.useState("");
+  const [country, setCountry] = React.useState("");
   // userService.isLoggedin()
   //   ? console.log("Yes logged in")
   //   : console.log("Not logged in");
 
+  React.useEffect(() => {
+    console.log("====================================");
+    console.log(type.toString());
+    console.log("====================================");
+  }, [type]);
+
   const handleLogin = () => {
     setLoginProgress(true);
+    if (password != confirmPassword) {
+      setOpen(true);
+      setmsg("Passwords do not match.");
+      setLoginProgress(false);
+      return;
+    }
     userService
-      .UserLogin({ email: email.toLowerCase(), password: password })
+      .UserReg({
+        email: email.toLowerCase(),
+        password: password,
+        type: type.toString(),
+        phone: phone,
+        country: country,
+        username: userName,
+        fname: fname,
+      })
       .then(function (res) {
         // props.history.push("/");
         setLoginProgress(false);
@@ -120,15 +145,16 @@ const Register = (props) => {
         // console.log("hello");
       })
       .then(() => {
-        userService.isLoggedin()
-          ? dispatch(trueLogin())
-          : console.log("Not logged in");
+        // userService.isLoggedin()
+        //   ? dispatch(trueLogin())
+        //   : console.log("Not logged in");
+        props.history.push("/login");
       })
       .catch(function (error) {
         setLoginProgress(false);
         console.log(error);
         setOpen(true);
-        setmsg(error);
+        setmsg(error.response.data);
       });
   };
 
@@ -213,20 +239,19 @@ const Register = (props) => {
               >
                 Customer Type
               </div>
-              <RadioButton />
+              <RadioButton setValue={setType} value={type} />
 
               <TextField
-                // value={email}
-                // onChange={(e) => {
-                //   setEmail(e.target.value);
-                // }}
+                value={userName}
+                onChange={(e) => {
+                  setUserName(e.target.value);
+                }}
                 variant="outlined"
                 margin="normal"
                 required
                 fullWidth
                 label="Username"
                 name="Username"
-                autoComplete="name"
               />
               <TextField
                 value={email}
@@ -250,28 +275,27 @@ const Register = (props) => {
                 fullWidth
                 label="Phone Number"
                 type="number"
-                // value={password}
-                // onChange={(e) => {
-                //   setPassword(e.target.value);
-                // }}
+                value={phone}
+                onChange={(e) => {
+                  setPhone(e.target.value);
+                }}
                 // autoComplete="current-password"
               />
-              <CountryNames />
+              <CountryNames country={country} setCountry={setCountry} />
               <TextField
-                // value={email}
-                // onChange={(e) => {
-                //   setEmail(e.target.value);
-                // }}
+                value={fname}
+                onChange={(e) => {
+                  setFname(e.target.value);
+                }}
                 variant="outlined"
                 margin="normal"
                 required
                 fullWidth
                 label="First Name"
-                name="Username"
                 autoComplete="name"
                 // autoFocus
               />
-              <TextField
+              {/* <TextField
                 // value={email}
                 // onChange={(e) => {
                 //   setEmail(e.target.value);
@@ -284,7 +308,7 @@ const Register = (props) => {
                 name="Username"
                 autoComplete="name"
                 // autoFocus
-              />
+              /> */}
               <TextField
                 variant="outlined"
                 margin="normal"
@@ -297,7 +321,6 @@ const Register = (props) => {
                 onChange={(e) => {
                   setPassword(e.target.value);
                 }}
-                autoComplete="current-password"
               />
               <TextField
                 variant="outlined"
@@ -307,11 +330,10 @@ const Register = (props) => {
                 name="password"
                 label="Confirm Password"
                 type="password"
-                value={password}
+                value={confirmPassword}
                 onChange={(e) => {
-                  setPassword(e.target.value);
+                  setConfirmPassword(e.target.value);
                 }}
-                autoComplete="current-password"
               />
               {/* <FormControlLabel
                 control={<Checkbox value="remember" color="primary" />}
