@@ -3,7 +3,7 @@ var { validateUserLogin } = require("../mongooseModels/model.users");
 function validateUserLoginMW(req, res, next) {
   console.log("In validate");
   let user = validateUserLogin(req.body);
-  console.log(user);
+  // console.log(user);
   if (user.error) {
     let test = "";
     for (let i = 0; i < user.error.details.length; i++) {

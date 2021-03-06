@@ -76,6 +76,33 @@ router.get("/getimage/:id", async (req, res) => {
   return res.send(newuser.img);
   // return res.send(_.pick(user, ["email", "name"]));
 });
+router.post("/uploadcareersdata/:id", async (req, res) => {
+  let newuser = await User.findById(req.params.id);
+  if (!newuser) return res.status(400).send("Sorry, user not found.");
+  newuser.resume = req.body.resume;
+  newuser.coverLetter = req.body.coverLetter;
+
+  console.log(req.body);
+  // newuser.careers.fname = req.body.fname;
+  // newuser.careers.lname = req.body.lname;
+  // newuser.careers.email = req.body.email;
+  // newuser.careers.phone = req.body.phone;
+  // newuser.careers.city = req.body.city;
+  // newuser.careers.country = req.body.country;
+  // newuser.careers.allowedToWork = req.body.allowedToWork;
+  // newuser.careers.education = req.body.education;
+  // newuser.careers.interests = req.body.interests;
+
+  await newuser.save();
+  return res.send();
+});
+router.get("/getcareersdata/:id", async (req, res) => {
+  let newuser = await User.findById(req.params.id);
+  if (!newuser) return res.status(400).send("Sorry, user not found.");
+
+  // await newuser.save();
+  return res.send(newuser.resume);
+});
 router.post("/updatepassword/:id", async (req, res) => {
   let newuser = await User.findById(req.params.id);
   if (!newuser) return res.status(400).send("Sorry, user not found.");
@@ -127,7 +154,7 @@ router.post("/forgetPassword/:emaill", async (req, res) => {
   let user = await User.findOne({ email: req.params.emaill });
   if (!user)
     return res.status(400).send("Sorry no account found with this email.");
-  console.log(user);
+  // console.log(user);
   let id = user._id;
   // let user = await User.findById(req.params.id);
   // if (!user) res.status(400).send("User does not exists!");
@@ -194,14 +221,6 @@ router.get("/getNewPassword/:id/:key", async (req, res) => {
 
   console.log(user.password_reset_code);
   if (user.password_reset_code == key) {
-    // new_password = generator.generate({
-    //   length: 10,
-    //   numbers: true,
-    // });
-    // user.password = new_password;
-    // let salt = await bcrypt.genSalt(10);
-    // user.password = await bcrypt.hash(new_password, salt);
-    // await user.save();
     return res.status(200).send("valid");
   } else {
     return res.status(400).send("Invalid Link! cant reset password");

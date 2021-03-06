@@ -14,6 +14,9 @@ var userSchema = mongoose.Schema({
   type: String,
   phone: String,
   country: String,
+  resume: {},
+  coverLetter: {},
+  careers: {},
 });
 var User = mongoose.model("users", userSchema);
 

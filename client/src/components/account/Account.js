@@ -77,7 +77,9 @@ const Account = (props) => {
     });
     check = 1;
   };
-
+  // React.useEffect(() => {
+  //   console.log(img);
+  // }, [img]);
   const handleUpdate = () => {
     setLoginProgress(true);
 
@@ -285,18 +287,9 @@ const Account = (props) => {
                           onChange={(e) => {
                             setPhone(e.target.value);
                           }}
-                          // value={password}
-                          // onChange={(e) => {
-                          //   setPassword(e.target.value);
-                          // }}
-                          // autoComplete="current-password"
                         />
                         {/* <CountryNames /> */}
                         <TextField
-                          // value={email}
-                          // onChange={(e) => {
-                          //   setEmail(e.target.value);
-                          // }}
                           variant="outlined"
                           margin="normal"
                           required
