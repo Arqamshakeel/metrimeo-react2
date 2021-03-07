@@ -181,10 +181,10 @@ router.post("/login", validateUserLoginMW, async (req, res) => {
       username: userData.username,
       // img: userData.img,
     },
-    config.get("jwt")
+    "SomeKey"
   );
 
-  let user2 = jwt.verify(token, config.get("jwt"));
+  let user2 = jwt.verify(token, "SomeKey");
   return res.send({ ok: "login successfull", token, user2 });
 });
 
