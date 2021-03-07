@@ -25,7 +25,7 @@ const corsOptions = {
   credentials: true,
   methods: "GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE",
   //origin: "http://ec2-18-224-94-239.us-east-2.compute.amazonaws.com",
-  origin: "http://localhost:3000",
+  origin: "*",
   preflightContinue: false,
 };
 app.use(cors(corsOptions));
@@ -55,10 +55,7 @@ app.use(function (req, res, next) {
   next(createError(404));
 });
 app.use(function (req, res, next) {
-  res.header(
-    "Access-Control-Allow-Origin",
-    "http://ec2-18-224-94-239.us-east-2.compute.amazonaws.com"
-  );
+  res.header("Access-Control-Allow-Origin", "*");
   res.header(
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept"
@@ -113,13 +110,10 @@ app.use(function (err, req, res, next) {
 //mongodb://<dbuser>:<dbpassword>@ds127260.mlab.com:27260/heroku_xtg78bjw
 //mongodb+srv://arqam:arqam@mern1-siiuo.mongodb.net/FamilyMart?retryWrites=true&w=majority
 mongoose
-  .connect(
-    "mongodb+srv://arqam:arqam@cluster0.qs7te.mongodb.net/metrimeo?retryWrites=true&w=majority",
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    }
-  )
+  .connect("mongodb://localhost:27017/metrimeo", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then(() => {
     console.log("Connected to mongoDB");
   })

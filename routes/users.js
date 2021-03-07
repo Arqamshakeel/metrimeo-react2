@@ -229,8 +229,8 @@ async function sendConfirmationMail(r_email, key, id) {
   let transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "metrimeocredit@gmail.com",
-      pass: "metrimeofiverr",
+      user: "arqam.android@gmail.com",
+      pass: "aafhbvtocfltptkm",
     },
   });
 
