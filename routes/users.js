@@ -16,6 +16,22 @@ router.get("/", async (req, res, next) => {
 
   res.send(user[0]._id);
 });
+router.get("/getall", async (req, res, next) => {
+  let user = await User.find();
+
+  res.send(user);
+});
+router.post("/updateUserRole", async (req, res, next) => {
+  console.log(req.body._id);
+  let user = await User.findById(req.body._id);
+  if (!user) return res.status(400).send("Sorry, user not found.");
+
+  if (user.role != req.body.role) {
+    user.role = req.body.role;
+  }
+  await user.save();
+  return res.status(200).send();
+});
 
 router.post("/register", validateUserRegMW, async (req, res) => {
   let newuser = await User.findOne({ email: req.body.email });
@@ -63,7 +79,9 @@ router.post("/update/:id", validateUserUpdateMW, async (req, res) => {
   newuser.username = req.body.username;
 
   newuser.phone = req.body.phone;
-  newuser.img = req.body.img;
+  if (req.body.img.length > 40) {
+    newuser.img = req.body.img;
+  }
 
   await newuser.save();
   return res.send();
@@ -82,16 +100,37 @@ router.post("/uploadcareersdata/:id", async (req, res) => {
   newuser.resume = req.body.resume;
   newuser.coverLetter = req.body.coverLetter;
 
-  console.log(req.body);
-  // newuser.careers.fname = req.body.fname;
-  // newuser.careers.lname = req.body.lname;
-  // newuser.careers.email = req.body.email;
-  // newuser.careers.phone = req.body.phone;
-  // newuser.careers.city = req.body.city;
-  // newuser.careers.country = req.body.country;
-  // newuser.careers.allowedToWork = req.body.allowedToWork;
-  // newuser.careers.education = req.body.education;
-  // newuser.careers.interests = req.body.interests;
+  console.log(req.body.fname);
+  let obj = {
+    fname: req.body.fname,
+    lname: req.body.lname,
+    email: req.body.email,
+    phone: req.body.phone,
+    city: req.body.city,
+    country: req.body.country,
+    allowedToWork: req.body.allowedToWork,
+    education: req.body.education,
+    interests: req.body.interests,
+  };
+  newuser.careers = obj;
+
+  await newuser.save();
+  return res.send();
+});
+router.post("/contactus/:id", async (req, res) => {
+  let newuser = await User.findById(req.params.id);
+  if (!newuser) return res.status(400).send("Sorry, user not found.");
+
+  console.log(req.body.fname);
+  let obj = {
+    fname: req.body.fname,
+    email: req.body.email,
+    phone: req.body.phone,
+    typeAccount: req.body.typeAccount,
+    message: req.body.message,
+    subject: req.body.subject,
+  };
+  newuser.message.push(obj);
 
   await newuser.save();
   return res.send();
@@ -140,6 +179,7 @@ router.post("/login", validateUserLoginMW, async (req, res) => {
       email: userData.email,
       phone: userData.phone,
       username: userData.username,
+      // img: userData.img,
     },
     config.get("jwt")
   );
@@ -189,8 +229,8 @@ async function sendConfirmationMail(r_email, key, id) {
   let transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "arqam.android@gmail.com",
-      pass: "aafhbvtocfltptkm",
+      user: "metrimeocredit@gmail.com",
+      pass: "metrimeofiverr",
     },
   });
 

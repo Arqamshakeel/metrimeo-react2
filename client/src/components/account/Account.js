@@ -36,19 +36,21 @@ const Account = (props) => {
   });
 
   React.useEffect(() => {
-    setFname(userService.getloggedinuser().name);
-    setUserName(userService.getloggedinuser().username);
-    setPhone(userService.getloggedinuser().phone);
-    setEmail(userService.getloggedinuser().email);
+    if (userService.getloggedinuser()) {
+      setFname(userService.getloggedinuser().name);
+      setUserName(userService.getloggedinuser().username);
+      setPhone(userService.getloggedinuser().phone);
+      setEmail(userService.getloggedinuser().email);
 
-    setImg({ file: userService.getloggedinuser().img });
+      setImg({ file: userService.getloggedinuser().img });
 
-    userService
-      .getImg(userService.getloggedinuser()._id)
-      .then((res) => {
-        setImg({ file: res });
-      })
-      .catch(function (error) {});
+      userService
+        .getImg(userService.getloggedinuser()._id)
+        .then((res) => {
+          setImg({ file: res });
+        })
+        .catch(function (error) {});
+    }
   }, []);
 
   React.useEffect(() => {
@@ -188,7 +190,9 @@ const Account = (props) => {
                               gutterBottom
                               style={{ fontWeight: "bold", margin: "10px" }}
                             >
-                              {userService.getloggedinuser().name}
+                              {userService.getloggedinuser()
+                                ? userService.getloggedinuser().name
+                                : null}
                             </Typography>
                             <Button
                               style={{ marginTop: "10px" }}

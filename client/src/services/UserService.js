@@ -45,7 +45,7 @@ class UserService extends GenericService {
   };
   isAdmin = () => {
     if (this.isLoggedin()) {
-      if (this.getloggedinuser().role == "admin") {
+      if (this.getloggedinuser().role) {
         return true;
       } else {
         return false;
@@ -54,13 +54,16 @@ class UserService extends GenericService {
     return false;
   };
 
+  updateUserRole = (data) => this.post("users/updateUserRole", data);
   UserReg = (data) => this.post("users/register", data);
   UserUpdate = (id, data) => this.post("users//update/" + id, data);
   getImg = (id) => this.get("users/getimage/" + id);
+  getAllUsers = () => this.get("users/getall/");
   updatePassword2 = (id, data) => this.post("users/updatepassword/" + id, data);
   uploadCareersData = (id, data) =>
     this.post("users/uploadcareersdata/" + id, data);
   getCareersData = (id) => this.get("users/getcareersdata/" + id);
+  contactUs = (id, data) => this.post("users/contactus/" + id, data);
   // UserReg = (data) =>
   //   new Promise((resolve, reject) => {
   //     this.postReg("users/register", data)

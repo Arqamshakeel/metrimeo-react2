@@ -23,9 +23,9 @@ const CustomFooter = () => {
           {
             title: "Company Info",
             items: [
-              { title: "About" },
-              { title: "Our Products" },
-              { title: "Careers" },
+              { title: "About", url: "/about" },
+              { title: "Our Products", url: "/our-products" },
+              { title: "Careers", url: "/careers" },
               { title: "Terms and conditions" },
               { title: "Privacy and policy" },
               { title: "Security" },
@@ -37,11 +37,11 @@ const CustomFooter = () => {
           {
             title: "Resources",
             items: [
-              { title: "Home" },
-              { title: "About" },
-              { title: "Our Products" },
-              { title: "Login" },
-              { title: "Sign up" },
+              { title: "Home", url: "/" },
+              { title: "About", url: "/about" },
+              { title: "Our Products", url: "/our-products" },
+              { title: "Login", url: "/login" },
+              { title: "Sign up", url: "/register" },
             ],
             url: "https://yuque.com",
             description: "hellosdnfljdashjfldjlf",
@@ -50,10 +50,10 @@ const CustomFooter = () => {
           {
             title: "Our Solutions",
             items: [
-              { title: "To Cooperatives" },
-              { title: "To Landlords" },
-              { title: "To Businesses" },
-              { title: "To Individuals" },
+              { title: "To Cooperatives", url: "/for-cooperatives" },
+              { title: "To Landlords", url: "/for-landlords" },
+              { title: "To Businesses", url: "/for-businesses" },
+              { title: "To Individuals", url: "/for-individuals" },
             ],
             url: "https://yuque.com",
             description: "hellosdnfljdashjfldjlf",

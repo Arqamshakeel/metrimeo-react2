@@ -6,10 +6,13 @@ import {
   Paper,
   TextField,
 } from "@material-ui/core";
+import CustomBackdrop from "../backdrop/CustomBackdrop";
 import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormHelperText from "@material-ui/core/FormHelperText";
+import SnackBar from "../snackBar/SnackBar";
 import FormControl from "@material-ui/core/FormControl";
+import SuccessSnackBar from "../snackBar/SuccessSnackBar";
 import Select from "@material-ui/core/Select";
 import React from "react";
 import fileUpload from "fuctbase64";
@@ -151,9 +154,9 @@ const Careers = () => {
       })
       .then(function (res) {
         // props.history.push("/");
-        // setLoginProgress(false);
-        // setSOpen(true);
-        // setSMsg("Information updated!");
+        setLoginProgress(false);
+        setSOpen(true);
+        setSMsg("Information uploaded!");
         // console.log(res);
         // console.log("hello");
       })
@@ -164,10 +167,10 @@ const Careers = () => {
         // props.history.push("/login");
       })
       .catch(function (error) {
-        // setLoginProgress(false);
+        setLoginProgress(false);
         // console.log(error);
-        // setOpen(true);
-        // setmsg(error.response.data);
+        setOpen(true);
+        setmsg(error.response.data);
       });
   };
 
@@ -211,9 +214,6 @@ const Careers = () => {
                   <br />
                 </div>
                 <div className="decs">Join our Talent Community</div>
-                <div className="intro-button">
-                  <a href="">Start here!</a>
-                </div>
               </div>
               <div></div>
             </div>
@@ -240,7 +240,7 @@ const Careers = () => {
           .box {
             ${!isPortrait && isTabletOrMobile
               ? "max-height:360px;"
-              : "min-height:250px;"}
+              : "min-height:200px;"}
             // min-height: 300px;
             margin-top: ${!isPortrait && isTabletOrMobile
               ? "40%"
@@ -301,7 +301,9 @@ const Careers = () => {
           }
         `}</style>
       </div>
-
+      <CustomBackdrop open={loginProgress} setOpen={setLoginProgress} />
+      <SuccessSnackBar open={sOpen} setOpen={setSOpen} msg={Smsg} />
+      <SnackBar open={open} setOpen={setOpen} msg={msg} />
       <Grid container justify="center">
         {/* <a href={resume} download="haha.pdf">
           Download Resume

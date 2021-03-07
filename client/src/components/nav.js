@@ -108,6 +108,17 @@ class MobileMenu extends Component {
               About Metrimeo
             </NavLink>
           </NavItem>
+          <NavItem className="nav-item-m">
+            <NavLink
+              style={{ cursor: "pointer" }}
+              onClick={() => {
+                this.props.props.history.push("/contact-us");
+                this.props.hideNav();
+              }}
+            >
+              Contact Us
+            </NavLink>
+          </NavItem>
 
           <NavItem className="nav-item-m">
             <NavLink
@@ -414,7 +425,14 @@ class NavBar extends Component {
               </NavLink>
             </NavItem>
             <NavItem className="nav-item-n">
-              <NavLink href="#">Contact Us</NavLink>
+              <NavLink
+                style={{ cursor: "pointer" }}
+                onClick={() => {
+                  this.props.history.push("/contact-us");
+                }}
+              >
+                Contact Us
+              </NavLink>
             </NavItem>
             {this.state.width > 490 ? (
               <>

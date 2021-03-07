@@ -30,6 +30,20 @@ import {
 import { falseLogin, switchLogin } from "../Redux/actions/LoginAction";
 import userService from "../services/UserService";
 const NavLoginSignUpButtons = (props) => {
+  const [img, setImg] = React.useState("");
+
+  React.useEffect(() => {
+    if (userService.getloggedinuser()) {
+      userService
+        .getImg(userService.getloggedinuser()._id)
+        .then((res) => {
+          setImg(res);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+  }, []);
   const useStyles = makeStyles((theme) => ({
     avatar: {
       backgroundColor: red[500],
@@ -90,13 +104,7 @@ const NavLoginSignUpButtons = (props) => {
               onClick={handleClickAvatar}
               aria-label="recipe"
               className={`${classes.largeAvatar} ${classes.avatar}`}
-              src={
-                userService.getloggedinuser().imageUrl
-                  ? userService.getloggedinuser().imageUrl
-                  : userService.getloggedinuser().picture
-                  ? userService.getloggedinuser().picture.data.url
-                  : null
-              }
+              src={img}
             >
               {userService.getloggedinuser().name
                 ? userService.getloggedinuser().name[0].toUpperCase()
@@ -112,6 +120,10 @@ const NavLoginSignUpButtons = (props) => {
                   {userService.getloggedinuser().email
                     ? userService.getloggedinuser().email
                     : null}
+                </Typography>
+                <hr />
+                <Typography variant="h6">
+                  Credit score: <b>788</b>
                 </Typography>
               </Grid>
             </Grid>
@@ -150,6 +162,24 @@ const NavLoginSignUpButtons = (props) => {
           <ListItemText primary={"Dashboard"} />
         </ListItem>
       </MenuItem>
+      <Divider />
+      {userService.getloggedinuser() ? (
+        userService.getloggedinuser().role == true ? (
+          <MenuItem onClick={handleMenuClose}>
+            <ListItem
+              button
+              onClick={() => {
+                props.history.push("/admin");
+              }}
+            >
+              <ListItemIcon>
+                <SettingsIcon />
+              </ListItemIcon>
+              <ListItemText primary={"Admin Panel"} />
+            </ListItem>
+          </MenuItem>
+        ) : null
+      ) : null}
       <Divider />
     </Menu>
   );
@@ -203,13 +233,7 @@ const NavLoginSignUpButtons = (props) => {
               onClick={handleClickAvatar}
               aria-label="recipe"
               className={classes.avatar}
-              src={
-                userService.getloggedinuser().imageUrl
-                  ? userService.getloggedinuser().imageUrl
-                  : userService.getloggedinuser().picture
-                  ? userService.getloggedinuser().picture.data.url
-                  : null
-              }
+              src={img}
             >
               {userService.getloggedinuser().name
                 ? userService.getloggedinuser().name[0].toUpperCase()

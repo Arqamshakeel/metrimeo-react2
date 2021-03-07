@@ -8,7 +8,7 @@ var userSchema = mongoose.Schema({
   username: String,
   password_reset_code: String,
   password: String,
-  role: String,
+  role: { type: Boolean, default: false },
   img: String,
 
   type: String,
@@ -17,6 +17,7 @@ var userSchema = mongoose.Schema({
   resume: {},
   coverLetter: {},
   careers: {},
+  message: [],
 });
 var User = mongoose.model("users", userSchema);
 

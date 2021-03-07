@@ -22,6 +22,8 @@ import ForgetPassword from "./components/forgetPassword/ForgetPassword";
 import NewPasswordForm from "./components/forgetPassword/NewPasswordForm";
 import About from "./components/about/About";
 import Careers from "./components/careers/Careers";
+import ContactUs from "./components/contactus/ContactUs";
+import AdminPanel from "./components/adminpanel/AdminPanel";
 
 function Routes(props) {
   const isDesktopOrLaptop = useMediaQuery({
@@ -66,6 +68,8 @@ function Routes(props) {
         <Route path="/newpassword/:id/:key" exact component={NewPasswordForm} />
         <Route path="/about" exact component={About} />
         <Route path="/careers" exact component={Careers} />
+        <Route path="/contact-us" exact component={ContactUs} />
+        <Route path="/admin" exact component={AdminPanel} />
       </Switch>
       <Grid container>
         <Grid item xs={12} lg={9}>
