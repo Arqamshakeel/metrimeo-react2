@@ -109,11 +109,15 @@ app.use(function (err, req, res, next) {
 });
 //mongodb://<dbuser>:<dbpassword>@ds127260.mlab.com:27260/heroku_xtg78bjw
 //mongodb+srv://arqam:arqam@mern1-siiuo.mongodb.net/FamilyMart?retryWrites=true&w=majority
+//mongodb://localhost:27017/metrimeo
 mongoose
-  .connect("mongodb://localhost:27017/metrimeo", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(
+    "mongodb+srv://arqam:arqam@cluster0.qs7te.mongodb.net/myFirstDatabase?authSource=admin&replicaSet=atlas-nifuvn-shard-0&w=majority&readPreference=primary&appname=MongoDB%20Compass&retryWrites=true&ssl=true",
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }
+  )
   .then(() => {
     console.log("Connected to mongoDB");
   })
