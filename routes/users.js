@@ -168,8 +168,8 @@ async function sendTriggerMail(adminsEmails, data) {
   let transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "arqam.android@gmail.com",
-      pass: "aafhbvtocfltptkm",
+      user: "metrimeocredit@gmail.com",
+      pass: "metrimeofiverr",
     },
   });
 
@@ -283,9 +283,13 @@ async function sendConfirmationMail(r_email, key, id) {
   let transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "arqam.android@gmail.com",
-      pass: "aafhbvtocfltptkm",
+      user: "metrimeocredit@gmail.com",
+      pass: "metrimeofiverr",
     },
+    // auth: {
+    //   user: "arqam.android@gmail.com",
+    //   pass: "aafhbvtocfltptkm",
+    // },
   });
 
   // send mail with defined transport object
@@ -294,7 +298,7 @@ async function sendConfirmationMail(r_email, key, id) {
     to: r_email, // list of receivers
     subject: "Recovery for trakouts login passoword", // Subject line
     text: `Hello ${r_email}, Your new trakouts password is `, // plain text body
-    html: `<div><p>Ignore this email if you have not applied for password recovery for trakouts.</p><b><a href=http://localhost:3000/newpassword/${id}/${key}>Click this link to confirm and to Redirect to a new page</a></b></div>`, // html body
+    html: `<div><p>Ignore this email if you have not applied for password recovery for trakouts.</p><b><a href=https://metrimeo-react.herokuapp.com/newpassword/${id}/${key}>Click this link to confirm and to Redirect to a new page</a></b></div>`, // html body
   });
 
   console.log("Message sent: %s", info.messageId);
