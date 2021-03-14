@@ -19,10 +19,10 @@ const SecurityPractices = () => {
         image1={"./wp-content/uploads/2020/12/key.png"}
         data1Heading={"Data Access"}
         data1sub={[
-          "We maintain a strict need to know basis for access to",
-          !isTabletOrMobile ? <br /> : <></>,
-          "your data. Also, access to your credit score and/or",
-          !isTabletOrMobile ? <br /> : <></>,
+          "We maintain a strict need to know basis for access to ",
+          // !isTabletOrMobile ? <br /> : <></>,
+          "your data. Also, access to your credit score and/or ",
+          // !isTabletOrMobile ? <br /> : <></>,
           "report are only provided after your approval.",
           isTabletOrMobile ? (
             <div>
@@ -35,8 +35,8 @@ const SecurityPractices = () => {
         image2={"./wp-content/uploads/2020/12/transmission.png"}
         data2Heading={"Data Transmission"}
         data2sub={[
-          "We use the standard 128-bit encryption to protect the",
-          !isTabletOrMobile ? <br /> : <></>,
+          "We use the standard 128-bit encryption to protect the ",
+          // !isTabletOrMobile ? <br /> : <></>,
           "transmission of your data on our site.",
           isTabletOrMobile ? (
             <div>
@@ -49,10 +49,10 @@ const SecurityPractices = () => {
         image3={"./wp-content/uploads/2020/12/credit-card.png"}
         data3Heading={"Customer Payment Information"}
         data3sub={[
-          "MetriMeo uses secured external third party payment",
-          !isTabletOrMobile ? <br /> : <></>,
-          "processing services and does not process, store or",
-          !isTabletOrMobile ? <br /> : <></>,
+          "MetriMeo uses secured external third party payment ",
+          // !isTabletOrMobile ? <br /> : <></>,
+          "processing services and does not process, store or ",
+          // !isTabletOrMobile ? <br /> : <></>,
           "transmit any payment card data.",
           isTabletOrMobile ? (
             <div>
@@ -76,14 +76,14 @@ const SecurityPractices = () => {
         image1={"./wp-content/uploads/2020/12/server.png"}
         data1Heading={"Physical Security"}
         data1sub={[
-          "MetriMeo leverages Amazon AWS for its data centers",
-          !isTabletOrMobile ? <br /> : <></>,
-          "AWS has several years of experience in designing.",
-          !isTabletOrMobile ? <br /> : <></>,
-          "constructing and operating state of the art data centers.",
-          !isTabletOrMobile ? <br /> : <></>,
-          "Also the production network is logically isolated from",
-          !isTabletOrMobile ? <br /> : <></>,
+          "MetriMeo leverages Amazon AWS for its data centers ",
+          // !isTabletOrMobile ? <br /> : <></>,
+          "AWS has several years of experience in designing, ",
+          // !isTabletOrMobile ? <br /> : <></>,
+          "constructing and operating state of the art data centers. ",
+          // !isTabletOrMobile ? <br /> : <></>,
+          "Also the production network is logically isolated from ",
+          // !isTabletOrMobile ? <br /> : <></>,
           "other networks such as QA, and Development.",
           isTabletOrMobile ? (
             <div>
@@ -97,11 +97,11 @@ const SecurityPractices = () => {
         data2Heading={"Coding And Testing Practices"}
         data2sub={[
           "We leverage industry standard programming",
-          !isTabletOrMobile ? <br /> : <></>,
+          // !isTabletOrMobile ? <br /> : <></>,
           " techniques such as having a documented",
-          !isTabletOrMobile ? <br /> : <></>,
+          // !isTabletOrMobile ? <br /> : <></>,
           "development and quality assurance processes to",
-          !isTabletOrMobile ? <br /> : <></>,
+          // !isTabletOrMobile ? <br /> : <></>,
           " ensure that we meet security standards.",
           isTabletOrMobile ? (
             <div>
@@ -114,12 +114,12 @@ const SecurityPractices = () => {
         image3={"./wp-content/uploads/2020/12/employee.png"}
         data3Heading={"Employee Access"}
         data3sub={[
-          "We follow the principle of least privilege in how we",
-          !isTabletOrMobile ? <br /> : <></>,
-          "grant access to your data to our employees to use in",
-          !isTabletOrMobile ? <br /> : <></>,
-          "the diagnosing and resolving of incidents as well as",
-          !isTabletOrMobile ? <br /> : <></>,
+          "We follow the principle of least privilege in how we ",
+          // !isTabletOrMobile ? <br /> : <></>,
+          "grant access to your data to our employees to use in ",
+          // !isTabletOrMobile ? <br /> : <></>,
+          "the diagnosing and resolving of incidents as well as ",
+          // !isTabletOrMobile ? <br /> : <></>,
           "to responding to customer support requests.",
           isTabletOrMobile ? (
             <div>

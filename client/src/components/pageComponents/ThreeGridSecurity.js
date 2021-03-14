@@ -71,9 +71,9 @@ const ThreeGridSecurity = (props) => {
                 <div
                   style={{
                     textAlign: "center",
-                    fontFamily: '"Times New Roman", Sans-serif',
+                    fontfont: "'Montserrat',sans-serif",
                     fontSize: isTabletOrMobile ? "35px" : "50px",
-                    fontWeight: "800",
+                    // fontWeight: "800",
                     marginBottom: "10px",
                   }}
                 >
@@ -82,9 +82,9 @@ const ThreeGridSecurity = (props) => {
                 <div
                   style={{
                     textAlign: "center",
-                    fontFamily: '"Times New Roman", Sans-serif',
-                    fontSize: isTabletOrMobile ? "15px" : "30px",
-                    fontWeight: "800",
+                    fontfont: "'Montserrat',sans-serif",
+                    fontSize: isTabletOrMobile ? "18px" : "30px",
+                    // fontWeight: "800",
                     marginBottom: "20px",
                   }}
                 >
@@ -93,15 +93,15 @@ const ThreeGridSecurity = (props) => {
                 <div
                   style={{
                     textAlign: "center",
-                    fontFamily: '"Times New Roman", Sans-serif',
-                    fontSize: isTabletOrMobile ? "15px" : "15px",
+                    fontfont: "'Montserrat',sans-serif",
+                    fontSize: isTabletOrMobile ? "18px" : "15px",
 
                     marginBottom: "20px",
                   }}
                 >
                   <div
                     style={{
-                      textAlign: "left",
+                      textAlign: "center",
                       color: "#5D7280",
                     }}
                   >
@@ -129,7 +129,7 @@ const ThreeGridSecurity = (props) => {
               <div
                 style={{
                   textAlign: "center",
-                  fontFamily: '"Times New Roman", Sans-serif',
+                  fontfont: "'Montserrat',sans-serif",
                   fontSize: "26px",
                   fontWeight: "800",
                   marginTop: "10px",
@@ -145,7 +145,7 @@ const ThreeGridSecurity = (props) => {
                   color: "#5D7280",
                   marginTop: "10px",
 
-                  fontFamily: '"Times New Roman", Sans-serif',
+                  fontfont: "'Montserrat',sans-serif",
                   fontSize: "18px",
                 }}
               >
@@ -180,7 +180,7 @@ const ThreeGridSecurity = (props) => {
               <div
                 style={{
                   textAlign: "center",
-                  fontFamily: '"Times New Roman", Sans-serif',
+                  fontfont: "'Montserrat',sans-serif",
                   fontSize: "26px",
                   fontWeight: "800",
                   marginTop: "10px",
@@ -197,7 +197,7 @@ const ThreeGridSecurity = (props) => {
                   color: "#5D7280",
                   marginTop: "10px",
 
-                  fontFamily: '"Times New Roman", Sans-serif',
+                  fontfont: "'Montserrat',sans-serif",
                   fontSize: "18px",
                 }}
               >
@@ -232,7 +232,7 @@ const ThreeGridSecurity = (props) => {
               <div
                 style={{
                   textAlign: "center",
-                  fontFamily: '"Times New Roman", Sans-serif',
+                  fontfont: "'Montserrat',sans-serif",
                   fontSize: "26px",
                   fontWeight: "800",
                   marginTop: "10px",
@@ -248,7 +248,7 @@ const ThreeGridSecurity = (props) => {
                   color: "#5D7280",
                   marginTop: "10px",
 
-                  fontFamily: '"Times New Roman", Sans-serif',
+                  fontfont: "'Montserrat',sans-serif",
                   fontSize: "18px",
                 }}
               >
