@@ -26,6 +26,7 @@ const corsOptions = {
   methods: "GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE",
   //origin: "http://ec2-18-224-94-239.us-east-2.compute.amazonaws.com",
   origin: "*",
+  // origin: "http://localhost:3000",
   preflightContinue: false,
 };
 app.use(cors(corsOptions));
@@ -110,6 +111,7 @@ app.use(function (err, req, res, next) {
 //mongodb://<dbuser>:<dbpassword>@ds127260.mlab.com:27260/heroku_xtg78bjw
 //mongodb+srv://arqam:arqam@mern1-siiuo.mongodb.net/FamilyMart?retryWrites=true&w=majority
 //mongodb://localhost:27017/metrimeo
+// mongodb+srv://arqam:arqam@cluster0.qs7te.mongodb.net/myFirstDatabase?authSource=admin&replicaSet=atlas-nifuvn-shard-0&w=majority&readPreference=primary&appname=MongoDB%20Compass&retryWrites=true&ssl=true
 mongoose
   .connect(
     "mongodb+srv://arqam:arqam@cluster0.qs7te.mongodb.net/myFirstDatabase?authSource=admin&replicaSet=atlas-nifuvn-shard-0&w=majority&readPreference=primary&appname=MongoDB%20Compass&retryWrites=true&ssl=true",

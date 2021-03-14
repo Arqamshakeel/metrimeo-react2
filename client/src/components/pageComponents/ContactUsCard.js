@@ -11,6 +11,7 @@ import ContactSupportIcon from "@material-ui/icons/ContactSupport";
 import { Box, Grid } from "@material-ui/core";
 import { red } from "@material-ui/core/colors";
 import { withRouter } from "react-router-dom";
+import userService from "../../services/UserService";
 // import GradientBtn from "../../quotes/GradientBtn";
 
 const ContactUsCard = (props) => {
@@ -103,7 +104,19 @@ const ContactUsCard = (props) => {
                 <br />
 
                 <div className="intro-button-card">
-                  <a href=""> {props.buttonText}</a>
+                  <a
+                    href=""
+                    onClick={() => {
+                      if (userService.getloggedinuser()) {
+                        props.history.push("/dashboard");
+                      } else {
+                        props.history.push("/login");
+                      }
+                    }}
+                  >
+                    {" "}
+                    {props.buttonText}
+                  </a>
                 </div>
               </CardContent>
             </Grid>
@@ -153,4 +166,4 @@ const ContactUsCard = (props) => {
     </div>
   );
 };
-export default ContactUsCard;
+export default withRouter(ContactUsCard);

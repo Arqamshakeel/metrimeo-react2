@@ -8,7 +8,8 @@ import ImageFullBackground from "../pageComponents/ImageFullBackground";
 import TextFullBackground from "../pageComponents/TextFullBackground";
 import CarMediaCardLeftPic from "../pageComponents/CarMediaCardLeftPic";
 import ThreeGrid from "../pageComponents/ThreeGrid";
-const ToCooperatives = () => {
+import userService from "../../services/UserService";
+const ToCooperatives = (props) => {
   React.useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -49,7 +50,19 @@ const ToCooperatives = () => {
                   MetriMeo is helping them build it.
                 </div>
                 <div className="intro-button">
-                  <a href="">Start here!</a>
+                  <a
+                    href=""
+                    onClick={() => {
+                      if (userService.getloggedinuser()) {
+                        props.history.push("/dashboard");
+                      } else {
+                        props.history.push("/login");
+                      }
+                    }}
+                    style={{ cursor: "pointer" }}
+                  >
+                    Start here!
+                  </a>
                 </div>
               </div>
               <div></div>

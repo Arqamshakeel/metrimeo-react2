@@ -36,6 +36,7 @@
     "react-responsive-animate-navbar": "^1.1.8",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
+    "react-sweet-progress": "^1.1.2",
     "react-window": "^1.8.6",
     "reactstrap": "^8.6.0",
     "rebass": "^3.0.0-12",

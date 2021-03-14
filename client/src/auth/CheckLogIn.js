@@ -8,7 +8,7 @@ const CheckLogIn = (props) => {
   const func = () => {
     if (userService.isLoggedin()) {
     } else {
-      props.history.push("/");
+      props.history.push("/login");
     }
   };
   React.useEffect(func, [isLoggedInRedux]);

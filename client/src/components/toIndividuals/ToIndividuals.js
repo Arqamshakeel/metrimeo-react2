@@ -5,8 +5,9 @@ import CarMediaCardRightPic from "../pageComponents/CarMediaCardRightPic";
 import ContactUsCard from "../pageComponents/ContactUsCard";
 import { useMediaQuery } from "react-responsive";
 import ImageFullBackground from "../pageComponents/ImageFullBackground";
+import userService from "../../services/UserService";
 // import useWindowsSize from "../../services/useWindowsSize";
-const ToIndividuals = () => {
+const ToIndividuals = (props) => {
   function useWindowSize() {
     // Initialize state with undefined width/height so server and client renders match
     // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
@@ -96,7 +97,19 @@ const ToIndividuals = () => {
                   explore their future.
                 </div>
                 <div className="intro-button">
-                  <a href="">Explore yours!</a>
+                  <a
+                    href=""
+                    onClick={() => {
+                      if (userService.getloggedinuser()) {
+                        props.history.push("/dashboard");
+                      } else {
+                        props.history.push("/login");
+                      }
+                    }}
+                    style={{ color: "white", cursor: "pointer" }}
+                  >
+                    Explore yours!
+                  </a>
                 </div>
               </div>
               <div></div>

@@ -11,6 +11,7 @@ import {
   Tooltip,
   Typography,
 } from "@material-ui/core";
+import DashboardIcon from "@material-ui/icons/Dashboard";
 import { red } from "@material-ui/core/colors";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -29,6 +30,7 @@ import {
 } from "reactstrap";
 import { falseLogin, switchLogin } from "../Redux/actions/LoginAction";
 import userService from "../services/UserService";
+import AccountBoxIcon from "@material-ui/icons/AccountBox";
 const NavLoginSignUpButtons = (props) => {
   const [img, setImg] = React.useState("");
 
@@ -157,25 +159,45 @@ const NavLoginSignUpButtons = (props) => {
           }}
         >
           <ListItemIcon>
-            <SettingsIcon />
+            <AccountBoxIcon />
           </ListItemIcon>
-          <ListItemText primary={"Dashboard"} />
+          <ListItemText primary={"Profile"} />
         </ListItem>
       </MenuItem>
       <Divider />
       {userService.getloggedinuser() ? (
         userService.getloggedinuser().role == true ? (
+          <>
+            <MenuItem onClick={handleMenuClose}>
+              <ListItem
+                button
+                onClick={() => {
+                  props.history.push("/admin");
+                }}
+              >
+                <ListItemIcon>
+                  <SettingsIcon />
+                </ListItemIcon>
+                <ListItemText primary={"Admin Panel"} />
+              </ListItem>
+            </MenuItem>
+            <Divider />
+          </>
+        ) : null
+      ) : null}
+      {userService.getloggedinuser() ? (
+        true ? (
           <MenuItem onClick={handleMenuClose}>
             <ListItem
               button
               onClick={() => {
-                props.history.push("/admin");
+                props.history.push("/dashboard");
               }}
             >
               <ListItemIcon>
-                <SettingsIcon />
+                <DashboardIcon />
               </ListItemIcon>
-              <ListItemText primary={"Admin Panel"} />
+              <ListItemText primary={"Dashboard"} />
             </ListItem>
           </MenuItem>
         ) : null

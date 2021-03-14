@@ -39,39 +39,40 @@ export default class extends Component {
       <section className="s4">
         <Container>
           <div class="owl-carousel owl-theme">
-            <div>
+            <div style={{ margin: "80px" }}>
               <img
                 src="./wp-content/uploads/2020/12/AWS-logo-removebg-preview.png"
                 alt=""
+                // width="50px"
               />
             </div>
 
-            <div>
+            <div style={{ margin: "80px" }}>
               <img
                 src="./wp-content/uploads/2020/12/google-logo-png-hd-11.png"
                 alt=""
               />
             </div>
-            <div>
+            <div style={{ margin: "80px" }}>
               <img
                 src="./wp-content/uploads/2020/12/cloudflare-logo.png"
                 alt=""
               />
             </div>
-            <div>
+            <div style={{ margin: "80px" }}>
               <img
                 src="./wp-content/uploads/2020/12/AWS-logo-removebg-preview.png"
                 alt=""
               />
             </div>
 
-            <div>
+            <div style={{ margin: "80px" }}>
               <img
                 src="./wp-content/uploads/2020/12/google-logo-png-hd-11.png"
                 alt=""
               />
             </div>
-            <div>
+            <div style={{ margin: "80px" }}>
               <img
                 src="./wp-content/uploads/2020/12/cloudflare-logo.png"
                 alt=""

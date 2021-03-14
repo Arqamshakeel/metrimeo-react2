@@ -12,6 +12,7 @@ import { Box, Grid } from "@material-ui/core";
 import { useMediaQuery } from "react-responsive";
 import { red } from "@material-ui/core/colors";
 import { withRouter } from "react-router-dom";
+import userService from "../../services/UserService";
 // import GradientBtn from "../../quotes/GradientBtn";
 
 const ContactUsCardCenter = (props) => {
@@ -115,7 +116,19 @@ const ContactUsCardCenter = (props) => {
                 className="intro-button-card"
                 style={{ textAlign: "center" }}
               >
-                <a href=""> {props.buttonText}</a>
+                <a
+                  href=""
+                  onClick={() => {
+                    if (userService.getloggedinuser()) {
+                      props.history.push("/dashboard");
+                    } else {
+                      props.history.push("/login");
+                    }
+                  }}
+                >
+                  {" "}
+                  {props.buttonText}
+                </a>
               </div>
             </Grid>
           </Grid>
@@ -146,4 +159,4 @@ const ContactUsCardCenter = (props) => {
     </div>
   );
 };
-export default ContactUsCardCenter;
+export default withRouter(ContactUsCardCenter);

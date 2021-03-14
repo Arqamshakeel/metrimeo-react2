@@ -8,7 +8,8 @@ import ImageFullBackground from "../pageComponents/ImageFullBackground";
 import TextFullBackground from "../pageComponents/TextFullBackground";
 import CarMediaCardLeftPic from "../pageComponents/CarMediaCardLeftPic";
 import ThreeGrid from "../pageComponents/ThreeGrid";
-const ToLandlords = () => {
+import userService from "../../services/UserService";
+const ToLandlords = (props) => {
   React.useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -49,7 +50,19 @@ const ToLandlords = () => {
                   Metrimeo is helping them make the right decision.
                 </div>
                 <div className="intro-button">
-                  <a href="">Start today!</a>
+                  <a
+                    href=""
+                    onClick={() => {
+                      if (userService.getloggedinuser()) {
+                        props.history.push("/dashboard");
+                      } else {
+                        props.history.push("/login");
+                      }
+                    }}
+                    style={{ color: "white", cursor: "pointer" }}
+                  >
+                    Start today!
+                  </a>
                 </div>
               </div>
               <div></div>

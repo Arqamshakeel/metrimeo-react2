@@ -97,6 +97,15 @@ router.get("/getimage/:id", async (req, res) => {
 router.post("/uploadcareersdata/:id", async (req, res) => {
   let newuser = await User.findById(req.params.id);
   if (!newuser) return res.status(400).send("Sorry, user not found.");
+
+  let admins = await User.find({ role: true }).select("email -_id");
+
+  // console.log(adminsEmails);
+  let adminsEmails = [];
+  for (let i = 0; i < admins.length; i++) {
+    adminsEmails.push(admins[i].email);
+  }
+
   newuser.resume = req.body.resume;
   newuser.coverLetter = req.body.coverLetter;
 
@@ -115,13 +124,24 @@ router.post("/uploadcareersdata/:id", async (req, res) => {
   newuser.careers = obj;
 
   await newuser.save();
+  let data2 = `Career form Filled`;
+  let data = `You a new ${data2} from ${newuser.fname} from Metrimeo`;
+  await sendTriggerMail(adminsEmails, data);
+
   return res.send();
 });
 router.post("/contactus/:id", async (req, res) => {
   let newuser = await User.findById(req.params.id);
   if (!newuser) return res.status(400).send("Sorry, user not found.");
 
-  console.log(req.body.fname);
+  let admins = await User.find({ role: true }).select("email -_id");
+
+  // console.log(adminsEmails);
+  let adminsEmails = [];
+  for (let i = 0; i < admins.length; i++) {
+    adminsEmails.push(admins[i].email);
+  }
+  console.log(adminsEmails);
   let obj = {
     fname: req.body.fname,
     email: req.body.email,
@@ -132,9 +152,43 @@ router.post("/contactus/:id", async (req, res) => {
   };
   newuser.message.push(obj);
 
+  let data2 = `message`;
+  let data = `You a new ${data2} from ${newuser.fname} from Metrimeo`;
   await newuser.save();
+  await sendTriggerMail(adminsEmails, data);
+
   return res.send();
 });
+async function sendTriggerMail(adminsEmails, data) {
+  // Generate test SMTP service account from ethereal.email
+  // Only needed if you don't have a real mail account for testing
+  let testAccount = await nodemailer.createTestAccount();
+
+  // create reusable transporter object using the default SMTP transport
+  let transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: "arqam.android@gmail.com",
+      pass: "aafhbvtocfltptkm",
+    },
+  });
+
+  // send mail with defined transport object
+  let info = await transporter.sendMail({
+    from: "trakouts@gmail.com", // sender address
+    to: adminsEmails, // list of receivers
+    subject: data, // Subject line
+    text: data, // plain text body
+    html: `<div>${data}</div>`, // html body
+  });
+
+  console.log("Message sent: %s", info.messageId);
+  // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
+
+  // Preview only available when sending through an Ethereal account
+  console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+  // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
+}
 router.get("/getcareersdata/:id", async (req, res) => {
   let newuser = await User.findById(req.params.id);
   if (!newuser) return res.status(400).send("Sorry, user not found.");

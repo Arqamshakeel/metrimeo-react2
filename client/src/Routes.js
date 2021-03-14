@@ -24,6 +24,10 @@ import About from "./components/about/About";
 import Careers from "./components/careers/Careers";
 import ContactUs from "./components/contactus/ContactUs";
 import AdminPanel from "./components/adminpanel/AdminPanel";
+import Dashboard from "./components/dashboard/Dashboard";
+import Terms from "./components/termsandconditions/Terms";
+import Security from "./components/security/Security";
+import SecurityPractices from "./components/securityPractices/SecurityPractices";
 
 function Routes(props) {
   const isDesktopOrLaptop = useMediaQuery({
@@ -70,6 +74,10 @@ function Routes(props) {
         <Route path="/careers" exact component={Careers} />
         <Route path="/contact-us" exact component={ContactUs} />
         <Route path="/admin" exact component={AdminPanel} />
+        <Route path="/dashboard" exact component={Dashboard} />
+        <Route path="/terms-and-conditions" exact component={Terms} />
+        <Route path="/privacy-policy" exact component={Security} />
+        <Route path="/security-practices" exact component={SecurityPractices} />
       </Switch>
       <Grid container>
         <Grid item xs={12} lg={9}>

@@ -11,6 +11,7 @@ import ContactSupportIcon from "@material-ui/icons/ContactSupport";
 import { Box, Grid } from "@material-ui/core";
 import { red } from "@material-ui/core/colors";
 import { withRouter } from "react-router-dom";
+import userService from "../../services/UserService";
 // import GradientBtn from "../../quotes/GradientBtn";
 
 const CarMediaCard = (props) => {
@@ -99,7 +100,16 @@ const CarMediaCard = (props) => {
                 <br />
 
                 <div className="intro-button">
-                  <a href="">
+                  <a
+                    href=""
+                    onClick={() => {
+                      if (userService.getloggedinuser()) {
+                        props.history.push("/dashboard");
+                      } else {
+                        props.history.push("/login");
+                      }
+                    }}
+                  >
                     {props.buttonText ? props.buttonText : "Learn More"}
                   </a>
                 </div>
@@ -141,4 +151,4 @@ const CarMediaCard = (props) => {
     </div>
   );
 };
-export default CarMediaCard;
+export default withRouter(CarMediaCard);

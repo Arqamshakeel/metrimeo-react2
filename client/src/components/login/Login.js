@@ -27,7 +27,9 @@ import CheckLoginForRegister from "../../auth/CheckLoginForRegister";
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
-      By continuing you accept our Terms & Conditions and Privacy Policy{" "}
+      By continuing you accept our{" "}
+      <a href="/terms-and-conditions">Terms & Conditions</a> and{" "}
+      <a href="/privacy-policy">Privacy Policy</a>{" "}
       {/* <Link color="inherit" href="https://www.instagram.com/arqamshakeel/">
         Family Mart made by Arqam Shakeel.
       </Link>{" "} */}

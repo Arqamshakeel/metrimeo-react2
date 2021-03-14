@@ -12,6 +12,7 @@ import { Box, Grid } from "@material-ui/core";
 import { red } from "@material-ui/core/colors";
 import { useMediaQuery } from "react-responsive";
 import { withRouter } from "react-router-dom";
+import userService from "../../services/UserService";
 // import GradientBtn from "../../quotes/GradientBtn";
 
 const CarMediaCardLong = (props) => {
@@ -130,7 +131,17 @@ const CarMediaCardLong = (props) => {
                 <br />
 
                 <div className="intro-button">
-                  <a href="">
+                  <a
+                    href=""
+                    onClick={() => {
+                      if (userService.getloggedinuser()) {
+                        props.history.push("/dashboard");
+                      } else {
+                        props.history.push("/login");
+                      }
+                    }}
+                    style={{ cursor: "pointer" }}
+                  >
                     {props.buttonText ? props.buttonText : "Learn More"}
                   </a>
                 </div>
@@ -182,4 +193,4 @@ const CarMediaCardLong = (props) => {
     </div>
   );
 };
-export default CarMediaCardLong;
+export default withRouter(CarMediaCardLong);
