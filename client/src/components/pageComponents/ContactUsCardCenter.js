@@ -120,9 +120,9 @@ const ContactUsCardCenter = (props) => {
                   href=""
                   onClick={() => {
                     if (userService.getloggedinuser()) {
-                      props.history.push("/dashboard");
+                      props.history.push("/careers");
                     } else {
-                      props.history.push("/login");
+                      props.history.push("/careers");
                     }
                   }}
                 >

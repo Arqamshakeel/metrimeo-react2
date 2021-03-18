@@ -103,11 +103,12 @@ const ContactUs = () => {
   React.useEffect(() => {
     console.log(resumeFileType);
   }, [resumeFileType]);
+
   const handleUpdate = () => {
     setLoginProgress(true);
 
     userService
-      .contactUs(userService.getloggedinuser()._id, {
+      .contactUs({
         fname: fname,
         email: email,
         phone: phone,
@@ -158,221 +159,219 @@ const ContactUs = () => {
   const isPortrait = useMediaQuery({ query: "(orientation: portrait)" });
   const isRetina = useMediaQuery({ query: "(min-resolution: 2dppx)" });
   return (
-    <CheckLogIn>
-      <div>
-        <div className="image">
-          <Grid container justify={isTabletOrMobile ? "flex-start" : null}>
-            <Grid item lg={7} md={7} sm={7} xs={12}></Grid>
-            <Grid
-              item
-              lg={4}
-              md={4}
-              sm={6}
-              xs={10}
-              style={{ marginLeft: isTabletOrMobile ? "10px" : null }}
-            >
-              <div className="box">
-                <div className="box-margin">
-                  <div className="heading">Contact Us</div>
-                  <div>
-                    <br />
-                    <div className="elementor-divider-separator data5"></div>
-                    <br />
-                  </div>
-                  <div className="decs">
-                    Get personalized help and answers to your questions
-                  </div>
+    <div>
+      <div className="image">
+        <Grid container justify={isTabletOrMobile ? "flex-start" : null}>
+          <Grid item lg={7} md={7} sm={7} xs={12}></Grid>
+          <Grid
+            item
+            lg={4}
+            md={4}
+            sm={6}
+            xs={10}
+            style={{ marginLeft: isTabletOrMobile ? "10px" : null }}
+          >
+            <div className="box">
+              <div className="box-margin">
+                <div className="heading">Contact Us</div>
+                <div>
+                  <br />
+                  <div className="elementor-divider-separator data5"></div>
+                  <br />
                 </div>
-                <div></div>
+                <div className="decs">
+                  Get personalized help and answers to your questions
+                </div>
               </div>
-            </Grid>
-            <Grid item lg={1} md={1} sm={7} xs={12}></Grid>
+              <div></div>
+            </div>
           </Grid>
+          <Grid item lg={1} md={1} sm={7} xs={12}></Grid>
+        </Grid>
 
-          <style jsx global>{`
-            .image {
-              background-image: url("./wp-content/uploads/2020/11/5650-scaled.jpg");
+        <style jsx global>{`
+          .image {
+            background-image: url("./wp-content/uploads/2020/11/5650-scaled.jpg");
 
-              width: 100%;
-              height: 600px;
-              max-height: 1000px;
-              //   background-size: 100% auto;
-              background-size: cover;
-              //   background-size: contain;
-              background-repeat: no-repeat;
-              background-position: center center;
-              max-height: 1000px;
-            }
-            .top-div {
-            }
-            .box {
-              ${!isPortrait && isTabletOrMobile
-                ? "max-height:360px;"
-                : "min-height:200px;"}
-              // min-height: 300px;
+            width: 100%;
+            height: 600px;
+            max-height: 1000px;
+            //   background-size: 100% auto;
+            background-size: cover;
+            //   background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            max-height: 1000px;
+          }
+          .top-div {
+          }
+          .box {
+            ${!isPortrait && isTabletOrMobile
+              ? "max-height:360px;"
+              : "min-height:200px;"}
+            // min-height: 300px;
             margin-top: ${!isPortrait && isTabletOrMobile
-                ? "40%"
-                : isTabletOrMobile
-                ? "40%"
-                : "55%"};
-              border: 1px solid rgba(255, 255, 255, 0.5);
-              background-color: #ffff;
-              // opacity: 0.7;
-              background: rgba(255, 255, 255, 0.9);
-            }
-            .box .heading {
-              font-style: normal;
+              ? "40%"
+              : isTabletOrMobile
+              ? "40%"
+              : "55%"};
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            background-color: #ffff;
+            // opacity: 0.7;
+            background: rgba(255, 255, 255, 0.9);
+          }
+          .box .heading {
+            font-style: normal;
 
-              line-height: 1.1em;
-              font-size: 26px;
-              font-family: Helvetica, sans-serif;
-              letter-spacing: 0.5px;
-              font-weight: 800;
-              opacity: 1;
-              color: #636060;
-            }
-            .elementor-divider-separator {
-              width: 50px;
-              margin: 0 auto;
-              margin-left: 0;
-              border-top: 4.5px solid #e05414;
-            }
-            .box-margin {
-              margin: 30px;
+            line-height: 1.1em;
+            font-size: 26px;
+            font-family: Helvetica, sans-serif;
+            letter-spacing: 0.5px;
+            font-weight: 800;
+            opacity: 1;
+            color: #636060;
+          }
+          .elementor-divider-separator {
+            width: 50px;
+            margin: 0 auto;
+            margin-left: 0;
+            border-top: 4.5px solid #e05414;
+          }
+          .box-margin {
+            margin: 30px;
 
-              opacity: 1;
-            }
-            .box .decs {
-              font-size: 20px;
-              color: black;
-              font-family: "Open Sans", sans-serif;
-              font-weight: 300;
-            }
-            .intro-button {
-              margin-top: 2.3em;
-              margin-bottom: 3em;
-              opacity: 1;
-            }
-            .intro-button a {
-              padding: 0.65em 2.6em;
-              border-radius: 20px;
-              color: white;
+            opacity: 1;
+          }
+          .box .decs {
+            font-size: 20px;
+            color: black;
+            font-family: "Open Sans", sans-serif;
+            font-weight: 300;
+          }
+          .intro-button {
+            margin-top: 2.3em;
+            margin-bottom: 3em;
+            opacity: 1;
+          }
+          .intro-button a {
+            padding: 0.65em 2.6em;
+            border-radius: 20px;
+            color: white;
 
-              background: #186eb8;
-              transition: all 0.5s;
-              opacity: 1;
-            }
-            .intro-button a:hover {
-              background-color: #186eb8;
-              color: white;
-              opacity: 1;
-            }
-          `}</style>
-        </div>
-        <CustomBackdrop open={loginProgress} setOpen={setLoginProgress} />
-        <SuccessSnackBar open={sOpen} setOpen={setSOpen} msg={Smsg} />
-        <SnackBar open={open} setOpen={setOpen} msg={msg} />
-        <Paper
-          elevation={3}
-          style={{ margin: "100px 200px 200px 200px", borderRadius: "40px" }}
-        >
-          <Grid container justify="center">
-            <Grid item xs={10}>
-              <div
-                style={{
-                  margin: "20px 0px 20px 0px",
-                  fontStyle: "'Montserrat',sans-serif",
-                  fontSize: "35px",
-                  fontWeight: "800",
-                }}
-              >
-                Your Message
-              </div>
-            </Grid>
-            <Grid item xs={10}>
-              <TextField
-                variant="outlined"
-                margin="normal"
-                required
-                fullWidth
-                label="Name"
-                name="Username"
-                autoComplete="name"
-                value={fname}
-                onChange={(e) => {
-                  setFname(e.target.value);
-                }}
-                // autoFocus
-              />
-
-              <TextField
-                value={email}
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                }}
-                variant="outlined"
-                margin="normal"
-                required
-                fullWidth
-                label="Email Address"
-                name="email"
-                autoComplete="email"
-              />
-              <TextField
-                variant="outlined"
-                margin="normal"
-                required
-                fullWidth
-                label="Phone Number"
-                type="number"
-                value={phone}
-                onChange={(e) => {
-                  setPhone(e.target.value);
-                }}
-              />
-
-              <div>Customer Type</div>
-              <CustomRadio value={typeAccount} setValue={setTypeAccount} />
-
-              <TextField
-                variant="outlined"
-                margin="normal"
-                required
-                fullWidth
-                label="Subject"
-                value={subject}
-                onChange={(e) => {
-                  setSubject(e.target.value);
-                }}
-              />
-              <TextField
-                variant="outlined"
-                margin="normal"
-                required
-                fullWidth
-                label="Message"
-                value={message}
-                onChange={(e) => {
-                  setMessage(e.target.value);
-                }}
-                multiline
-                rows={7}
-              />
-              <Button
-                disabled={message.length > 0 ? false : true}
-                variant="contained"
-                onClick={handleUpdate}
-                fullWidth
-                color="primary"
-                style={{ marginBottom: "10px" }}
-              >
-                Submit
-              </Button>
-            </Grid>
-          </Grid>
-        </Paper>
+            background: #186eb8;
+            transition: all 0.5s;
+            opacity: 1;
+          }
+          .intro-button a:hover {
+            background-color: #186eb8;
+            color: white;
+            opacity: 1;
+          }
+        `}</style>
       </div>
-    </CheckLogIn>
+      <CustomBackdrop open={loginProgress} setOpen={setLoginProgress} />
+      <SuccessSnackBar open={sOpen} setOpen={setSOpen} msg={Smsg} />
+      <SnackBar open={open} setOpen={setOpen} msg={msg} />
+      <Paper
+        elevation={3}
+        style={{ margin: "100px 200px 200px 200px", borderRadius: "40px" }}
+      >
+        <Grid container justify="center">
+          <Grid item xs={10}>
+            <div
+              style={{
+                margin: "20px 0px 20px 0px",
+                fontStyle: "'Montserrat',sans-serif",
+                fontSize: "35px",
+                fontWeight: "800",
+              }}
+            >
+              Your Message
+            </div>
+          </Grid>
+          <Grid item xs={10}>
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              label="Name"
+              name="Username"
+              autoComplete="name"
+              value={fname}
+              onChange={(e) => {
+                setFname(e.target.value);
+              }}
+              // autoFocus
+            />
+
+            <TextField
+              value={email}
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              label="Email Address"
+              name="email"
+              autoComplete="email"
+            />
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              label="Phone Number"
+              type="number"
+              value={phone}
+              onChange={(e) => {
+                setPhone(e.target.value);
+              }}
+            />
+
+            <div>Customer Type</div>
+            <CustomRadio value={typeAccount} setValue={setTypeAccount} />
+
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              label="Subject"
+              value={subject}
+              onChange={(e) => {
+                setSubject(e.target.value);
+              }}
+            />
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              label="Message"
+              value={message}
+              onChange={(e) => {
+                setMessage(e.target.value);
+              }}
+              multiline
+              rows={7}
+            />
+            <Button
+              disabled={message.length > 0 ? false : true}
+              variant="contained"
+              onClick={handleUpdate}
+              fullWidth
+              color="primary"
+              style={{ marginBottom: "10px" }}
+            >
+              Submit
+            </Button>
+          </Grid>
+        </Grid>
+      </Paper>
+    </div>
   );
 };
 

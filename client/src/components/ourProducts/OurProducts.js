@@ -4,7 +4,7 @@ import CarMediaCard from "../pageComponents/CarMediaCard";
 import CarMediaCardRightPic from "../pageComponents/CarMediaCardRightPic";
 import ContactUsCard from "../pageComponents/ContactUsCard";
 import { useMediaQuery } from "react-responsive";
-const OurProducts = () => {
+const OurProducts = (props) => {
   React.useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -45,7 +45,14 @@ const OurProducts = () => {
                   businesses
                 </div>
                 <div className="intro-button">
-                  <a href="">Join Us!</a>
+                  <a
+                    onClick={() => {
+                      props.history.push("/register");
+                    }}
+                    href=""
+                  >
+                    Join Us!
+                  </a>
                 </div>
               </div>
               <div></div>
@@ -185,6 +192,8 @@ const OurProducts = () => {
         buttonTextColor={"blue"}
         height="300px"
         buttonText={"Lets get in touch!"}
+        loggedin={"/contact-us"}
+        notloggedin={"/contact-us"}
       />
     </div>
   );

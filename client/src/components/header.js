@@ -2,7 +2,9 @@ import React from "react";
 import { Container, Jumbotron } from "reactstrap";
 import { useMediaQuery } from "react-responsive";
 import { Grid } from "@material-ui/core";
-const Header = () => {
+import { withRouter } from "react-router";
+import userService from "../services/UserService";
+const Header = (props) => {
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-width: 1224px)",
   });
@@ -97,7 +99,23 @@ const Header = () => {
                 isDesktopOrLaptop ? "intro-button data3" : "intro-button"
               }
             >
-              <a href="">Get Started!</a>
+              <a
+                href=""
+                onClick={() => {
+                  if (userService.getloggedinuser()) {
+                    props.history.push(
+                      props.loggedin ? props.loggedin : "/dashboard"
+                    );
+                  } else {
+                    props.history.push(
+                      props.notloggedin ? props.notloggedin : "/register"
+                    );
+                  }
+                }}
+                href=""
+              >
+                Get Started!
+              </a>
             </div>
             <br />
           </Grid>
@@ -315,4 +333,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default withRouter(Header);

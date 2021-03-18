@@ -98,7 +98,7 @@ const SecurityPractices = () => {
         data2sub={[
           "We leverage industry standard programming",
           // !isTabletOrMobile ? <br /> : <></>,
-          " techniques such as having a documented",
+          " techniques such as having a documented ",
           // !isTabletOrMobile ? <br /> : <></>,
           "development and quality assurance processes to",
           // !isTabletOrMobile ? <br /> : <></>,

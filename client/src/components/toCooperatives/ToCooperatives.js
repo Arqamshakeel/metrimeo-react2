@@ -56,7 +56,7 @@ const ToCooperatives = (props) => {
                       if (userService.getloggedinuser()) {
                         props.history.push("/dashboard");
                       } else {
-                        props.history.push("/login");
+                        props.history.push("/register");
                       }
                     }}
                     style={{ cursor: "pointer" }}
@@ -232,6 +232,8 @@ const ToCooperatives = (props) => {
         buttonTextColor={"blue"}
         height="300px"
         buttonText={"Contact us"}
+        loggedin={"/contact-us"}
+        notloggedin={"/contact-us"}
       />
     </div>
   );

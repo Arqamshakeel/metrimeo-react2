@@ -44,7 +44,7 @@ const ThreeGridSecurity = (props) => {
   return (
     <div>
       <Card className={classes.root}>
-        <CardActionArea>
+        <CardActionArea style={{ padding: isTabletOrMobile ? "0px" : "20px" }}>
           <Grid container style={{ padding: "50px" }}>
             {/* <Grid item xs={12}>
               <div
@@ -101,8 +101,10 @@ const ThreeGridSecurity = (props) => {
                 >
                   <div
                     style={{
-                      textAlign: "center",
+                      textAlign: "left",
                       color: "#5D7280",
+                      fontfont: "'Montserrat',sans-serif",
+                      fontSize: "18px",
                     }}
                   >
                     Your data security is a top priority at MetriMeo. Every day
@@ -261,6 +263,54 @@ const ThreeGridSecurity = (props) => {
                 ) : null}
               </div>
             </Grid>
+            {props.headingShow != "hello" ? (
+              <Grid
+                xs={12}
+                container
+                direction="column"
+                alignItems="center"
+                justify="center"
+              >
+                <div
+                  style={{
+                    textAlign: "left",
+                    // marginLeft: "auto",
+                    // marginRight: "auto",
+                    fontfont: "'Montserrat',sans-serif",
+                    fontSize: isTabletOrMobile ? "18px" : "15px",
+                    marginBottom: "20px",
+                  }}
+                >
+                  <div
+                    style={{
+                      // textAlign: "left",
+                      marginLeft: "auto",
+                      marginRight: "auto",
+                      color: "#5D7280",
+                      fontfont: "'Montserrat',sans-serif",
+                      fontSize: "18px",
+                      // display: "inline-block",
+                    }}
+                  >
+                    <br />
+                    <p>
+                      We hope that the above has helped you better understand
+                      MetriMeo’s efforts to protect your data. Would you have
+                      any additional questions or concerns please email us at{" "}
+                      <a
+                        href="mailto:security@metrimeo.com"
+                        style={{ color: "orange" }}
+                      >
+                        security@metrimeo.com
+                      </a>
+                      .
+                    </p>
+                  </div>
+                </div>
+              </Grid>
+            ) : (
+              <></>
+            )}
           </Grid>
         </CardActionArea>
       </Card>

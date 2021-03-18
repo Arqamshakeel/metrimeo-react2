@@ -19,26 +19,19 @@ import ViewColumn from "@material-ui/icons/ViewColumn";
 import { Checkbox, Container, MenuItem, Select } from "@material-ui/core";
 import userService from "../../services/UserService";
 
-const MaterialTableResume = () => {
+const MaterialTableContactUs = () => {
   const [userData, setUserData] = React.useState([]);
   const [adminChecked, setAdminChecked] = React.useState(null);
 
-  const getUsersData = () => {
-    userService
-      .getCareersData2()
-      .then((res) => {
-        // setUserData(res);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-
-  React.useEffect(getUsersData, []);
+  // React.useEffect(getUsersData, []);
   React.useEffect(() => {
     userService
-      .getCareersData2()
+      .getContactUs()
       .then((res) => {
+        console.log("====================================");
+        console.log("Contactus");
+        console.log(res);
+        console.log("====================================");
         setUserData(res);
       })
       .catch((err) => {
@@ -140,10 +133,10 @@ const MaterialTableResume = () => {
 
   return (
     <Container maxWidth="md">
-      <h3>Resume and Letters</h3>
+      <h3>Messages</h3>
       <MaterialTable
         icons={tableIcons}
-        title="Resume and Letters"
+        title="Messages"
         columns={[
           { title: "-" },
           {
@@ -152,41 +145,23 @@ const MaterialTableResume = () => {
             editable: "never",
             render: (rowData) => (
               <div>
-                {rowData.careers.fname.length > 1 ? (
-                  <div
-                    href={rowData.resume.base64}
-                    download={rowData.resume.name}
-                  >
-                    {rowData.careers.fname}
-                  </div>
+                {rowData.message.fname.length > 1 ? (
+                  <div>{rowData.message.fname}</div>
                 ) : (
                   <>Not found</>
                 )}
               </div>
             ),
           },
-          {
-            title: "Last Name",
-            field: "lname",
-            editable: "never",
-            render: (rowData) => (
-              <div>
-                {rowData.careers.lname.length > 1 ? (
-                  <div>{rowData.careers.lname}</div>
-                ) : (
-                  <>Not found</>
-                )}
-              </div>
-            ),
-          },
+
           {
             title: "Email",
             field: "email",
             editable: "never",
             render: (rowData) => (
               <div>
-                {rowData.careers.email.length > 1 ? (
-                  <div>{rowData.careers.email}</div>
+                {rowData.message.email.length > 1 ? (
+                  <div>{rowData.message.email}</div>
                 ) : (
                   <>Not found</>
                 )}
@@ -194,38 +169,27 @@ const MaterialTableResume = () => {
             ),
           },
           {
-            title: "Resume",
-            field: "Resume",
+            title: "Contact no",
+            field: "Contact no",
             render: (rowData) => (
               <div>
-                {rowData.resume && rowData.resume.base64.length > 30 ? (
-                  <a
-                    href={rowData.resume.base64}
-                    download={rowData.resume.name}
-                  >
-                    Download resume
-                  </a>
+                {rowData.message.phone.length > 1 ? (
+                  <div>{rowData.message.phone}</div>
                 ) : (
-                  <>No resume found</>
+                  <>Not found</>
                 )}
               </div>
             ),
           },
           {
-            title: "Letter",
-            field: "Letter",
+            title: "Message",
+            field: "Message",
             render: (rowData) => (
               <div>
-                {rowData.coverLetter &&
-                rowData.coverLetter.base64.length > 30 ? (
-                  <a
-                    href={rowData.coverLetter.base64}
-                    download={rowData.coverLetter.name}
-                  >
-                    Download Cover Letter
-                  </a>
+                {rowData.message.message.length > 1 ? (
+                  <div>{rowData.message.message}</div>
                 ) : (
-                  <>No Cover Letter found</>
+                  <>Not found</>
                 )}
               </div>
             ),
@@ -243,4 +207,4 @@ const MaterialTableResume = () => {
   );
 };
 
-export default MaterialTableResume;
+export default MaterialTableContactUs;

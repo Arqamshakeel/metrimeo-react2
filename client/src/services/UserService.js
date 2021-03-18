@@ -60,10 +60,14 @@ class UserService extends GenericService {
   getImg = (id) => this.get("users/getimage/" + id);
   getAllUsers = () => this.get("users/getall/");
   updatePassword2 = (id, data) => this.post("users/updatepassword/" + id, data);
-  uploadCareersData = (id, data) =>
-    this.post("users/uploadcareersdata/" + id, data);
+  // uploadCareersData = (id, data) =>
+  //   this.post("users/uploadcareersdata/" + id, data);
+  uploadCareersData = (data) => this.post("users/uploadcareersdata/", data);
   getCareersData = (id) => this.get("users/getcareersdata/" + id);
-  contactUs = (id, data) => this.post("users/contactus/" + id, data);
+  getCareersData2 = () => this.get("users/getcareersdata/all");
+  getContactUs = () => this.get("users/getcontactus/");
+  contactUs = (data) => this.post("users/contactus/", data);
+  // contactUs = (id, data) => this.post("users/contactus/" + id, data);
   // UserReg = (data) =>
   //   new Promise((resolve, reject) => {
   //     this.postReg("users/register", data)

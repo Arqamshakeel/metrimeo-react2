@@ -1,6 +1,8 @@
 var express = require("express");
 var router = express.Router();
 var { User } = require("../mongooseModels/model.users");
+var { Career } = require("../mongooseModels/model.careers");
+var { Contact } = require("../mongooseModels/model.contactus");
 const { mongo } = require("mongoose");
 var bcrypt = require("bcryptjs");
 var config = require("config");
@@ -94,10 +96,10 @@ router.get("/getimage/:id", async (req, res) => {
   return res.send(newuser.img);
   // return res.send(_.pick(user, ["email", "name"]));
 });
-router.post("/uploadcareersdata/:id", async (req, res) => {
-  let newuser = await User.findById(req.params.id);
-  if (!newuser) return res.status(400).send("Sorry, user not found.");
-
+router.post("/uploadcareersdata", async (req, res) => {
+  // let newuser = await User.findById(req.params.id);
+  // if (!newuser) return res.status(400).send("Sorry, user not found.");
+  let newuser = new Career();
   let admins = await User.find({ role: true }).select("email -_id");
 
   // console.log(adminsEmails);
@@ -125,14 +127,51 @@ router.post("/uploadcareersdata/:id", async (req, res) => {
 
   await newuser.save();
   let data2 = `Career form Filled`;
-  let data = `You a new ${data2} from ${newuser.fname} from Metrimeo`;
+  let data = `You a new ${data2} from Metrimeo`;
   await sendTriggerMail(adminsEmails, data);
-
   return res.send();
 });
-router.post("/contactus/:id", async (req, res) => {
-  let newuser = await User.findById(req.params.id);
-  if (!newuser) return res.status(400).send("Sorry, user not found.");
+// router.post("/uploadcareersdata/:id", async (req, res) => {
+//   let newuser = await User.findById(req.params.id);
+//   if (!newuser) return res.status(400).send("Sorry, user not found.");
+
+//   let admins = await User.find({ role: true }).select("email -_id");
+
+//   // console.log(adminsEmails);
+//   let adminsEmails = [];
+//   for (let i = 0; i < admins.length; i++) {
+//     adminsEmails.push(admins[i].email);
+//   }
+
+//   newuser.resume = req.body.resume;
+//   newuser.coverLetter = req.body.coverLetter;
+
+//   console.log(req.body.fname);
+//   let obj = {
+//     fname: req.body.fname,
+//     lname: req.body.lname,
+//     email: req.body.email,
+//     phone: req.body.phone,
+//     city: req.body.city,
+//     country: req.body.country,
+//     allowedToWork: req.body.allowedToWork,
+//     education: req.body.education,
+//     interests: req.body.interests,
+//   };
+//   newuser.careers = obj;
+
+//   await newuser.save();
+//   let data2 = `Career form Filled`;
+//   let data = `You a new ${data2} from ${newuser.fname} from Metrimeo`;
+//   await sendTriggerMail(adminsEmails, data);
+
+//   return res.send();
+// });
+router.post("/contactus/", async (req, res) => {
+  // let newuser = await User.findById(req.params.id);
+  // if (!newuser) return res.status(400).send("Sorry, user not found.");
+
+  let newuser = new Contact();
 
   let admins = await User.find({ role: true }).select("email -_id");
 
@@ -150,10 +189,10 @@ router.post("/contactus/:id", async (req, res) => {
     message: req.body.message,
     subject: req.body.subject,
   };
-  newuser.message.push(obj);
+  newuser.message = obj;
 
   let data2 = `message`;
-  let data = `You a new ${data2} from ${newuser.fname} from Metrimeo`;
+  let data = `You a new ${data2} from Metrimeo`;
   await newuser.save();
   await sendTriggerMail(adminsEmails, data);
 
@@ -189,6 +228,19 @@ async function sendTriggerMail(adminsEmails, data) {
   console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
   // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
 }
+router.get("/getcareersdata/all", async (req, res) => {
+  let career = await Career.find();
+  if (!career) return res.status(400).send("Sorry, user not found.");
+
+  // await newuser.save();
+  return res.send(career);
+});
+router.get("/getcontactus", async (req, res) => {
+  let career = await Contact.find();
+  if (!career) return res.status(400).send("Sorry, user not found.");
+
+  return res.status(200).send(career);
+});
 router.get("/getcareersdata/:id", async (req, res) => {
   let newuser = await User.findById(req.params.id);
   if (!newuser) return res.status(400).send("Sorry, user not found.");
@@ -196,6 +248,7 @@ router.get("/getcareersdata/:id", async (req, res) => {
   // await newuser.save();
   return res.send(newuser.resume);
 });
+
 router.post("/updatepassword/:id", async (req, res) => {
   let newuser = await User.findById(req.params.id);
   if (!newuser) return res.status(400).send("Sorry, user not found.");

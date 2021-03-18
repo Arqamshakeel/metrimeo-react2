@@ -55,9 +55,15 @@ function Routes(props) {
       props.history.location.pathname === "/forgetpassword" ? (
         <></>
       ) : (
-        <NavBar />
+        <>
+          <NavBar />
+        </>
       )}
-
+      {/* {props.history.location.pathname === "/terms-and-conditions" ? (
+        <div style={{ marginBottom: "20px" }}></div>
+      ) : (
+        <></>
+      )} */}
       <Switch>
         <Route path="/" exact component={LandingComponent} />
         <Route path="/our-products" exact component={OurProducts} />

@@ -311,7 +311,6 @@ class NavBar extends Component {
       <div className="navi-menu">
         <Container>
           <MobileMenu hideNav={this.hideNav} props={this.props} />
-
           <Nav className="nav-n">
             <NavItem className="nav-item-n logo">
               {/* <NavLink href="#">Meterio</NavLink> */}

@@ -26,8 +26,8 @@ const CustomFooter = () => {
               { title: "About", url: "/about" },
               { title: "Our Products", url: "/our-products" },
               { title: "Careers", url: "/careers" },
-              { title: "Terms and conditions", url: "/terms-and-conditions" },
-              { title: "Privacy and policy", url: "/privacy-policy" },
+              { title: "Terms & Conditions", url: "/terms-and-conditions" },
+              { title: "Privacy Policy", url: "/privacy-policy" },
               { title: "Security Practices", url: "/security-practices" },
             ],
             url: "https://yuque.com",
@@ -41,7 +41,7 @@ const CustomFooter = () => {
               { title: "About", url: "/about" },
               { title: "Our Products", url: "/our-products" },
               { title: "Login", url: "/login" },
-              { title: "Sign up", url: "/register" },
+              { title: "Sign Up", url: "/register" },
             ],
             url: "https://yuque.com",
             description: "hellosdnfljdashjfldjlf",
@@ -60,7 +60,6 @@ const CustomFooter = () => {
             openExternal: true,
           },
         ]}
-        // bottom={<div style={{ backgroundColor: "white" }}>hello</div>}
       />
     </>
   );

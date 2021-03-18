@@ -94,6 +94,8 @@ const LandingComponent = () => {
         buttonTextColor={"blue"}
         height="400px"
         buttonText={"Sign up free today!"}
+        loggedin={"/dashboard"}
+        notloggedin={"/register"}
       />
 
       <style jsx global>{`

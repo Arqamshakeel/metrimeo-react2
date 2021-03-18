@@ -137,7 +137,7 @@ const CarMediaCardLong = (props) => {
                       if (userService.getloggedinuser()) {
                         props.history.push("/dashboard");
                       } else {
-                        props.history.push("/login");
+                        props.history.push("/register");
                       }
                     }}
                     style={{ cursor: "pointer" }}

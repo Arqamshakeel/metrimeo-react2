@@ -56,7 +56,7 @@ const ToLandlords = (props) => {
                       if (userService.getloggedinuser()) {
                         props.history.push("/dashboard");
                       } else {
-                        props.history.push("/login");
+                        props.history.push("/register");
                       }
                     }}
                     style={{ color: "white", cursor: "pointer" }}
@@ -293,6 +293,8 @@ const ToLandlords = (props) => {
         buttonTextColor={"blue"}
         height="300px"
         buttonText={"Contact us"}
+        loggedin={"/contact-us"}
+        notloggedin={"/contact-us"}
       />
     </div>
   );

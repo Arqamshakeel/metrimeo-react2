@@ -108,9 +108,13 @@ const ContactUsCard = (props) => {
                     href=""
                     onClick={() => {
                       if (userService.getloggedinuser()) {
-                        props.history.push("/dashboard");
+                        props.history.push(
+                          props.loggedin ? props.loggedin : "/dashboard"
+                        );
                       } else {
-                        props.history.push("/login");
+                        props.history.push(
+                          props.notloggedin ? props.notloggedin : "/login"
+                        );
                       }
                     }}
                   >
