@@ -8,6 +8,7 @@ import {
 } from "@material-ui/core";
 import CustomBackdrop from "../backdrop/CustomBackdrop";
 import InputLabel from "@material-ui/core/InputLabel";
+import validator from "email-validator";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormHelperText from "@material-ui/core/FormHelperText";
 import SnackBar from "../snackBar/SnackBar";
@@ -112,11 +113,12 @@ const ContactUs = () => {
       setmsg("First name should not be empty");
       return;
     }
-    if (email.length < 1) {
+    if (!validator.validate(email)) {
       setOpen(true);
-      setmsg("Email should not be empty");
+      setmsg("Email invalid");
       return;
     }
+
     if (phone.length < 1) {
       setOpen(true);
       setmsg("Phone should not be empty");
@@ -125,6 +127,11 @@ const ContactUs = () => {
     if (subject.length < 1) {
       setOpen(true);
       setmsg("Subject should not be empty");
+      return;
+    }
+    if (!typeAccount) {
+      setOpen(true);
+      setmsg("Type should not be empty");
       return;
     }
 
@@ -171,6 +178,7 @@ const ContactUs = () => {
         .catch((err) => {});
     }
   }, []);
+
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-width: 1224px)",
   });
@@ -345,6 +353,7 @@ const ContactUs = () => {
               label="Email Address"
               name="email"
               autoComplete="email"
+              type="email"
             />
             <TextField
               variant="outlined"

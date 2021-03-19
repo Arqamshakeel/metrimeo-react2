@@ -24,6 +24,7 @@ import RadioButton from "./RadioButton";
 import CountryNames from "./CountryNames";
 import CancelOutlinedIcon from "@material-ui/icons/CancelOutlined";
 import CheckLoginForRegister from "../../auth/CheckLoginForRegister";
+import CustomDatePicker from "./CustomDatePicker";
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -243,18 +244,23 @@ const Register = (props) => {
               </div>
               <RadioButton setValue={setType} value={type} />
 
-              <TextField
-                value={userName}
-                onChange={(e) => {
-                  setUserName(e.target.value);
-                }}
-                variant="outlined"
-                margin="normal"
-                required
-                fullWidth
-                label="Username"
-                name="Username"
-              />
+              {type == "business" ? (
+                <TextField
+                  value={userName}
+                  onChange={(e) => {
+                    setUserName(e.target.value);
+                  }}
+                  variant="outlined"
+                  margin="normal"
+                  required
+                  fullWidth
+                  label={"Business Name"}
+                  name="Username"
+                />
+              ) : (
+                <></>
+              )}
+
               <TextField
                 value={email}
                 onChange={(e) => {
@@ -284,18 +290,39 @@ const Register = (props) => {
                 // autoComplete="current-password"
               />
               <CountryNames country={country} setCountry={setCountry} />
-              <TextField
-                value={fname}
-                onChange={(e) => {
-                  setFname(e.target.value);
-                }}
-                variant="outlined"
-                margin="normal"
-                required
-                fullWidth
-                label="First Name"
-                autoComplete="name"
-                // autoFocus
+
+              {type == "business" ? (
+                <></>
+              ) : (
+                <>
+                  <TextField
+                    value={fname}
+                    onChange={(e) => {
+                      setFname(e.target.value);
+                    }}
+                    variant="outlined"
+                    margin="normal"
+                    required
+                    fullWidth
+                    label="First Name"
+                    autoComplete="name"
+                    // autoFocus
+                  />
+                  <TextField
+                    variant="outlined"
+                    margin="normal"
+                    required
+                    fullWidth
+                    label="Last Name"
+                    autoComplete="name"
+                    // autoFocus
+                  />
+                </>
+              )}
+              <CustomDatePicker
+                label={
+                  type == "business" ? "Business Creation Date" : "Birth Date"
+                }
               />
               {/* <TextField
                 // value={email}

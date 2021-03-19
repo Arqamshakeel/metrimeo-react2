@@ -15,6 +15,7 @@ import FormControl from "@material-ui/core/FormControl";
 import SuccessSnackBar from "../snackBar/SuccessSnackBar";
 import Select from "@material-ui/core/Select";
 import React from "react";
+import validator from "email-validator";
 import fileUpload from "fuctbase64";
 import CustomRadio from "./CustomRadio";
 import { useMediaQuery } from "react-responsive";
@@ -40,8 +41,8 @@ const Careers = () => {
   const [education, setEducation] = React.useState("");
   const [interests, setInterests] = React.useState("");
 
-  const [imgBase64, setImgBase64] = React.useState(null);
-  const [imgBase642, setImgBase642] = React.useState(null);
+  const [imgBase64, setImgBase64] = React.useState("");
+  const [imgBase642, setImgBase642] = React.useState("");
   const [check2, setCheck2] = React.useState(false);
   const [check22, setCheck22] = React.useState(false);
   const [resume, setResume] = React.useState("");
@@ -129,6 +130,61 @@ const Careers = () => {
     console.log(resumeFileType);
   }, [resumeFileType]);
   const handleUpdate = () => {
+    if (imgBase64.length < 40) {
+      setOpen(true);
+      setmsg("Select Resume");
+      return;
+    }
+    if (imgBase642.length < 40) {
+      setOpen(true);
+      setmsg("Select Cover");
+      return;
+    }
+    if (fname.length < 1) {
+      setOpen(true);
+      setmsg("First name should not be empty");
+      return;
+    }
+    if (lname.length < 1) {
+      setOpen(true);
+      setmsg("Last name should not be empty");
+      return;
+    }
+    if (!validator.validate(email)) {
+      setOpen(true);
+      setmsg("Email invalid");
+      return;
+    }
+    if (education.length < 1) {
+      setOpen(true);
+      setmsg("Education should not be empty");
+      return;
+    }
+    if (interests.length < 1) {
+      setOpen(true);
+      setmsg("interests not be empty");
+      return;
+    }
+    // if (!ValidateEmail(email)) {
+    //   setOpen(true);
+    //   setmsg("Email Should be valid");
+    //   return;
+    // }
+    if (phone.length < 1) {
+      setOpen(true);
+      setmsg("Phone should not be empty");
+      return;
+    }
+    if (city.length < 1) {
+      setOpen(true);
+      setmsg("City should not be empty");
+      return;
+    }
+    if (!allowedToWork) {
+      setOpen(true);
+      setmsg("Type should not be empty");
+      return;
+    }
     setLoginProgress(true);
 
     userService
