@@ -134,12 +134,15 @@ const CarMediaCardLeftPic = (props) => {
                     href=""
                     onClick={() => {
                       if (userService.getloggedinuser()) {
-                        props.history.push("/dashboard");
+                        props.history.push(
+                          props.loggedin ? props.loggedin : "/dashboard"
+                        );
                       } else {
-                        props.history.push("/login");
+                        props.history.push(
+                          props.notloggedin ? props.notloggedin : "/login"
+                        );
                       }
                     }}
-                    style={{ cursor: "pointer" }}
                   >
                     {props.buttonText ? props.buttonText : "Learn More"}
                   </a>

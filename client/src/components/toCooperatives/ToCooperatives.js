@@ -182,6 +182,8 @@ const ToCooperatives = (props) => {
         buttonTextColor={"white"}
         buttonText={"Subscribe now!"}
         elementSepColor={"#186eb8"}
+        loggedin={"/dashboard"}
+        notloggedin={"/register"}
       />
       <CarMediaCardRightPic
         image={
@@ -201,6 +203,8 @@ const ToCooperatives = (props) => {
         buttonColor={"#ffff"}
         buttonTextColor={"#186eb8"}
         buttonText={"Subscribe now!"}
+        loggedin={"/dashboard"}
+        notloggedin={"/register"}
       />
 
       <CarMediaCard
@@ -217,6 +221,8 @@ const ToCooperatives = (props) => {
         buttonColor={"#186eb8"}
         buttonTextColor={"white"}
         buttonText={"Subscribe now!"}
+        loggedin={"/dashboard"}
+        notloggedin={"/register"}
       />
 
       <ContactUsCard

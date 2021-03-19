@@ -246,7 +246,7 @@ const Careers = () => {
             margin-top: ${!isPortrait && isTabletOrMobile
               ? "40%"
               : isTabletOrMobile
-              ? "40%"
+              ? "95%"
               : "55%"};
             border: 1px solid rgba(255, 255, 255, 0.5);
             background-color: #ffff;
@@ -533,7 +533,7 @@ const Careers = () => {
             onClick={handleUpdate}
             fullWidth
             color="primary"
-            style={{ marginBottom: "10px" }}
+            style={{ marginBottom: "30px" }}
           >
             Submit
           </Button>

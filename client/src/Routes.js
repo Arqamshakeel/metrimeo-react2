@@ -27,6 +27,7 @@ import AdminPanel from "./components/adminpanel/AdminPanel";
 import Dashboard from "./components/dashboard/Dashboard";
 import Terms from "./components/termsandconditions/Terms";
 import Security from "./components/security/Security";
+import SearchPage from "./components/search/SearchPage";
 import SecurityPractices from "./components/securityPractices/SecurityPractices";
 
 function Routes(props) {
@@ -46,6 +47,8 @@ function Routes(props) {
       type: dark ? "dark" : "light",
     },
   });
+
+  const [searchInput, setSearchInput] = React.useState("");
   React.useEffect(() => {}, []);
   console.log(props.history.location.pathname);
   return (
@@ -84,6 +87,7 @@ function Routes(props) {
         <Route path="/terms-and-conditions" exact component={Terms} />
         <Route path="/privacy-policy" exact component={Security} />
         <Route path="/security-practices" exact component={SecurityPractices} />
+        <Route path="/search/:query" exact component={SearchPage} />
       </Switch>
       <Grid container>
         <Grid item xs={12} lg={9}>
@@ -115,9 +119,9 @@ function Routes(props) {
             <div class="elementor-widget-container">
               <form
                 class="hfe-search-button-wrapper"
-                role="search"
-                action="https://www.metrimeo.com"
-                method="get"
+                // role="search"
+                // action={"/search/" + searchInput}
+                // method="get"
               >
                 <div
                   class="hfe-search-form__container"
@@ -134,14 +138,23 @@ function Routes(props) {
                     placeholder="Search..."
                     class="hfe-search-form__input"
                     type="search"
-                    name="s"
-                    title="Search"
-                    value=""
+                    // name="s"
+                    // title="Search"
+                    value={searchInput}
+                    onChange={(e) => {
+                      setSearchInput(e.target.value);
+                    }}
                   ></input>
                   <button id="clear-with-button" type="reset">
                     <i class="fas fa-times" aria-hidden="true"></i>
                   </button>
-                  <button class="hfe-search-submit" type="submit">
+                  <button
+                    class="hfe-search-submit"
+                    // type="submit"
+                    onClick={() => {
+                      props.history.push("/search/" + searchInput);
+                    }}
+                  >
                     <i class="fas fa-search" aria-hidden="true"></i>
                   </button>
                 </div>

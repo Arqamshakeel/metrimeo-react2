@@ -151,6 +151,8 @@ const OurProducts = (props) => {
         backgroundColor={"#ffff"}
         buttonColor={"#186eb8"}
         buttonTextColor={"white"}
+        loggedin={"/for-individuals"}
+        notloggedin={"/for-individuals"}
       />
 
       <CarMediaCardRightPic
@@ -164,6 +166,8 @@ const OurProducts = (props) => {
         backgroundColor={"#186EB8"}
         buttonColor={"#ffff"}
         buttonTextColor={"#186eb8"}
+        loggedin={"/for-businesses"}
+        notloggedin={"/for-businesses"}
       />
       <CarMediaCard
         image={
@@ -178,6 +182,8 @@ const OurProducts = (props) => {
         backgroundColor={"#E3EEF6"}
         buttonColor={"#186eb8"}
         buttonTextColor={"white"}
+        loggedin={"/for-businesses"}
+        notloggedin={"/for-businesses"}
       />
       <ContactUsCard
         image={"./wp-content/uploads/2020/10/3969587-removebg-preview.png"}

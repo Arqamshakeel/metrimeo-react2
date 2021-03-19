@@ -116,7 +116,7 @@ const Login = (props) => {
     userService
       .UserLogin({ email: email.toLowerCase(), password: password })
       .then(function (res) {
-        // props.history.push("/");
+        props.history.push("/dashboard");
         setLoginProgress(false);
         // console.log(res);
         // console.log("hello");

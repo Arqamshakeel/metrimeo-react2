@@ -177,6 +177,8 @@ const ToLandlords = (props) => {
         buttonColor={"#ffff"}
         buttonTextColor={"#186eb8"}
         buttonText={"Subscribe now!"}
+        loggedin={"/dashboard"}
+        notloggedin={"/register"}
       />
       <ThreeGrid
         image1={
@@ -243,6 +245,8 @@ const ToLandlords = (props) => {
         borderRadius={true}
         marginPic={"50px"}
         picHeight={"300px"}
+        loggedin={"/dashboard"}
+        notloggedin={"/register"}
       />
       <ThreeGrid
         image1={"./wp-content/uploads/2020/11/output-onlinepngtoolscheck2.png"}

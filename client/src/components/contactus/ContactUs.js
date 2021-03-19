@@ -62,7 +62,9 @@ const ContactUs = () => {
   const [img2, setImg2] = React.useState({
     file: "",
   });
-
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   var buffer = null;
   let check = 0;
   let resumefiletype2 = "";
@@ -105,6 +107,27 @@ const ContactUs = () => {
   }, [resumeFileType]);
 
   const handleUpdate = () => {
+    if (fname.length < 1) {
+      setOpen(true);
+      setmsg("First name should not be empty");
+      return;
+    }
+    if (email.length < 1) {
+      setOpen(true);
+      setmsg("Email should not be empty");
+      return;
+    }
+    if (phone.length < 1) {
+      setOpen(true);
+      setmsg("Phone should not be empty");
+      return;
+    }
+    if (subject.length < 1) {
+      setOpen(true);
+      setmsg("Subject should not be empty");
+      return;
+    }
+
     setLoginProgress(true);
 
     userService
@@ -158,6 +181,7 @@ const ContactUs = () => {
   });
   const isPortrait = useMediaQuery({ query: "(orientation: portrait)" });
   const isRetina = useMediaQuery({ query: "(min-resolution: 2dppx)" });
+
   return (
     <div>
       <div className="image">
@@ -272,9 +296,13 @@ const ContactUs = () => {
       <CustomBackdrop open={loginProgress} setOpen={setLoginProgress} />
       <SuccessSnackBar open={sOpen} setOpen={setSOpen} msg={Smsg} />
       <SnackBar open={open} setOpen={setOpen} msg={msg} />
+
       <Paper
         elevation={3}
-        style={{ margin: "100px 200px 200px 200px", borderRadius: "40px" }}
+        style={{
+          margin: isTabletOrMobile ? null : "100px 200px 200px 200px",
+          borderRadius: "40px",
+        }}
       >
         <Grid container justify="center">
           <Grid item xs={10}>
@@ -364,7 +392,7 @@ const ContactUs = () => {
               onClick={handleUpdate}
               fullWidth
               color="primary"
-              style={{ marginBottom: "10px" }}
+              style={{ marginBottom: "25px" }}
             >
               Submit
             </Button>

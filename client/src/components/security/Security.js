@@ -3588,7 +3588,7 @@ const Security = () => {
                               <span style={{ color: "rgb(48, 48, 241)" }}>
                                 <a
                                   data-custom-class="link"
-                                  href="../maps-platform/terms/index.htm"
+                                  href="https://cloud.google.com/maps-platform/terms/"
                                   target="_blank"
                                 >
                                   here
@@ -3607,7 +3607,7 @@ const Security = () => {
                             <span style={{ color: "rgb(48, 48, 241)" }}>
                               <a
                                 data-custom-class="link"
-                                href="../privacy.html"
+                                href="https://policies.google.com/privacy"
                                 target="_blank"
                               >
                                 link
@@ -4962,7 +4962,7 @@ const Security = () => {
                             <span data-custom-class="body_text">
                               <a
                                 data-custom-class="link"
-                                href="../index-3.htm"
+                                href="https://optout.aboutads.info/?c=2&lang=EN"
                                 rel="noopener noreferrer"
                                 target="_blank"
                               >

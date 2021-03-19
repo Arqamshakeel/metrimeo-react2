@@ -113,13 +113,10 @@ app.use(function (err, req, res, next) {
 //mongodb://localhost:27017/metrimeo
 // mongodb+srv://arqam:arqam@cluster0.qs7te.mongodb.net/myFirstDatabase?authSource=admin&replicaSet=atlas-nifuvn-shard-0&w=majority&readPreference=primary&appname=MongoDB%20Compass&retryWrites=true&ssl=true
 mongoose
-  .connect(
-    "mongodb+srv://arqam:arqam@cluster0.qs7te.mongodb.net/myFirstDatabase?authSource=admin&replicaSet=atlas-nifuvn-shard-0&w=majority&readPreference=primary&appname=MongoDB%20Compass&retryWrites=true&ssl=true",
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    }
-  )
+  .connect("mongodb://localhost:27017/metrimeo", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then(() => {
     console.log("Connected to mongoDB");
   })

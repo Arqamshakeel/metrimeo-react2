@@ -213,6 +213,8 @@ const ToIndividuals = (props) => {
         buttonColor={"#186eb8"}
         buttonTextColor={"white"}
         buttonText={"Apply now!"}
+        loggedin={"/dashboard"}
+        notloggedin={"/register"}
       />
 
       <CarMediaCardRightPic
@@ -233,6 +235,8 @@ const ToIndividuals = (props) => {
         buttonColor={"#ffff"}
         buttonTextColor={"#186eb8"}
         buttonText={"Apply now!"}
+        loggedin={"/dashboard"}
+        notloggedin={"/register"}
       />
       <ImageFullBackground
         image={"./wp-content/uploads/2020/11/3799789-scaled.jpg"}
