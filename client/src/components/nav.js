@@ -121,7 +121,7 @@ class MobileMenu extends Component {
               Contact Us
             </NavLink>
           </NavItem>
-          <MobileMenu2 />
+          <MobileMenu2 navrem={this.props.hideNav} />
           {userService.getloggedinuser() ? (
             <NavItem className="nav-item-m">
               <NavLink

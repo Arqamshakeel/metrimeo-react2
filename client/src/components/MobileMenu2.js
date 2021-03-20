@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
+import { withRouter } from "react-router";
 import {
   Container,
   Nav,
@@ -12,7 +13,7 @@ import {
 } from "reactstrap";
 import { falseLogin, switchLogin } from "../Redux/actions/LoginAction";
 import userService from "../services/UserService";
-const MobileMenu2 = () => {
+const MobileMenu2 = (props) => {
   const dispatch = useDispatch();
   return (
     <div>
@@ -34,8 +35,8 @@ const MobileMenu2 = () => {
             <NavLink
               style={{ cursor: "pointer" }}
               onClick={() => {
-                this.props.props.history.push("login");
-                this.props.hideNav();
+                props.history.push("login");
+                props.navrem();
               }}
             >
               Login
@@ -45,8 +46,8 @@ const MobileMenu2 = () => {
             <NavLink
               style={{ cursor: "pointer" }}
               onClick={() => {
-                this.props.props.history.push("register");
-                this.props.hideNav();
+                props.history.push("register");
+                props.navrem();
               }}
             >
               Sign up
@@ -58,4 +59,4 @@ const MobileMenu2 = () => {
   );
 };
 
-export default MobileMenu2;
+export default withRouter(MobileMenu2);
