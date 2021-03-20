@@ -4,6 +4,7 @@ import CarMediaCard from "../pageComponents/CarMediaCard";
 import CarMediaCardRightPic from "../pageComponents/CarMediaCardRightPic";
 import ContactUsCard from "../pageComponents/ContactUsCard";
 import { useMediaQuery } from "react-responsive";
+import userService from "../../services/UserService";
 const OurProducts = (props) => {
   React.useEffect(() => {
     window.scrollTo(0, 0);
@@ -47,7 +48,11 @@ const OurProducts = (props) => {
                 <div className="intro-button">
                   <a
                     onClick={() => {
-                      props.history.push("/register");
+                      if (userService.getloggedinuser()) {
+                        props.history.push("/dashboard");
+                      } else {
+                        props.history.push("/register");
+                      }
                     }}
                     href=""
                   >
