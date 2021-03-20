@@ -24,8 +24,8 @@ const corsOptions = {
   ],
   credentials: true,
   methods: "GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE",
-  // origin: "http://ec2-13-58-234-132.us-east-2.compute.amazonaws.com",
-  origin: "*",
+  origin: "http://ec2-13-58-234-132.us-east-2.compute.amazonaws.com",
+  // origin: "*",
   // origin: "http://localhost:3000",
   preflightContinue: false,
 };
