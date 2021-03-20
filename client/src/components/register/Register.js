@@ -138,8 +138,8 @@ const Register = (props) => {
         type: type.toString(),
         phone: phone,
         country: country,
-        username: userName,
-        fname: fname,
+        // username: userName,
+        fname: type == "business" ? "business" : fname,
       })
       .then(function (res) {
         // props.history.push("/");
@@ -284,8 +284,14 @@ const Register = (props) => {
                 label="Phone Number"
                 type="number"
                 value={phone}
-                onChange={(e) => {
-                  setPhone(e.target.value);
+                onChange={(evt) => {
+                  if (
+                    (evt.which != 8 && evt.which != 0 && evt.which < 48) ||
+                    evt.which > 57
+                  ) {
+                    evt.preventDefault();
+                  }
+                  setPhone(evt.target.value);
                 }}
                 // autoComplete="current-password"
               />
@@ -319,11 +325,11 @@ const Register = (props) => {
                   />
                 </>
               )}
-              <CustomDatePicker
+              {/* <CustomDatePicker
                 label={
                   type == "business" ? "Business Creation Date" : "Birth Date"
                 }
-              />
+              /> */}
               {/* <TextField
                 // value={email}
                 // onChange={(e) => {

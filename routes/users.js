@@ -40,15 +40,15 @@ router.post("/register", validateUserRegMW, async (req, res) => {
   if (newuser != null)
     return res.status(400).send("Sorry, user with this email already exists.");
 
-  newuser = await User.findOne({ username: req.body.username });
-  if (newuser != null)
-    return res.status(400).send("Sorry, username already exists.");
+  // newuser = await User.findOne({ username: req.body.username });
+  // if (newuser != null)
+  //   return res.status(400).send("Sorry, username already exists.");
   newuser = new User();
   console.log(req.body.type2);
   newuser.fname = req.body.fname;
 
   newuser.email = req.body.email;
-  newuser.username = req.body.username;
+  // newuser.username = req.body.username;
 
   newuser.password = req.body.password;
   newuser.type = req.body.type;

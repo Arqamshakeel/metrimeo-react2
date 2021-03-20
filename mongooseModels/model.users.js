@@ -5,7 +5,7 @@ var userSchema = mongoose.Schema({
   fname: String,
   lname: String,
   email: String,
-  username: String,
+  // username: String,
   password_reset_code: String,
   password: String,
   role: { type: Boolean, default: false },
@@ -23,7 +23,7 @@ var User = mongoose.model("users", userSchema);
 
 function validateUser(data) {
   const schema = Joi.object({
-    username: Joi.string().min(3).required(),
+    // username: Joi.string().min(3).required(),
     email: Joi.string().email().min(3).required(),
     phone: Joi.string().required(),
     country: Joi.string().required(),
