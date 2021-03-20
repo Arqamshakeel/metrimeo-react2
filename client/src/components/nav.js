@@ -12,6 +12,8 @@ import {
 import { useMediaQuery } from "react-responsive";
 import { withRouter } from "react-router-dom";
 import NavLoginSignUpButtons from "./NavLoginSignUpButtons";
+import userService from "../services/UserService";
+import MobileMenu2 from "./MobileMenu2";
 class MobileMenu extends Component {
   state = { isOpen: false };
 
@@ -119,29 +121,35 @@ class MobileMenu extends Component {
               Contact Us
             </NavLink>
           </NavItem>
-
-          <NavItem className="nav-item-m">
-            <NavLink
-              style={{ cursor: "pointer" }}
-              onClick={() => {
-                this.props.props.history.push("login");
-                this.props.hideNav();
-              }}
-            >
-              Login
-            </NavLink>
-          </NavItem>
-          <NavItem className="nav-item-m">
-            <NavLink
-              style={{ cursor: "pointer" }}
-              onClick={() => {
-                this.props.props.history.push("register");
-                this.props.hideNav();
-              }}
-            >
-              Sign up
-            </NavLink>
-          </NavItem>
+          <MobileMenu2 />
+          {userService.getloggedinuser() ? (
+            <NavItem className="nav-item-m">
+              <NavLink
+                style={{ cursor: "pointer" }}
+                onClick={() => {
+                  this.props.props.history.push("/dashboard");
+                  this.props.hideNav();
+                }}
+              >
+                Dashboard
+              </NavLink>
+            </NavItem>
+          ) : null}
+          {userService.getloggedinuser() ? (
+            userService.getloggedinuser().role == true ? (
+              <NavItem className="nav-item-m">
+                <NavLink
+                  style={{ cursor: "pointer" }}
+                  onClick={() => {
+                    this.props.props.history.push("/admin");
+                    this.props.hideNav();
+                  }}
+                >
+                  Admin panel
+                </NavLink>
+              </NavItem>
+            ) : null
+          ) : null}
           {/* <NavItem className="nav-item-n-white intro-button2">
             <NavLink href="#">Login</NavLink>
           </NavItem>

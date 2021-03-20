@@ -6,7 +6,7 @@ import DataReviewIcon from "./DataReviewIcon";
 import StatusBar from "./StatusBar";
 const Dashboard = () => {
   return (
-    <div style={{ margin: "40px" }}>
+    <div style={{ padding: "40px" }}>
       <Grid container>
         <Grid item md={6} xs={12}>
           <StatusBar />
