@@ -4,7 +4,7 @@ import axios from "axios";
 
 // axios.defaults.baseURL = "https://metrimeo-react.herokuapp.com/api";
 axios.defaults.baseURL =
-  "ec2-13-58-234-132.us-east-2.compute.amazonaws.com/api";
+  "http://ec2-13-58-234-132.us-east-2.compute.amazonaws.com/api";
 // axios.defaults.baseURL = "http://localhost:8080/api";
 
 axios.defaults.headers.common["x-auth-token"] = localStorage.getItem("token");
