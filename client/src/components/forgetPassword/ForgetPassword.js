@@ -180,7 +180,7 @@ const ForgotPassword = (props) => {
         <div className={classes.icon}>
           <CloseIcon
             onClick={() => {
-              props.history.push("/");
+              props.history.goBack();
             }}
             style={{
               float: "right",
@@ -210,12 +210,23 @@ const ForgotPassword = (props) => {
           <div
             style={{
               fontFamily: "'Montserrat',sans-serif",
-              fontSize: "28px",
+              fontSize: "20px",
               textAlign: "center",
               fontWeight: "800",
             }}
           >
-            Forgot Password?
+            Forgot Your Password? <br /> Don't Worry!
+          </div>
+          <br />
+          <div
+            style={{
+              fontFamily: "'Montserrat',sans-serif",
+              fontSize: "15px",
+              textAlign: "center",
+            }}
+          >
+            To reset your password, please enter your email address or username
+            below
           </div>
           <br />
           {/* <Typography component="h1" variant="h5">

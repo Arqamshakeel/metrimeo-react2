@@ -25,6 +25,7 @@ import CountryNames from "./CountryNames";
 import CancelOutlinedIcon from "@material-ui/icons/CancelOutlined";
 import CheckLoginForRegister from "../../auth/CheckLoginForRegister";
 import CustomDatePicker from "./CustomDatePicker";
+import NumberText from "../numberText/NumberText";
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -113,6 +114,7 @@ const Register = (props) => {
   const [phone, setPhone] = React.useState("");
   const [fname, setFname] = React.useState("");
   const [country, setCountry] = React.useState("");
+  const [lname, setLname] = React.useState("");
   // userService.isLoggedin()
   //   ? console.log("Yes logged in")
   //   : console.log("Not logged in");
@@ -131,6 +133,12 @@ const Register = (props) => {
       setLoginProgress(false);
       return;
     }
+    if (type != "business" && lname.length < 1) {
+      setOpen(true);
+      setmsg("last name cannot be empty");
+      setLoginProgress(false);
+      return;
+    }
     userService
       .UserReg({
         email: email.toLowerCase(),
@@ -139,7 +147,8 @@ const Register = (props) => {
         phone: phone,
         country: country,
         // username: userName,
-        fname: type == "business" ? "business" : fname,
+        fname: fname,
+        // fname: type == "business" ? "business" : fname,
       })
       .then(function (res) {
         // props.history.push("/");
@@ -157,13 +166,18 @@ const Register = (props) => {
         setLoginProgress(false);
         console.log(error);
         setOpen(true);
-        setmsg(error.response.data);
+        if (error.response.data.match("fname") && type == "business") {
+          setmsg("Username cannot be empty");
+        } else setmsg(error.response.data);
       });
   };
 
   React.useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  React.useEffect(() => {
+    console.log(phone);
+  }, [phone]);
   return (
     <CheckLoginForRegister>
       <Grid container component="main" className={classes.root}>
@@ -174,7 +188,7 @@ const Register = (props) => {
           <div className={classes.icon}>
             <CloseIcon
               onClick={() => {
-                props.history.push("/");
+                props.history.goBack();
               }}
               style={{
                 float: "right",
@@ -246,9 +260,9 @@ const Register = (props) => {
 
               {type == "business" ? (
                 <TextField
-                  value={userName}
+                  value={fname}
                   onChange={(e) => {
-                    setUserName(e.target.value);
+                    setFname(e.target.value);
                   }}
                   variant="outlined"
                   margin="normal"
@@ -258,7 +272,34 @@ const Register = (props) => {
                   name="Username"
                 />
               ) : (
-                <></>
+                <>
+                  <TextField
+                    value={fname}
+                    onChange={(e) => {
+                      setFname(e.target.value);
+                    }}
+                    variant="outlined"
+                    margin="normal"
+                    required
+                    fullWidth
+                    label="First Name"
+                    autoComplete="name"
+                    // autoFocus
+                  />
+                  <TextField
+                    value={lname}
+                    onChange={(e) => {
+                      setLname(e.target.value);
+                    }}
+                    variant="outlined"
+                    margin="normal"
+                    required
+                    fullWidth
+                    label="Last Name"
+                    autoComplete="name"
+                    // autoFocus
+                  />
+                </>
               )}
 
               <TextField
@@ -276,7 +317,7 @@ const Register = (props) => {
                 // autoFocus
               />
               <SnackBar open={open} setOpen={setOpen} msg={msg} />
-              <TextField
+              {/* <TextField
                 variant="outlined"
                 margin="normal"
                 required
@@ -285,23 +326,18 @@ const Register = (props) => {
                 type="number"
                 value={phone}
                 onChange={(evt) => {
-                  if (
-                    (evt.which != 8 && evt.which != 0 && evt.which < 48) ||
-                    evt.which > 57
-                  ) {
-                    evt.preventDefault();
-                  }
                   setPhone(evt.target.value);
                 }}
                 // autoComplete="current-password"
-              />
+              /> */}
+              <NumberText phone={phone} setPhone={setPhone} />
               <CountryNames country={country} setCountry={setCountry} />
 
               {type == "business" ? (
                 <></>
               ) : (
                 <>
-                  <TextField
+                  {/* <TextField
                     value={fname}
                     onChange={(e) => {
                       setFname(e.target.value);
@@ -322,7 +358,7 @@ const Register = (props) => {
                     label="Last Name"
                     autoComplete="name"
                     // autoFocus
-                  />
+                  /> */}
                 </>
               )}
               {/* <CustomDatePicker

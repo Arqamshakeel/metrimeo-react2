@@ -147,7 +147,11 @@ const Login = (props) => {
           <div className={classes.icon}>
             <CloseIcon
               onClick={() => {
-                props.history.push("/");
+                // console.log("====================================");
+                // console.log(props.history.goBack());
+                // console.log("====================================");
+                // props.history.push("/");
+                props.history.goBack();
               }}
               style={{
                 float: "right",

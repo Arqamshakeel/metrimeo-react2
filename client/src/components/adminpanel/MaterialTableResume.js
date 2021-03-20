@@ -232,12 +232,11 @@ const MaterialTableResume = () => {
           },
         ]}
         data={userData}
-        // options={{
-        //   rowStyle: {
-        //     backgroundColor: "#EEE",
-        //     padding:"100px"
-        //   },
-        // }}
+        options={{
+          headerStyle: {
+            zIndex: 1,
+          },
+        }}
       />
     </Container>
   );

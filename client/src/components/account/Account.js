@@ -12,6 +12,7 @@ import CustomAccountList from "./CustomAccountList";
 import CustomBackdrop from "../backdrop/CustomBackdrop";
 import fileUpload from "fuctbase64";
 import ProfileAvatar from "./ProfileAvatar";
+import NumberText from "../numberText/NumberText";
 const Account = (props) => {
   const [open, setOpen] = React.useState(false);
   const [msg, setmsg] = React.useState("");
@@ -249,7 +250,7 @@ const Account = (props) => {
                     </Grid>
                     {pageState == 0 ? (
                       <div>
-                        <TextField
+                        {/* <TextField
                           // value={email}
                           // onChange={(e) => {
                           //   setEmail(e.target.value);
@@ -264,7 +265,7 @@ const Account = (props) => {
                           fullWidth
                           label="Username"
                           name="Username"
-                        />
+                        /> */}
                         <TextField
                           value={email}
                           onChange={(e) => {
@@ -280,7 +281,7 @@ const Account = (props) => {
                           // autoFocus
                         />
 
-                        <TextField
+                        {/* <TextField
                           variant="outlined"
                           margin="normal"
                           required
@@ -291,7 +292,8 @@ const Account = (props) => {
                           onChange={(e) => {
                             setPhone(e.target.value);
                           }}
-                        />
+                        /> */}
+                        <NumberText phone={phone} setPhone={setPhone} />
                         {/* <CountryNames /> */}
                         <TextField
                           variant="outlined"

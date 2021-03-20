@@ -219,7 +219,7 @@ const NewPasswordForm = (props) => {
         <div className={classes.icon}>
           <CloseIcon
             onClick={() => {
-              props.history.push("/");
+              props.history.goBack();
             }}
             style={{
               float: "right",

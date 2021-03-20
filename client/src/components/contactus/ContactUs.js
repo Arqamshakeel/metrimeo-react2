@@ -21,6 +21,7 @@ import CustomRadio from "./CustomRadio";
 import { useMediaQuery } from "react-responsive";
 import userService from "../../services/UserService";
 import CheckLogIn from "../../auth/CheckLogIn";
+import NumberText from "../numberText/NumberText";
 
 const ContactUs = () => {
   const [open, setOpen] = React.useState(false);
@@ -355,7 +356,7 @@ const ContactUs = () => {
               autoComplete="email"
               type="email"
             />
-            <TextField
+            {/* <TextField
               variant="outlined"
               margin="normal"
               required
@@ -366,8 +367,8 @@ const ContactUs = () => {
               onChange={(e) => {
                 setPhone(e.target.value);
               }}
-            />
-
+            /> */}
+            <NumberText phone={phone} setPhone={setPhone} />
             <div>Customer Type</div>
             <CustomRadio value={typeAccount} setValue={setTypeAccount} />
 

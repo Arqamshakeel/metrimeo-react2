@@ -6,11 +6,13 @@ import MaterialTableContactUs from "./MaterialTableContactUs";
 const AdminPanel = () => {
   return (
     <CheckAdmin>
-      <MaterialTableUsers />
-      <hr />
-      <MaterialTableResume />
-      <hr />
-      <MaterialTableContactUs />
+      <div style={{ zIndex: "-1" }}>
+        <MaterialTableUsers />
+        <hr />
+        <MaterialTableResume />
+        <hr />
+        <MaterialTableContactUs />
+      </div>
     </CheckAdmin>
   );
 };

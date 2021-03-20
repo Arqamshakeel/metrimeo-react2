@@ -5,6 +5,7 @@ import {
   Grid,
   Paper,
   TextField,
+  Typography,
 } from "@material-ui/core";
 import CustomBackdrop from "../backdrop/CustomBackdrop";
 import InputLabel from "@material-ui/core/InputLabel";
@@ -21,6 +22,7 @@ import CustomRadio from "./CustomRadio";
 import { useMediaQuery } from "react-responsive";
 import userService from "../../services/UserService";
 import CheckLogIn from "../../auth/CheckLogIn";
+import NumberText from "../numberText/NumberText";
 const Careers = () => {
   const [open, setOpen] = React.useState(false);
   const [msg, setmsg] = React.useState("");
@@ -135,11 +137,11 @@ const Careers = () => {
       setmsg("Select Resume");
       return;
     }
-    if (imgBase642.length < 40) {
-      setOpen(true);
-      setmsg("Select Cover");
-      return;
-    }
+    // if (imgBase642.length < 40) {
+    //   setOpen(true);
+    //   setmsg("Select Cover");
+    //   return;
+    // }
     if (fname.length < 1) {
       setOpen(true);
       setmsg("First name should not be empty");
@@ -416,7 +418,7 @@ const Careers = () => {
             name="email"
             autoComplete="email"
           />
-          <TextField
+          {/* <TextField
             variant="outlined"
             margin="normal"
             required
@@ -427,7 +429,8 @@ const Careers = () => {
             onChange={(e) => {
               setPhone(e.target.value);
             }}
-          />
+          /> */}
+          <NumberText phone={phone} setPhone={setPhone} />
           <FormControl variant="outlined" fullWidth margin="normal">
             <InputLabel id="demo-simple-select-outlined-label">
               Desired Location – Country *
@@ -566,8 +569,16 @@ const Careers = () => {
             />
           </Button>
           <div>
-            You must agree to our Terms & Services and Privacy Policy to submit
-            your information
+            <Typography variant="body2" color="textSecondary" align="left">
+              By continuing you accept our{" "}
+              <a href="/terms-and-conditions">Terms & Conditions</a> and{" "}
+              <a href="/privacy-policy">Privacy Policy</a>{" "}
+              {/* <Link color="inherit" href="https://www.instagram.com/arqamshakeel/">
+        Family Mart made by Arqam Shakeel.
+      </Link>{" "} */}
+              {new Date().getFullYear()}
+              {"."}
+            </Typography>
           </div>
 
           <FormControlLabel
